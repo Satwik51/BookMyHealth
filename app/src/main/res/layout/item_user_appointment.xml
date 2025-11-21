@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackgroundBorderless"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="8dp"
+    app:strokeWidth="0dp"
+    app:cardUseCompatPadding="true"
+    app:cardBackgroundColor="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#80E9D4"
+        android:padding="20dp">
+
+        <!-- Doctor Name -->
+        <TextView
+            android:id="@+id/tvDoctorId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="👨‍⚕️ Doctor: Dr. John Doe"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#AB47BC"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Appointment Date -->
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📅 Date: 01/11/2025"
+            android:textSize="15sp"
+            android:textColor="#424242"
+            android:layout_marginBottom="6dp" />
+
+        <!-- Appointment Time -->
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🕒 Time: 10:30 AM"
+            android:textSize="15sp"
+            android:textColor="#1565C0"
+            android:layout_marginBottom="6dp" />
+
+        <!-- Appointment Status -->
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status: Pending"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#F8A725"
+            android:layout_marginTop="4dp" />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

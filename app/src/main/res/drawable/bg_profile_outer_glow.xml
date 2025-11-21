@@ -1,0 +1,26 @@
+<!-- res/drawable/bg_profile_outer_glow.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- outer blurred-ish glow (gradient) -->
+    <item>
+        <shape android:shape="oval">
+            <size android:width="140dp" android:height="140dp"/>
+            <gradient
+                android:type="radial"
+                android:gradientRadius="70"
+                android:startColor="#40FFFFFF"
+            android:centerColor="#40AB47BC"
+            android:endColor="#00AB47BC"
+            />
+        </shape>
+    </item>
+
+    <!-- inner white ring -->
+    <item android:left="6dp" android:top="6dp" android:right="6dp" android:bottom="6dp">
+        <shape android:shape="oval">
+            <solid android:color="#FFFFFFFF"/>
+            <size android:width="124dp" android:height="124dp"/>
+        </shape>
+    </item>
+
+</layer-list>

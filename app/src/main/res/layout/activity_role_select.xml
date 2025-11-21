@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".ui.auth.RoleSelectActivity">
+
+    <!-- 🔹 Top Half: ViewPager Intro -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/introViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:background="@drawable/bg_intro_curve" />
+
+    <LinearLayout
+        android:id="@+id/dotsIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" />
+
+    <!-- 🔸 Bottom Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingLeft="22dp"
+        android:paddingRight="22dp">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Your Role"
+            android:textColor="#AB47BC"
+            android:layout_gravity="center"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="28dp"
+            android:gravity="center" />
+
+        <!-- ⭐ Both Cards Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="40dp"
+            android:weightSum="2"
+            android:layout_marginBottom="40dp">
+
+            <!-- ⭐ USER CARD -->
+            <LinearLayout
+                android:id="@+id/btnUser"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="12dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="18dp"
+                android:background="@drawable/bg_role_unselected"
+                android:elevation="4dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/lottieUser"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    app:lottie_rawRes="@raw/user_role"
+                    app:lottie_autoPlay="false"
+                    app:lottie_repeatCount="0" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="User"
+                    android:textColor="#444"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+            <!-- ⭐ DOCTOR CARD -->
+            <LinearLayout
+                android:id="@+id/btnDoctor"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_weight="1"
+                android:layout_marginStart="12dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="18dp"
+                android:background="@drawable/bg_role_unselected"
+                android:elevation="4dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/lottieDoctor"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    app:lottie_rawRes="@raw/doctor_role"
+                    app:lottie_autoPlay="false"
+                    app:lottie_repeatCount="0" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Doctor"
+                    android:textColor="#444"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ⭐ CONTINUE BUTTON (Bottom Fixed, Big, Rounded, Premium) -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnContinue"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="120dp"
+            android:text="Continue"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:enabled="false"
+            android:textColor="@color/white"
+            app:cornerRadius="20dp"
+            android:backgroundTint="#80E9D4" />
+
+    </LinearLayout>
+
+</LinearLayout>

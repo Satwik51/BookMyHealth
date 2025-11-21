@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Base matte white background -->
+    <item>
+        <shape>
+            <solid android:color="#F8FAFD" />
+        </shape>
+    </item>
+
+    <!-- Subtle abstract soft panel (top left) -->
+    <item android:left="-60dp" android:top="-40dp">
+        <shape android:shape="rectangle">
+            <size android:width="260dp" android:height="240dp" />
+            <corners android:radius="50dp" />
+            <solid android:color="#F1F5F9" />
+        </shape>
+    </item>
+
+    <!-- Abstract floating panel (top right) -->
+    <item android:right="-40dp" android:top="60dp">
+        <shape android:shape="rectangle">
+            <size android:width="200dp" android:height="200dp" />
+            <corners android:radius="40dp" />
+            <solid android:color="#EEF3FA" />
+        </shape>
+    </item>
+
+    <!-- Big lower soft panel (bottom) -->
+    <item android:left="-80dp" android:bottom="-120dp">
+        <shape android:shape="rectangle">
+            <size android:width="420dp" android:height="420dp"/>
+            <corners android:radius="60dp" />
+            <solid android:color="#E9F0F8"/>
+        </shape>
+    </item>
+
+    <!-- Accent medical micro dots -->
+    <item>
+        <bitmap
+            android:alpha="0.08"
+            android:gravity="top|center_horizontal"
+            android:src="@drawable/bg_micro_dots"/>
+    </item>
+
+    <!-- Soft vignette for depth -->
+    <item>
+        <shape>
+            <gradient
+                android:type="radial"
+                android:gradientRadius="600dp"
+                android:centerX="0.5"
+                android:centerY="0.6"
+                android:startColor="#00FFFFFF"
+                android:endColor="#12FFFFFF"/>
+        </shape>
+    </item>
+
+</layer-list>

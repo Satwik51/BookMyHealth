@@ -1,0 +1,16 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Background circle -->
+    <path
+        android:fillColor="#FFE6E6"
+        android:pathData="M12,2A10,10 0 1,0 22,12A10,10 0 0,0 12,2z" />
+
+    <!-- Cross X -->
+    <path
+        android:fillColor="#FF3B30"
+        android:pathData="M15.3,8.7l-2.3,2.3l2.3,2.3c0.4,0.4 0.4,1 0,1.4c-0.4,0.4 -1,0.4 -1.4,0l-2.3,-2.3l-2.3,2.3c-0.4,0.4 -1,0.4 -1.4,0c-0.4,-0.4 -0.4,-1 0,-1.4l2.3,-2.3l-2.3,-2.3c-0.4,-0.4 -0.4,-1 0,-1.4c0.4,-0.4 1,-0.4 1.4,0l2.3,2.3l2.3,-2.3c0.4,-0.4 1,-0.4 1.4,0C15.7,7.7 15.7,8.3 15.3,8.7z" />
+</vector>

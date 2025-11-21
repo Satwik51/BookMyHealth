@@ -1,0 +1,16 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="28dp"
+    android:height="28dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Cloud -->
+    <path
+        android:fillColor="#80E9D4"
+        android:pathData="M19.35,10.04C18.67,7.59 16.53,5.82 14,5.82C12.38,5.82 10.89,6.52 9.88,7.66C8.45,7.9 7.27,8.74 6.63,9.93C5.09,10.23 4,11.59 4,13.18C4,15.03 5.49,16.52 7.34,16.52H17.66C19.33,16.52 20.66,15.19 20.66,13.52C20.66,11.96 19.66,10.7 19.35,10.04Z" />
+
+    <!-- Up Arrow -->
+    <path
+        android:fillColor="#0D47A1"
+        android:pathData="M12,14.5 L12,9.5 L14.5,12 L16,10.5 L12,6.5 L8,10.5 L9.5,12 L12,9.5 L12,14.5 Z" />
+</vector>

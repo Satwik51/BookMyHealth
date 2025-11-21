@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F7FF"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- 🌟 TOP CURVED HEADER -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/bg_intro_curve"
+            android:padding="18dp">
+
+            <ImageView
+                android:id="@+id/ivProfile"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/placeholder_profile"
+                android:scaleType="centerCrop"
+                android:background="@drawable/bg_circle_white"
+                android:padding="8dp" />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Name"
+                android:textColor="#80E9D4"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:id="@+id/tvEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="user@mail.com"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="#80E9D4"
+                android:textSize="20sp"
+                />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_verified"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Verified User"
+                    android:textColor="#C8FAFF"
+                    android:textSize="18sp"
+                    android:layout_marginStart="6dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <!-- 🌟 PERSONAL INFORMATION -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="7dp">
+
+            <LinearLayout
+                android:padding="20dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Personal Information"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:textColor="#80E9D4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+                <TextView
+                    android:text="Phone Number"
+                    android:layout_marginTop="10dp"
+                    android:textSize="18sp"
+                    android:textColor="#80E9D4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+
+                <EditText
+                    android:id="@+id/etPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_edit_glass"
+                    android:padding="12dp"
+                    android:hint="Phone Number"
+                    android:inputType="phone"
+                    android:layout_marginTop="12dp"/>
+
+                <TextView
+                    android:text="Age"
+                    android:layout_marginTop="10dp"
+                    android:textSize="18sp"
+                    android:textColor="#80E9D4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/etAge"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_edit_glass"
+                    android:padding="12dp"
+                    android:hint="Age"
+                    android:inputType="number"
+                    android:layout_marginTop="12dp"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- 🌟 ADDRESS CARD -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="7dp">
+
+            <LinearLayout
+                android:padding="20dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Address"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="#80E9D4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/etAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="100dp"
+                    android:background="@drawable/bg_edit_glass"
+                    android:padding="12dp"
+                    android:hint="Complete Address"
+                    android:inputType="textMultiLine"
+                    android:layout_marginTop="12dp"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- 🌟 UPDATE & LOGOUT -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnUpdateProfile"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Update Profile"
+            android:backgroundTint="#80E9D4"
+            android:textColor="#FFFFFF"
+            app:cornerRadius="18dp"
+            android:layout_marginTop="22dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Logout"
+            android:backgroundTint="#E53935"
+            android:textColor="#FFFFFF"
+            app:cornerRadius="18dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="40dp" />
+
+    </LinearLayout>
+</ScrollView>

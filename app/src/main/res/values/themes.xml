@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base Light Theme -->
+    <style name="Base.Theme.BookMyHealth" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <!-- Primary Branding -->
+        <item name="colorPrimary">#AB47BC</item>
+        <item name="colorPrimaryContainer">#80E9D4</item>
+
+        <!-- Secondary / Highlight -->
+        <item name="colorSecondary">@color/highlightYellow</item>
+
+        <!-- Status & Navigation -->
+        <item name="android:statusBarColor">#AB47BC</item>
+        <item name="android:navigationBarColor">@color/white</item>
+
+        <!-- Text & Surface -->
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSurface">@color/white</item>
+
+    </style>
+
+    <!-- Final App Theme -->
+    <style name="Theme.BookMyHealth" parent="Base.Theme.BookMyHealth"/>
+
+</resources>

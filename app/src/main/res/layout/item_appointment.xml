@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    app:cardCornerRadius="22dp"
+    app:cardElevation="10dp"
+    app:strokeColor="#1FFFFFFF"
+    app:strokeWidth="1dp"
+    android:clickable="true"
+    android:foreground="?attr/selectableItemBackgroundBorderless"
+    app:cardBackgroundColor="@color/transparent">
+
+    <!-- ✅ Gradient background inside -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:gravity="center_vertical"
+        android:background="#80E9D4">
+
+        <!-- 🧍 Patient Name -->
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="👤 Patient: John Doe"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#AB47BC"
+            android:layout_marginBottom="8dp"
+            android:shadowColor="#40000000"
+            android:shadowDx="0"
+            android:shadowDy="2"
+            android:shadowRadius="4" />
+
+        <!-- 📅 Date and Time -->
+        <TextView
+            android:id="@+id/tvDateTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📅 12/10/2025   🕒 10:30 AM"
+            android:textSize="15sp"
+            android:textColor="#AB47BC"
+            android:layout_marginBottom="6dp" />
+
+        <!-- 🩺 Status Chip -->
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pending"
+            android:textColor="@color/white"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="4dp"
+            android:textSize="13sp"
+            android:background="@drawable/bg_status_chip_orange"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:elevation="2dp" />
+
+        <!-- ✅ Buttons Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnApprove"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Approve"
+                android:textAllCaps="false"
+                android:textSize="15sp"
+                app:cornerRadius="14dp"
+                app:iconPadding="8dp"
+                app:backgroundTint="@color/green_success"
+                android:textColor="@android:color/white"
+                android:elevation="5dp"
+                android:layout_marginEnd="10dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnReject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reject"
+                android:textAllCaps="false"
+                android:textSize="15sp"
+                app:cornerRadius="14dp"
+                app:iconPadding="8dp"
+                app:backgroundTint="@color/red_error"
+                android:textColor="@android:color/white"
+                android:elevation="5dp" />
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

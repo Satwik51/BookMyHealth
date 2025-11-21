@@ -1,0 +1,27 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Base.Theme.BookMyHealth" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <!-- Brand Colors -->
+        <item name="colorPrimary">#AB47BC</item>
+        <item name="colorPrimaryContainer">#80E9D4</item>
+
+        <!-- ✅ Proper Dark Background (Material3 Safe) -->
+        <item name="android:colorBackground">#121212</item>
+        <item name="colorSurface">#121212</item>
+
+        <!-- Highlight -->
+        <item name="colorSecondary">@color/highlightYellow</item>
+
+        <!-- System Bars -->
+        <item name="android:statusBarColor">#121212</item>
+        <item name="android:navigationBarColor">#121212</item>
+
+        <!-- Text on primary -->
+        <item name="colorOnPrimary">@color/white</item>
+
+    </style>
+
+    <style name="Theme.BookMyHealth" parent="Base.Theme.BookMyHealth"/>
+
+</resources>

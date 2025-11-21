@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/splashLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_app"
+    android:gravity="center"
+    tools:context=".ui.splash.SplashActivity">
+
+    <!-- 🔹 Subtle circular background accent -->
+    <View
+        android:id="@+id/bgCircle"
+        android:layout_width="420dp"
+        android:layout_height="420dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/bg_circle"
+        android:alpha="0.1" />
+
+    <!-- 🔹 App Logo -->
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/logo_circle"
+        android:layout_centerInParent="true"
+        android:contentDescription="App Logo"
+        android:elevation="10dp"
+        android:background="@drawable/bg_logo_circle"
+        android:padding="5dp" />
+
+    <!-- 🔹 App Name -->
+    <TextView
+        android:id="@+id/tvAppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivLogo"
+        android:layout_centerHorizontal="true"
+        android:text="BookMyHealth"
+        android:textColor="#80E9D4"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.05"
+        android:layout_marginTop="20dp" />
+
+    <!-- 🔹 Tagline -->
+    <TextView
+        android:id="@+id/tvTagline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvAppName"
+        android:layout_centerHorizontal="true"
+        android:text="Your Health, Our Priority"
+        android:textColor="@color/bgLight"
+        android:textSize="14sp"
+        android:layout_marginTop="6dp" />
+
+    <!-- 🔹 Progress bar animation -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvTagline"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:indeterminate="true"
+        android:indeterminateTint="#FFEB3B" />
+
+</RelativeLayout>

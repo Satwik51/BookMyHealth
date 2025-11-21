@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.auth.doctor.DoctorApprovedListActivity">
+
+    <!-- ✅ Toolbar -->
+    <include
+        android:id="@+id/toolbarDoctorInclude"
+        layout="@layout/toolbar_doctor" />
+
+    <!-- ✅ ProgressBar -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:indeterminateTint="#FFEB3B"
+        android:visibility="gone" />
+
+    <!-- ✅ Empty State Layout with Lottie -->
+    <LinearLayout
+        android:id="@+id/emptyLayout"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:padding="40dp">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieEmpty"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/empty"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No approved appointments yet"
+            android:textSize="16sp"
+            android:textColor="#80E9D4"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp" />
+    </LinearLayout>
+
+    <!-- ✅ RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvApproved"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp" />
+</LinearLayout>

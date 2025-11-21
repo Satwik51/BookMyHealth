@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Soft base background -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#F7F8FC"/>
+        </shape>
+    </item>
+
+    <!-- Subtle diagonal lines texture -->
+    <item>
+        <shape android:shape="rectangle">
+            <size android:width="8dp" android:height="8dp"/>
+            <bitmap
+                android:src="@drawable/texture_dots_pattern"/>
+        </shape>
+    </item>
+
+</layer-list>

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@android:color/transparent">
+
+
+
+
+    <!-- ⭐ MAIN WHITE CONTENT AREA -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:background="@drawable/bg_filter_content_round">
+
+
+        <!-- ⭐ NEW LOTTIE ANIMATION -->
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieFilter"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginBottom="6dp"
+            android:layout_gravity="center"
+            app:lottie_rawRes="@raw/filter"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true" />
+
+        <!-- TODAY CARD -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardFilterToday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="4dp"
+            app:strokeWidth="2dp"
+            app:strokeColor="#80E9D4">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_today"
+                    android:layout_marginEnd="14dp"
+                    app:tint="#2196F3" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/filterToday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Today"
+                        android:textSize="18sp"
+                        android:textColor="#000"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Show today’s scheduled appointments"
+                        android:textSize="14sp"
+                        android:textColor="#616161" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- UPCOMING CARD -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardFilterUpcoming"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="4dp"
+            app:strokeWidth="2dp"
+            app:strokeColor="#80E9D4">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_calender"
+                    android:layout_marginEnd="14dp"
+                    app:tint="#4CAF50" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/filterUpcoming"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Upcoming"
+                        android:textSize="18sp"
+                        android:textColor="#000"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Show all future appointments"
+                        android:textSize="14sp"
+                        android:textColor="#616161" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- ALL CARD -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardFilterAll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="4dp"
+            app:strokeWidth="2dp"
+            app:strokeColor="#80E9D4">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_list"
+                    android:layout_marginEnd="14dp"
+                    app:tint="#FF9800" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/filterAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="All"
+                        android:textColor="#000"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Show all pending appointments"
+                        android:textColor="#616161"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- CLEAR FILTER BUTTON -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnClearFilter"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:text="Clear Filters"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            app:cornerRadius="14dp"
+            app:backgroundTint="#E53935" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BookMyHealth</string>
+    <string name="no_appointments">No pending appointments</string>
+    <string name="default_web_client_id">
+    "1039875295963-1skldamub29s6tjocjqcp92i95v6mn5k.apps.googleusercontent.com"
+</string>
+
+</resources>

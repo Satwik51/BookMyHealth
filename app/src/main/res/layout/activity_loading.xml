@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#AB47BC"
+    tools:context=".ui.splash.LoadingActivity">
+
+    <!-- 🔹 Background Overlay (for soft dim/glow) -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#66000000" />
+
+    <!-- 🔹 Centered Lottie Animation -->
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieLoading"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_centerInParent="true"
+        app:lottie_rawRes="@raw/doctor"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_speed="1"
+        android:elevation="6dp" />
+
+    <!-- 🔹 App Name -->
+    <TextView
+        android:id="@+id/tvAppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BookMyHealth"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/lottieLoading"
+        android:layout_marginTop="20dp"
+        android:alpha="0.95" />
+
+    <!-- 🔹 Tagline -->
+    <TextView
+        android:id="@+id/tvTagline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Connecting you to care..."
+        android:textColor="#DDEEFF"
+        android:textSize="14sp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tvAppName"
+        android:layout_marginTop="6dp"
+        android:alpha="0.8" />
+
+</RelativeLayout>

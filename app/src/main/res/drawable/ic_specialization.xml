@@ -1,0 +1,8 @@
+<!-- res/drawable/ic_specialization.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp" android:height="24dp" android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#00796B"
+        android:pathData="M20,11v-1a1,1 0,0 0,-1,-1h-1v2h1v1a4,4 0,1 1,-8,0v-6h2v6a2,2 0,1 0,4,0v-1h1a1,1 0,0 0,1,-1z"/>
+</vector>

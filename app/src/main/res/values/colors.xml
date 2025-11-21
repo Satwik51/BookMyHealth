@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="primary_blue">#0D99FF</color>
+    <color name="background_light">#F9FAFB</color>
+    <color name="gray_200">#E5E7EB</color>
+    <color name="gray_600">#6B7280</color>
+    <color name="green_approved">#4CAF50</color>
+    <color name="green">#4CAF50</color>   <!-- for approved -->
+    <color name="red">#F44336</color>     <!-- for rejected -->
+    <color name="orange">#FF9800</color>  <!-- for pending/other -->
+    <color name="gray_500">#888888</color>
+    <color name="highlightYellow">#FFEB3B</color>
+    <color name="green_success">#4CAF50</color>
+    <color name="red_error">#F44336</color>
+    <color name="blue_primary">#1976D2</color>
+    <color name="blue_light">#42A5F5</color>
+
+    <color name="primaryBlue">#1976D2</color>
+    <color name="lightBlue">#E3F2FD</color>
+    <color name="textDark">#212121</color>
+    <color name="textGray">#757575</color>
+    <color name="bgLight">#F5F5F5</color>
+
+
+    <color name="primaryBlueDark">#1565C0</color>
+    <color name="greenAccent">#4CAF50</color>
+    <color name="greenDark">#2E7D32</color>
+
+
+    <color name="darkPrimary">#80E9D4</color>
+    <color name="darkPrimaryContainer">#1E1E1E</color>
+
+
+
+
+
+    <!-- 🔹 Primary Brand Colors -->
+
+        <color name="primaryGreen">#00C853</color>        <!-- Success green -->
+        <color name="purple">#AA00FF</color>              <!-- Accent purple -->
+
+        <!-- 🔹 Neutral / Background -->
+
+        <color name="lightGray">#E0E0E0</color>
+        <color name="gray">#757575</color>
+        <color name="darkGray">#424242</color>
+
+
+
+        <!-- 🔹 Background Gradients (for optional fancy cards) -->
+        <color name="blueGradientStart">#2196F3</color>
+        <color name="blueGradientEnd">#1976D2</color>
+
+        <color name="greenGradientStart">#00C853</color>
+        <color name="greenGradientEnd">#009624</color>
+
+        <color name="purpleGradientStart">#AA00FF</color>
+        <color name="purpleGradientEnd">#6200EA</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="darkPrimaryText">#1A1A1A</color>
+
+    <color name="main">#AB47BC</color>
+    <color name="text">#02C39A</color>
+
+
+
+
+</resources>
