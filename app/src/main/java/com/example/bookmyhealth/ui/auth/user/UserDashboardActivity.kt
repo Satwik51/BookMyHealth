@@ -67,6 +67,11 @@ class UserDashboardActivity : AppCompatActivity() {
             return
         }
 
+        // ✅ SHOW DIALOG IF COMING FROM SIGNUP (GOOGLE OR MANUAL)
+        if (intent.getBooleanExtra(UserSignupActivity.EXTRA_FROM_SIGNUP, false)) {
+            showWelcomeDialog()
+        }
+
         val firebaseUrl =
             "https://bookmyhealth-5920a-default-rtdb.asia-southeast1.firebasedatabase.app/"
         val database = FirebaseDatabase.getInstance(firebaseUrl)
@@ -85,6 +90,34 @@ class UserDashboardActivity : AppCompatActivity() {
         setupFilter()
         fetchAllDoctors()
     }
+
+
+    // ✅ FULLY FIXED WELCOME ALERT DIALOG WITH BOTH BUTTONS
+    private fun showWelcomeDialog() {
+        val dialogView = layoutInflater.inflate(R.layout.alert_success, null)
+
+        val dialog = android.app.AlertDialog.Builder(this)
+            .setView(dialogView)
+            .setCancelable(false)
+            .create()
+
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+
+        val btnOk = dialogView.findViewById<View>(R.id.btnDialogOk)
+        val btnGoProfile = dialogView.findViewById<View>(R.id.btnGoProfile)
+
+        btnOk.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        btnGoProfile.setOnClickListener {
+            dialog.dismiss()
+            startActivity(Intent(this, UserProfileActivity::class.java))
+        }
+
+        dialog.show()
+    }
+
 
     // -------------------------------------------------------------------
     private fun setupDrawerClicks() {

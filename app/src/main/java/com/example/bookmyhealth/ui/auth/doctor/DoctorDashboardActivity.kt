@@ -93,38 +93,21 @@ class DoctorDashboardActivity : AppCompatActivity() {
         dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
         dialog.show()
 
-        val successIcon = view.findViewById<ImageView>(R.id.successIcon)
         val okBtn = view.findViewById<MaterialButton>(R.id.btnDialogOk)
         val goProfileBtn = view.findViewById<MaterialButton>(R.id.btnGoProfile)
 
-        view.scaleX = 0.85f
-        view.scaleY = 0.85f
-        view.alpha = 0f
+        // ✅ OK BUTTON
+        okBtn.setOnClickListener {
+            dialog.dismiss()
+        }
 
-        view.animate()
-            .scaleX(1f).scaleY(1f).alpha(1f)
-            .setDuration(350)
-            .setStartDelay(50)
-            .setInterpolator(OvershootInterpolator(1.2f))
-            .start()
-
-        successIcon.scaleX = 0f
-        successIcon.scaleY = 0f
-
-        successIcon.animate()
-            .scaleX(1f).scaleY(1f)
-            .setDuration(520)
-            .setStartDelay(150)
-            .setInterpolator(OvershootInterpolator(1.3f))
-            .start()
-
-        okBtn.setOnClickListener { dialog.dismiss() }
-
+        // ✅ GO TO PROFILE BUTTON
         goProfileBtn.setOnClickListener {
             dialog.dismiss()
             startActivity(Intent(this, DoctorProfileActivity::class.java))
         }
     }
+
 
     private fun setupUI() {
         setupRecyclerView()
