@@ -754,8 +754,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👨‍💻 Author
 
 **Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
+- GitHub: [Satwik51](https://github.com/Satwik51)
+- Email: raiakki51@gmail.com
 
 ---
 
@@ -820,8 +820,8 @@ Image Loading
 ## 📞 Support
 
 If you have any questions or need help, please:
-- Open an [Issue](https://github.com/yourusername/BookMyHealth/issues)
-- Contact: your.email@example.com
+- Open an [Issue](https://github.com/Satwik51/BookMyHealth/issues)
+- Contact: raiakki51@gmail.com
 
 ---
 
