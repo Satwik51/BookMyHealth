@@ -15,3 +15,4 @@
 local.properties
 # ==== Firebase (IMPORTANT) ====
 app/google-services.json
+google-services.json
