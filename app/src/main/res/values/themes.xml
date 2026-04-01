@@ -1,26 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Base Light Theme -->
     <style name="Base.Theme.BookMyHealth" parent="Theme.Material3.DayNight.NoActionBar">
 
-        <!-- Primary Branding -->
-        <item name="colorPrimary">#AB47BC</item>
-        <item name="colorPrimaryContainer">#80E9D4</item>
+        <!-- Brand -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryContainer">@color/colorPrimaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/textPrimary</item>
 
-        <!-- Secondary / Highlight -->
+        <!-- Secondary -->
         <item name="colorSecondary">@color/highlightYellow</item>
+        <item name="colorOnSecondary">@color/black</item>
 
-        <!-- Status & Navigation -->
-        <item name="android:statusBarColor">#AB47BC</item>
-        <item name="android:navigationBarColor">@color/white</item>
+        <!-- Surface & Background -->
+        <item name="colorSurface">@color/colorSurface</item>
+        <item name="colorOnSurface">@color/textPrimary</item>
+        <item name="colorOnSurfaceVariant">@color/textSecondary</item>
+        <item name="android:colorBackground">@color/colorBackground</item>
 
-        <!-- Text & Surface -->
+        <!-- Text on primary -->
         <item name="colorOnPrimary">@color/white</item>
-        <item name="colorSurface">@color/white</item>
+
+        <!-- System bars — transparent for edge-to-edge -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="23">true</item>
 
     </style>
 
-    <!-- Final App Theme -->
     <style name="Theme.BookMyHealth" parent="Base.Theme.BookMyHealth"/>
 
 </resources>

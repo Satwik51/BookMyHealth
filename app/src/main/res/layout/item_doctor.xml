@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="16dp"
-        android:background="#80E9D4"
+        android:background="@color/card"
         android:gravity="center_vertical">
 
         <!-- ⭐ Doctor Image -->
@@ -55,7 +55,7 @@
                 android:text="Dr. John Doe"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="#AB47BC"
+                android:textColor="@color/primary_blue"
                 android:layout_marginBottom="4dp" />
 
             <!-- Specialization -->

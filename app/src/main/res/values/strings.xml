@@ -1,4 +1,38 @@
 <resources>
+    <!-- Booking Confirmation -->
+    <string name="success_icon">Success icon</string>
+    <string name="booking_confirmed">Booking Confirmed!</string>
+    <string name="booking_confirmed_subtitle">Your appointment has been booked successfully</string>
+
+    <!-- Labels -->
+    <string name="label_doctor">Doctor</string>
+    <string name="label_date">Date</string>
+    <string name="label_time">Time</string>
+    <string name="label_slot">Slot</string>
+    <string name="label_status">Status</string>
+    <string name="label_token">TOKEN NO.</string>
+    <string name="label_ref_id">Ref. ID</string>
+
+    <!-- Buttons -->
+    <string name="btn_done">Done</string>
+
+    <!-- Status -->
+    <string name="status_confirmed">Confirmed</string>
+    <string name="status_pending">Pending</string>
+    <string name="status_cancelled">Cancelled</string>
+    <string name="select_appointment">Select Appointment</string>
+    <string name="choose_approved_appointment">Choose your approved appointment</string>
+    <string name="go_back">Go Back</string>
+    <string name="select_appointment_first">Please select an appointment first</string>
+    <string name="no_approved_appointments">No Approved Appointments Found</string>
+    <string name="slip_saved_success">Slip saved to Gallery (Pictures/BookMyHealth)</string>
+    <string name="save_failed">Save Failed: %s</string>
+    <string name="doctor_name_format">Dr. %s</string>
+    <string name="patient_name_format">Patient: %s</string>
+    <string name="date_time_format">%s | %s</string>
+    <string name="token_format">#%s</string>
+    <string name="appointment_id_format">ID: %s</string>
+    <string name="status_approved">Status: Approved</string>
     <string name="app_name">BookMyHealth</string>
     <string name="no_appointments">No pending appointments</string>
     <string name="default_web_client_id">

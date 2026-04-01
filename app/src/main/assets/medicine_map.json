@@ -1,0 +1,593 @@
+{
+  "Paracetamol": ["Fever", "Flu", "Viral Infection"],
+  "Dolo": ["Fever"],
+  "Crocin": ["Fever"],
+  "Calpol": ["Fever"],
+  "Ibuprofen": ["Pain", "Inflammation"],
+  "Combiflam": ["Pain", "Fever"],
+  "Aspirin": ["Pain", "Heart Disease"],
+  "Diclofenac": ["Pain", "Inflammation"],
+  "Aceclofenac": ["Pain"],
+  "Naproxen": ["Pain", "Arthritis"],
+
+  "Cetirizine": ["Allergy", "Cold"],
+  "Levocetirizine": ["Allergy"],
+  "Fexofenadine": ["Allergy"],
+  "Loratadine": ["Allergy"],
+  "Montelukast": ["Asthma", "Allergy"],
+
+  "Azithromycin": ["Bacterial Infection", "Throat Infection"],
+  "Amoxicillin": ["Bacterial Infection"],
+  "Ciprofloxacin": ["Infection"],
+  "Ofloxacin": ["Infection"],
+  "Doxycycline": ["Infection"],
+  "Clarithromycin": ["Respiratory Infection"],
+  "Levofloxacin": ["Infection"],
+
+  "Pantoprazole": ["Acidity", "Gastritis"],
+  "Omeprazole": ["Acidity"],
+  "Rabeprazole": ["Acidity"],
+  "Esomeprazole": ["Acidity"],
+  "Ranitidine": ["Acidity"],
+  "Famotidine": ["Acidity"],
+
+  "Metformin": ["Diabetes"],
+  "Glibenclamide": ["Diabetes"],
+  "Glimepiride": ["Diabetes"],
+  "Sitagliptin": ["Diabetes"],
+  "Insulin": ["Diabetes"],
+
+  "Amlodipine": ["Hypertension"],
+  "Losartan": ["Hypertension"],
+  "Atenolol": ["Hypertension"],
+  "Telmisartan": ["Hypertension"],
+  "Ramipril": ["Hypertension"],
+
+  "Atorvastatin": ["Cholesterol"],
+  "Rosuvastatin": ["Cholesterol"],
+  "Simvastatin": ["Cholesterol"],
+
+  "Salbutamol": ["Asthma"],
+  "Budesonide": ["Asthma"],
+  "Formoterol": ["Asthma"],
+  "Tiotropium": ["COPD"],
+
+  "ORS": ["Dehydration"],
+  "Zinc": ["Diarrhea"],
+  "Loperamide": ["Diarrhea"],
+  "Domperidone": ["Vomiting"],
+  "Ondansetron": ["Vomiting"],
+
+  "Iron": ["Anemia"],
+  "Folic Acid": ["Anemia"],
+  "Vitamin B12": ["Deficiency"],
+  "Vitamin D3": ["Deficiency"],
+  "Calcium": ["Bone Health"],
+
+  "Hydroxychloroquine": ["Malaria"],
+  "Artemether": ["Malaria"],
+  "Primaquine": ["Malaria"],
+
+  "Fluconazole": ["Fungal Infection"],
+  "Ketoconazole": ["Fungal Infection"],
+  "Itraconazole": ["Fungal Infection"],
+
+  "Acyclovir": ["Viral Infection"],
+  "Valacyclovir": ["Viral Infection"],
+
+  "Sertraline": ["Depression"],
+  "Fluoxetine": ["Depression"],
+  "Escitalopram": ["Anxiety", "Depression"],
+
+  "Diazepam": ["Anxiety"],
+  "Alprazolam": ["Anxiety"],
+
+  "Prednisolone": ["Inflammation"],
+  "Dexamethasone": ["Inflammation"],
+
+  "Clopidogrel": ["Heart Disease"],
+  "Warfarin": ["Blood Clot"],
+  "Heparin": ["Blood Clot"],
+
+  "Tamsulosin": ["Prostate"],
+  "Finasteride": ["Prostate"],
+
+  "Levothyroxine": ["Thyroid"],
+  "Carbimazole": ["Thyroid"],
+
+  "Insulin Glargine": ["Diabetes"],
+  "Insulin Lispro": ["Diabetes"],
+
+  "Mefenamic Acid": ["Pain"],
+  "Tramadol": ["Severe Pain"],
+
+  "Codeine": ["Cough"],
+  "Dextromethorphan": ["Cough"],
+  "Ambroxol": ["Cough"],
+
+  "Guaifenesin": ["Cough"],
+  "Phenylephrine": ["Cold"],
+  "Pseudoephedrine": ["Cold"],
+
+  "Chlorpheniramine": ["Allergy"],
+  "Hydroxyzine": ["Allergy"],
+
+  "Spironolactone": ["Heart Failure"],
+  "Furosemide": ["Edema"],
+  "Torsemide": ["Edema"],
+
+  "Clindamycin": ["Infection"],
+  "Linezolid": ["Infection"],
+  "Vancomycin": ["Infection"],
+
+  "Rifaximin": ["Gut Infection"],
+  "Metronidazole": ["Infection"],
+
+  "Erythromycin": ["Infection"],
+
+  "Tacrolimus": ["Immunity"],
+  "Cyclosporine": ["Immunity"],
+
+  "Isotretinoin": ["Acne"],
+  "Adapalene": ["Acne"],
+
+  "Minoxidil": ["Hair Loss"],
+  "Finasteride Hair": ["Hair Loss"],
+
+  "Betamethasone": ["Skin Disease"],
+  "Mometasone": ["Skin Disease"],
+
+  "Latanoprost": ["Glaucoma"],
+  "Timolol": ["Glaucoma"],
+
+  "Sildenafil": ["Erectile Dysfunction"],
+  "Tadalafil": ["Erectile Dysfunction"],
+
+  "Teneligliptin": ["Diabetes"],
+  "Vildagliptin": ["Diabetes"],
+  "Saxagliptin": ["Diabetes"],
+  "Dapagliflozin": ["Diabetes"],
+  "Empagliflozin": ["Diabetes"],
+  "Pioglitazone": ["Diabetes"],
+  "Repaglinide": ["Diabetes"],
+
+  "Olmesartan": ["Hypertension"],
+  "Candesartan": ["Hypertension"],
+  "Valsartan": ["Hypertension"],
+  "Nifedipine": ["Hypertension"],
+  "Propranolol": ["Hypertension", "Anxiety"],
+  "Bisoprolol": ["Hypertension"],
+  "Metoprolol": ["Hypertension"],
+
+  "Ecosprin": ["Heart Disease"],
+  "Nitroglycerin": ["Heart Disease"],
+  "Isosorbide": ["Heart Disease"],
+  "Digoxin": ["Heart Failure"],
+
+  "Hydrochlorothiazide": ["Edema", "Hypertension"],
+  "Chlorthalidone": ["Hypertension"],
+
+  "Co-amoxiclav": ["Infection"],
+  "Cefixime": ["Infection"],
+  "Ceftriaxone": ["Infection"],
+  "Cefuroxime": ["Infection"],
+  "Cefpodoxime": ["Infection"],
+  "Meropenem": ["Severe Infection"],
+  "Imipenem": ["Severe Infection"],
+
+  "Tinidazole": ["Infection"],
+  "Secnidazole": ["Infection"],
+
+  "Albendazole": ["Worm Infection"],
+  "Mebendazole": ["Worm Infection"],
+  "Ivermectin": ["Parasitic Infection"],
+
+  "Ranitidine Bismuth": ["Ulcer"],
+  "Sucralfate": ["Ulcer"],
+  "Misoprostol": ["Ulcer"],
+
+  "Lactulose": ["Constipation"],
+  "Bisacodyl": ["Constipation"],
+  "Senna": ["Constipation"],
+
+  "Pancreatin": ["Digestion"],
+  "Domstal": ["Vomiting"],
+  "Perinorm": ["Vomiting"],
+
+  "Betahistine": ["Vertigo"],
+  "Meclizine": ["Vertigo"],
+
+  "Topiramate": ["Migraine"],
+  "Sumatriptan": ["Migraine"],
+  "Prochlorperazine": ["Migraine"],
+
+  "Phenytoin": ["Seizure"],
+  "Valproate": ["Seizure"],
+  "Levetiracetam": ["Seizure"],
+  "Carbamazepine": ["Seizure"],
+
+  "Haloperidol": ["Psychosis"],
+  "Olanzapine": ["Psychosis"],
+  "Quetiapine": ["Psychosis"],
+  "Risperidone": ["Psychosis"],
+
+  "Amitriptyline": ["Depression"],
+  "Nortriptyline": ["Depression"],
+  "Duloxetine": ["Depression", "Pain"],
+  "Venlafaxine": ["Depression"],
+
+  "Buspirone": ["Anxiety"],
+  "Clonazepam": ["Anxiety"],
+
+  "Hydrocortisone": ["Inflammation"],
+  "Methylprednisolone": ["Inflammation"],
+
+  "Tacrolimus Cream": ["Skin Disease"],
+  "Pimecrolimus": ["Skin Disease"],
+
+  "Permethrin": ["Scabies"],
+  "Benzyl Benzoate": ["Scabies"],
+
+  "Clotrimazole": ["Fungal Infection"],
+  "Miconazole": ["Fungal Infection"],
+  "Terbinafine": ["Fungal Infection"],
+  "Griseofulvin": ["Fungal Infection"],
+
+  "Oseltamivir": ["Flu"],
+  "Remdesivir": ["Viral Infection"],
+
+  "Zanamivir": ["Flu"],
+
+  "Multivitamin": ["Deficiency"],
+  "Vitamin C": ["Immunity"],
+  "Vitamin E": ["Deficiency"],
+  "Magnesium": ["Deficiency"],
+
+  "Potassium": ["Deficiency"],
+
+  "Thiamine": ["Deficiency"],
+  "Riboflavin": ["Deficiency"],
+
+  "Biotin": ["Hair Loss"],
+  "Collagen": ["Skin Health"],
+
+  "Glucosamine": ["Joint Pain"],
+  "Chondroitin": ["Joint Pain"],
+
+  "Melatonin": ["Sleep Disorder"],
+  "Zolpidem": ["Sleep Disorder"],
+
+  "Modafinil": ["Sleep Disorder"],
+
+  "Desloratadine": ["Allergy"],
+  "Bilastine": ["Allergy"],
+
+  "Oxymetazoline": ["Cold"],
+  "Xylometazoline": ["Cold"],
+
+  "Amantadine": ["Viral Infection"],
+  "Ribavirin": ["Viral Infection"],
+
+  "Azelaic Acid": ["Acne"],
+  "Benzoyl Peroxide": ["Acne"],
+
+  "Clindamycin Gel": ["Acne"],
+  "Erythromycin Gel": ["Acne"],
+
+  "Ketorolac": ["Pain"],
+  "Etodolac": ["Pain"],
+  "Piroxicam": ["Pain"],
+
+  "Colchicine": ["Gout"],
+  "Allopurinol": ["Gout"],
+
+  "Febuxostat": ["Gout"],
+
+  "Cyproheptadine": ["Allergy"],
+
+  "Tranexamic Acid": ["Bleeding"],
+  "Ethamsylate": ["Bleeding"],
+
+  "Human Albumin": ["Liver Disease"],
+
+  "Lactobacillus": ["Gut Health"],
+  "Probiotic": ["Gut Health"],
+
+  "Rifaximin Plus": ["Gut Infection"],
+
+  "Chlordiazepoxide": ["Anxiety"],
+
+  "Azathioprine": ["Immunity"],
+  "Mycophenolate": ["Immunity"],
+
+  "Etanercept": ["Autoimmune"],
+  "Adalimumab": ["Autoimmune"],
+
+  "Infliximab": ["Autoimmune"],
+
+  "Leuprorelin": ["Hormonal Disorder"],
+  "Tamoxifen": ["Cancer"],
+
+  "Anastrozole": ["Cancer"],
+  "Letrozole": ["Cancer"],
+
+  "Cyclophosphamide": ["Cancer"],
+  "Methotrexate": ["Cancer"],
+
+  "Docetaxel": ["Cancer"],
+  "Paclitaxel": ["Cancer"],
+
+  "Capecitabine": ["Cancer"],
+
+  "Bevacizumab": ["Cancer"],
+  "Imatinib": ["Cancer"],
+
+  "Sorafenib": ["Cancer"],
+
+  "Hydroxyzine Syrup": ["Allergy"],
+  "Benadryl": ["Cough"],
+
+  "Pheniramine": ["Allergy"],
+
+  "Levocarnitine": ["Deficiency"],
+  "Coenzyme Q10": ["Heart Health"],
+
+  ,
+  "Acetazolamide": ["Glaucoma", "Altitude Sickness"],
+  "Brimonidine": ["Glaucoma"],
+  "Dorzolamide": ["Glaucoma"],
+  "Travoprost": ["Glaucoma"],
+
+  "Acamprosate": ["Alcohol Dependence"],
+  "Disulfiram": ["Alcohol Dependence"],
+
+  "Baclofen": ["Muscle Spasm"],
+  "Tizanidine": ["Muscle Spasm"],
+  "Chlorzoxazone": ["Muscle Spasm"],
+
+  "Piracetam": ["Cognitive Disorder"],
+  "Citicoline": ["Cognitive Disorder"],
+
+  "Donepezil": ["Alzheimer"],
+  "Memantine": ["Alzheimer"],
+
+  "Amisulpride": ["Psychosis"],
+  "Aripiprazole": ["Psychosis"],
+
+  "Lithium": ["Bipolar Disorder"],
+
+  "Ropinirole": ["Parkinson"],
+  "Levodopa": ["Parkinson"],
+  "Carbidopa": ["Parkinson"],
+
+  "Hydroxyurea": ["Cancer"],
+  "Bleomycin": ["Cancer"],
+  "Vincristine": ["Cancer"],
+  "Vinblastine": ["Cancer"],
+
+  "Cisplatin": ["Cancer"],
+  "Carboplatin": ["Cancer"],
+
+  "Topotecan": ["Cancer"],
+  "Irinotecan": ["Cancer"],
+
+  "Etoposide": ["Cancer"],
+  "Dactinomycin": ["Cancer"],
+
+  "Thalidomide": ["Cancer"],
+
+  "Amikacin": ["Infection"],
+  "Gentamicin": ["Infection"],
+  "Tobramycin": ["Infection"],
+
+  "Neomycin": ["Infection"],
+  "Polymyxin B": ["Infection"],
+
+  "Fosfomycin": ["Infection"],
+  "Linezolid Plus": ["Infection"],
+
+  "Nitrofurantoin": ["UTI"],
+  "Fosfomycin Trometamol": ["UTI"],
+
+  "Phenazopyridine": ["UTI"],
+
+  "Solifenacin": ["Overactive Bladder"],
+  "Darifenacin": ["Overactive Bladder"],
+
+  "Desmopressin": ["Diabetes Insipidus"],
+
+  "Cabergoline": ["Hormonal Disorder"],
+  "Bromocriptine": ["Hormonal Disorder"],
+
+  "Spironolactone Plus": ["Hormonal Disorder"],
+
+  "Testosterone": ["Hormonal Disorder"],
+  "Progesterone": ["Hormonal Disorder"],
+  "Estrogen": ["Hormonal Disorder"],
+
+  "Levamisole": ["Worm Infection"],
+
+  "Chloroquine": ["Malaria"],
+  "Quinine": ["Malaria"],
+
+  "Artesunate": ["Malaria"],
+  "Artemisinin": ["Malaria"],
+
+  "Primaquine Plus": ["Malaria"],
+
+  "Isosorbide Mononitrate": ["Heart Disease"],
+
+  "Ranolazine": ["Angina"],
+
+  "Ivabradine": ["Heart Disease"],
+
+  "Amiodarone": ["Arrhythmia"],
+  "Diltiazem": ["Arrhythmia"],
+  "Verapamil": ["Arrhythmia"],
+
+  "Propafenone": ["Arrhythmia"],
+
+  "Hydralazine": ["Hypertension"],
+  "Minoxidil Tablet": ["Hypertension"],
+
+  "Clonidine": ["Hypertension"],
+  "Methyldopa": ["Hypertension"],
+
+  "Indapamide": ["Hypertension"],
+
+  "Nicorandil": ["Heart Disease"],
+
+  "Acenocoumarol": ["Blood Clot"],
+
+  "Dabigatran": ["Blood Clot"],
+  "Apixaban": ["Blood Clot"],
+  "Rivaroxaban": ["Blood Clot"],
+
+  "Edoxaban": ["Blood Clot"],
+
+  "Calcium Channel Blocker": ["Hypertension"],
+
+  "Zonisamide": ["Seizure"],
+  "Lacosamide": ["Seizure"],
+  "Lamotrigine": ["Seizure"],
+
+  "Gabapentin": ["Neuropathy"],
+  "Pregabalin": ["Neuropathy"],
+
+  "Oxcarbazepine": ["Seizure"],
+
+  "Levodopa Plus": ["Parkinson"],
+
+  "Selegiline": ["Parkinson"],
+
+  "Entacapone": ["Parkinson"],
+
+  "Rasagiline": ["Parkinson"],
+
+  "Rotigotine": ["Parkinson"],
+
+  "Benztropine": ["Parkinson"],
+
+  "Trihexyphenidyl": ["Parkinson"],
+
+  "Clobetasol": ["Skin Disease"],
+  "Halobetasol": ["Skin Disease"],
+
+  "Tacrolimus Ointment": ["Skin Disease"],
+
+  "Ketotifen": ["Allergy"],
+
+  "Olopatadine": ["Allergy"],
+
+  "Beclomethasone": ["Asthma"],
+  "Mometasone Inhaler": ["Asthma"],
+
+  "Fluticasone": ["Asthma"],
+  "Salmeterol": ["Asthma"],
+
+  "Indacaterol": ["Asthma"],
+
+  "Vilanterol": ["Asthma"],
+
+  "Glycopyrrolate": ["COPD"],
+
+  "Umeclidinium": ["COPD"],
+
+  "Revefenacin": ["COPD"],
+
+  "Tiotropium Plus": ["COPD"],
+
+  "Acetylcysteine": ["Cough"],
+  "Carbocisteine": ["Cough"],
+
+  "Bromhexine": ["Cough"],
+
+  "Noscapine": ["Cough"],
+
+  "Pholcodine": ["Cough"],
+
+  "Cloperastine": ["Cough"],
+
+  "Benzydamine": ["Throat Infection"],
+
+  "Hexetidine": ["Throat Infection"],
+
+  "Chlorhexidine": ["Infection"],
+
+  "Povidone Iodine": ["Infection"],
+
+  "Silver Sulfadiazine": ["Burn"],
+
+  "Calamine": ["Skin Disease"],
+
+  "Urea Cream": ["Skin Disease"],
+
+  "Salicylic Acid": ["Skin Disease"],
+
+  "Coal Tar": ["Skin Disease"],
+
+  "Tacalcitol": ["Skin Disease"],
+
+  "Vitamin K": ["Bleeding"],
+
+  "Tranexamic Acid Plus": ["Bleeding"],
+
+  "Octreotide": ["Hormonal Disorder"],
+
+  "Somatropin": ["Growth Disorder"],
+
+  "Pegfilgrastim": ["Immunity"],
+
+  "Filgrastim": ["Immunity"],
+
+  "Interferon": ["Viral Infection"],
+
+  "Ritonavir": ["Viral Infection"],
+  "Lopinavir": ["Viral Infection"],
+
+  "Efavirenz": ["HIV"],
+  "Tenofovir": ["HIV"],
+  "Lamivudine": ["HIV"],
+
+  "Abacavir": ["HIV"],
+
+  "Zidovudine": ["HIV"],
+
+  "Nevirapine": ["HIV"],
+
+  "Atazanavir": ["HIV"],
+
+  "Darunavir": ["HIV"],
+
+  "Raltegravir": ["HIV"],
+
+  "Dolutegravir": ["HIV"],
+
+  "Hydroxyzine Capsule": ["Allergy"],
+
+  "Cetirizine Syrup": ["Allergy"],
+
+  "Lactase": ["Digestion"],
+
+  "Pancrelipase": ["Digestion"],
+
+  "Simethicone": ["Gas"],
+
+  "Activated Charcoal": ["Poisoning"],
+
+  "Naloxone": ["Overdose"],
+
+  "Flumazenil": ["Overdose"],
+
+  "Atropine": ["Poisoning"],
+
+  "Pralidoxime": ["Poisoning"],
+
+  "Deferoxamine": ["Iron Overload"],
+
+  "Penicillamine": ["Wilson Disease"],
+
+  "Dimercaprol": ["Heavy Metal Poisoning"],
+
+  "Succimer": ["Heavy Metal Poisoning"]
+}

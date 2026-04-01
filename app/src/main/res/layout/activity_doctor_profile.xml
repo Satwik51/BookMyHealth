@@ -1,499 +1,488 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:fitsSystemWindows="true">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <!-- 🌟 TOP BANNER HEADER -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="270dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:gravity="center"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/bg_intro_curve"
-            android:padding="18dp">
+            android:padding="16dp">
 
-            <ImageView
-                android:id="@+id/ivProfile"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:src="@drawable/placeholder_profile"
-                android:background="@drawable/bg_circle_white"
-                android:padding="8dp"
-                android:scaleType="centerCrop" />
-
-            <TextView
-                android:id="@+id/etName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Dr. Name"
-                android:textColor="#80E9D4"
-                android:textStyle="bold"
-                android:textSize="30sp"
-                android:layout_marginTop="10dp" />
-
-            <TextView
-                android:id="@+id/tvEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="#80E9D4"
-                android:text="doctor@mail.com"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:textSize="20sp"
-                />
-
-            <!-- Verified Badge -->
             <LinearLayout
-                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="270dp"
+                android:orientation="vertical"
                 android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp">
+                android:background="@drawable/bg_intro_curve"
+                android:padding="18dp">
 
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/ic_verified" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Verified Doctor"
-                    android:textColor="#C8FAFF"
-                    android:textSize="18sp"
-                    android:layout_marginStart="6dp" />
-            </LinearLayout>
-        </LinearLayout>
-
-
-        <!-- ⭐ PERSONAL INFO -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            app:cardCornerRadius="18dp"
-            app:cardElevation="7dp">
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:padding="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Personal Information"
-                    android:textStyle="bold"
-                    android:textSize="25sp"
-                    android:textColor="#80E9D4" />
-
-
-                <TextView
-                    android:text="About Myself"
-                    android:layout_marginTop="10dp"
-                    android:textSize="18sp"
-                    android:textColor="#80E9D4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-
-
-                <EditText
-                    android:id="@+id/tvAbout"
-                    android:layout_width="match_parent"
+                    android:id="@+id/ivProfile"
+                    android:layout_width="120dp"
                     android:layout_height="120dp"
-                    android:background="@drawable/bg_edit_glass"
-                    android:padding="12dp"
-                    android:hint="Short Bio / About Me"
-                    android:inputType="textMultiLine"
-                    android:minLines="3"
-                    android:maxLines="6"
-                    android:layout_marginTop="12dp" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-
-        <!-- ⭐ PROFESSIONAL DETAILS -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            app:cardCornerRadius="18dp"
-            app:cardElevation="7dp">
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:padding="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                    android:src="@drawable/placeholder_profile"
+                    android:background="@drawable/bg_circle_white"
+                    android:padding="8dp"
+                    android:scaleType="centerCrop" />
 
                 <TextView
-                    android:text="Professional Details"
-                    android:textSize="25sp"
+                    android:id="@+id/etName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dr. Name"
+                    android:textColor="@color/white"
                     android:textStyle="bold"
-                    android:textColor="#80E9D4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:textSize="30sp"
+                    android:layout_marginTop="10dp" />
 
                 <TextView
-                    android:text="Specialization"
-                    android:layout_marginTop="10dp"
-                    android:textSize="18sp"
-                    android:textColor="#80E9D4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <!-- 🔥 AutoCompleteTextView for Specialization -->
-                <AutoCompleteTextView
-                    android:id="@+id/etSpecialization"
+                    android:id="@+id/tvEmail"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:background="@drawable/bg_edit_glass"
-                    android:padding="12dp"
-                    android:hint="Specialization"
-                    android:inputType="none"
-                    android:focusable="true"
-                    android:clickable="true"
-                    android:layout_marginTop="14dp" />
-
-                <TextView
-                    android:text="Experience"
-                    android:layout_marginTop="10dp"
-                    android:textSize="18sp"
-                    android:textColor="#80E9D4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primary_blue"
+                    android:text="doctor@mail.com"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textSize="20sp" />
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:weightSum="2"
-                    android:orientation="vertical"
-                    android:layout_marginTop="12dp">
+                    android:layout_marginTop="6dp">
 
-
-                    <EditText
-                        android:id="@+id/etExperience"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:background="@drawable/bg_edit_glass"
-                        android:padding="12dp"
-                        android:hint="Experience (yrs)"
-                        android:inputType="number" />
-
-                    <View
-                        android:layout_width="12dp"
-                        android:layout_height="match_parent" />
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_verified" />
 
                     <TextView
-                        android:text="Slots"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Verified Doctor"
+                        android:textColor="#C8FAFF"
+                        android:textSize="18sp"
+                        android:layout_marginStart="6dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="7dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Personal Information"
+                        android:textStyle="bold"
+                        android:textSize="25sp"
+                        android:textColor="@color/primary_blue" />
+
+                    <TextView
+                        android:text="About Myself"
                         android:layout_marginTop="10dp"
                         android:textSize="18sp"
-                        android:textColor="#80E9D4"
+                        android:textColor="@color/primary_blue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
                     <EditText
-                        android:id="@+id/etAvailableSlots"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
+                        android:id="@+id/tvAbout"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
                         android:background="@drawable/bg_edit_glass"
                         android:padding="12dp"
-                        android:inputType="number"
-                        android:hint="Slots/day" />
+                        android:hint="Short Bio / About Me"
+                        android:gravity="top"
+                        android:inputType="textMultiLine"
+                        android:minLines="3"
+                        android:maxLines="6"
+                        android:layout_marginTop="12dp" />
                 </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
 
-
-        <!-- ⭐ WEEKLY AVAILABILITY (with IDs added) -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            app:cardCornerRadius="18dp"
-            app:cardElevation="7dp">
-
-            <LinearLayout
-                android:padding="20dp"
-                android:orientation="vertical"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="7dp">
 
-                <TextView
-                    android:text="Weekly Availability"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
-                    android:textColor="#80E9D4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <!-- Row 1 -->
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
+                    android:padding="20dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:weightSum="3"
-                    android:layout_marginTop="12dp">
+                    android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/monChip"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="Mon"
-                        android:background="@drawable/bg_chip"
-                        android:textColor="#80E9D4"
-                        android:layout_marginEnd="8dp" />
+                        android:text="Professional Details"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary_blue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
 
                     <TextView
-                        android:id="@+id/tueChip"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="Tue"
-                        android:background="@drawable/bg_chip"
-                        android:textColor="#80E9D4"
-                        android:layout_marginEnd="8dp" />
+                        android:text="Specialization"
+                        android:layout_marginTop="10dp"
+                        android:textSize="18sp"
+                        android:textColor="@color/primary_blue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/etSpecialization"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_edit_glass"
+                        android:padding="12dp"
+                        android:hint="Specialization"
+                        android:inputType="none"
+                        android:focusable="true"
+                        android:clickable="true"
+                        android:layout_marginTop="14dp" />
 
                     <TextView
-                        android:id="@+id/wedChip"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="Wed"
-                        android:background="@drawable/bg_chip"
-                        android:textColor="#80E9D4" />
+                        android:text="Experience &amp; Slots"
+                        android:layout_marginTop="10dp"
+                        android:textSize="18sp"
+                        android:textColor="@color/primary_blue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        android:layout_marginTop="12dp">
+
+                        <EditText
+                            android:id="@+id/etExperience"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_edit_glass"
+                            android:padding="12dp"
+                            android:hint="Years"
+                            android:inputType="number" />
+
+                        <View
+                            android:layout_width="12dp"
+                            android:layout_height="match_parent" />
+
+                        <EditText
+                            android:id="@+id/etAvailableSlots"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_edit_glass"
+                            android:padding="12dp"
+                            android:inputType="number"
+                            android:hint="Slots/day" />
+                    </LinearLayout>
                 </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-                <!-- Row 2 -->
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="7dp">
+
                 <LinearLayout
-                    android:orientation="horizontal"
+                    android:padding="20dp"
+                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:weightSum="3"
-                    android:layout_marginTop="12dp">
+                    android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/thuChip"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="Thu"
-                        android:background="@drawable/bg_chip"
-                        android:textColor="#80E9D4"
-                        android:layout_marginEnd="8dp" />
+                        android:text="Weekly Availability"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary_blue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
 
-                    <TextView
-                        android:id="@+id/friChip"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="Fri"
-                        android:background="@drawable/bg_chip"
-                        android:textColor="#80E9D4"
-                        android:layout_marginEnd="8dp" />
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="3"
+                        android:layout_marginTop="12dp">
 
-                    <TextView
-                        android:id="@+id/satChip"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="Sat"
-                        android:background="@drawable/bg_chip"
-                        android:textColor="#80E9D4" />
-                </LinearLayout>
+                        <TextView android:id="@+id/monChip" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" android:gravity="center" android:text="Mon" android:background="@drawable/bg_chip" android:textColor="@color/primary_blue" android:layout_marginEnd="8dp" />
+                        <TextView android:id="@+id/tueChip" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" android:gravity="center" android:text="Tue" android:background="@drawable/bg_chip" android:textColor="@color/primary_blue" android:layout_marginEnd="8dp" />
+                        <TextView android:id="@+id/wedChip" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" android:gravity="center" android:text="Wed" android:background="@drawable/bg_chip" android:textColor="@color/primary_blue" />
+                    </LinearLayout>
 
-                <!-- Row 3 -->
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_marginTop="12dp">
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="3"
+                        android:layout_marginTop="12dp">
+
+                        <TextView android:id="@+id/thuChip" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" android:gravity="center" android:text="Thu" android:background="@drawable/bg_chip" android:textColor="@color/primary_blue" android:layout_marginEnd="8dp" />
+                        <TextView android:id="@+id/friChip" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" android:gravity="center" android:text="Fri" android:background="@drawable/bg_chip" android:textColor="@color/primary_blue" android:layout_marginEnd="8dp" />
+                        <TextView android:id="@+id/satChip" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" android:gravity="center" android:text="Sat" android:background="@drawable/bg_chip" android:textColor="@color/primary_blue" />
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/sunChip"
                         android:layout_width="120dp"
                         android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="12dp"
                         android:gravity="center"
                         android:text="Sun"
                         android:background="@drawable/bg_chip"
-                        android:textColor="#80E9D4" />
+                        android:textColor="@color/primary_blue" />
                 </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
 
-        <!-- ⭐ CLINIC INFORMATION -->
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="7dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Clinic Information"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary_blue"
+                        android:textSize="25sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:text="Clinic Name"
+                        android:layout_marginTop="10dp"
+                        android:textSize="18sp"
+                        android:textColor="@color/primary_blue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <EditText
+                        android:id="@+id/etClinicName"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_edit_glass"
+                        android:padding="12dp"
+                        android:hint="Clinic Name"
+                        android:layout_marginTop="12dp" />
+
+                    <TextView
+                        android:text="Consultation Fee"
+                        android:layout_marginTop="10dp"
+                        android:textSize="18sp"
+                        android:textColor="@color/primary_blue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <EditText
+                        android:id="@+id/etConsultationFee"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_edit_glass"
+                        android:padding="12dp"
+                        android:hint="Consultation Fee"
+                        android:inputType="number"
+                        android:layout_marginTop="12dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="7dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Awards &amp; Achievements"
+                        android:textStyle="bold"
+                        android:textSize="25sp"
+                        android:textColor="@color/primary_blue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <EditText
+                        android:id="@+id/etAchievements"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_edit_glass"
+                        android:padding="12dp"
+                        android:hint="List Achievements"
+                        android:layout_marginTop="12dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="7dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Certifications"
+                        android:textStyle="bold"
+                        android:textSize="25sp"
+                        android:textColor="@color/primary_blue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="12dp">
+
+                        <ImageView
+                            android:id="@+id/btnUploadCertificate"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_upload"
+                            android:background="@drawable/bg_round_white"
+                            android:elevation="2dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Upload Degree/Certificate"
+                            android:layout_marginStart="12dp"
+                            android:textColor="@color/primary_blue"
+                            android:textStyle="italic"/>
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardCertificatePreview"
+                        android:layout_width="match_parent"
+                        android:layout_height="220dp"
+                        android:layout_marginTop="15dp"
+                        android:visibility="gone"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="2dp">
+
+                        <ImageView
+                            android:id="@+id/ivCertificatePreview"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/placeholder_profile" />
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnUpdateProfile"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Update Profile"
+                android:backgroundTint="@color/primary_blue"
+                android:textColor="@color/white"
+                app:cornerRadius="18dp"
+                android:layout_marginTop="22dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Logout"
+                android:textColor="@color/white"
+                android:backgroundTint="#E53935"
+                app:cornerRadius="18dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="40dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/layoutFullscreenPreview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E6000000"
+        android:visibility="gone"
+        android:clickable="true"
+        android:focusable="true">
+
         <androidx.cardview.widget.CardView
-            android:layout_marginTop="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="18dp"
-            app:cardElevation="7dp">
+            android:layout_centerInParent="true"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="12dp">
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:padding="20dp"
+            <ImageView
+                android:id="@+id/ivFullscreenImage"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:text="Clinic Information"
-                    android:textStyle="bold"
-                    android:textColor="#80E9D4"
-                    android:textSize="25sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:text="Clinic Name"
-                    android:layout_marginTop="10dp"
-                    android:textSize="18sp"
-                    android:textColor="#80E9D4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <EditText
-                    android:id="@+id/etClinicName"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:background="@drawable/bg_edit_glass"
-                    android:padding="12dp"
-                    android:hint="Clinic Name"
-                    android:layout_marginTop="12dp" />
-
-                <TextView
-                    android:text="Consultation Fee"
-                    android:layout_marginTop="10dp"
-                    android:textSize="18sp"
-                    android:textColor="#80E9D4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <EditText
-                    android:id="@+id/etConsultationFee"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:background="@drawable/bg_edit_glass"
-                    android:padding="12dp"
-                    android:hint="Consultation Fee"
-                    android:inputType="number"
-                    android:layout_marginTop="12dp" />
-            </LinearLayout>
+                android:layout_height="500dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/placeholder_profile" />
         </androidx.cardview.widget.CardView>
 
+        <ImageView
+            android:id="@+id/btnClosePreview"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="20dp"
+            android:padding="10dp"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:background="@drawable/bg_circle_white"
+            app:tint="@color/black" />
+    </RelativeLayout>
 
-        <!-- ⭐ ACHIEVEMENTS -->
-        <androidx.cardview.widget.CardView
-            android:layout_marginTop="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="18dp"
-            app:cardElevation="7dp">
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:padding="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:text="Awards &amp; Achievements"
-                    android:textStyle="bold"
-                    android:textSize="25sp"
-                    android:textColor="#80E9D4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <EditText
-                    android:id="@+id/etAchievements"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_edit_glass"
-                    android:padding="12dp"
-                    android:hint="List Achievements"
-                    android:layout_marginTop="12dp" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-
-        <!-- ⭐ CERTIFICATIONS -->
-        <androidx.cardview.widget.CardView
-            android:layout_marginTop="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="18dp"
-            app:cardElevation="7dp">
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:padding="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:text="Certifications"
-                    android:textStyle="bold"
-                    android:textSize="25sp"
-                    android:textColor="#80E9D4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <ImageView
-                    android:id="@+id/btnUploadCertificate"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:padding="10dp"
-                    android:src="@drawable/ic_upload"
-                    android:background="@drawable/bg_round_white"
-                    android:layout_marginTop="12dp" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-
-        <!-- ⭐ UPDATE & LOGOUT -->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnUpdateProfile"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:text="Update Profile"
-            android:backgroundTint="#80E9D4"
-            android:textColor="@color/white"
-            app:cornerRadius="18dp"
-            android:layout_marginTop="22dp" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnLogout"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:text="Logout"
-            android:textColor="@color/white"
-            android:backgroundTint="#E53935"
-            app:cornerRadius="18dp"
-            android:layout_marginTop="14dp"
-            android:layout_marginBottom="40dp" />
-
-    </LinearLayout>
-</ScrollView>
+</RelativeLayout>

@@ -2,7 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Hardware feature declare karna achha rehta hai -->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -13,6 +18,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BookMyHealth">
+
+
+        <activity android:name=".ui.auth.user.AppointmentSlipActivity"
+            android:exported="false"/>
         <activity
             android:name=".ui.auth.doctor.DoctorApprovedListActivity"
             android:exported="false" />
@@ -34,6 +43,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".utils.CaptureActivityPortrait"
+            android:screenOrientation="portrait"
+            android:stateNotNeeded="true" />
+
         <activity
             android:name=".ui.auth.doctor.DoctorSignupActivity"
             android:exported="false" />
@@ -49,6 +64,19 @@
         <activity
             android:name=".ui.auth.user.UserDashboardActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".ui.symptom.SymptomCheckerActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.drug.DrugSearchActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.chat.ChatActivity"
+            android:exported="false"/>
+
         <activity
             android:name=".ui.auth.user.UserSignupActivity"
             android:exported="false" />

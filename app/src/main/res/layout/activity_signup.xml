@@ -64,7 +64,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Create Your Account"
-                android:textColor="#80E9D4"
+                android:textColor="@color/primary_blue"
                 android:textSize="22sp"
                 android:textStyle="bold"
                 android:layout_marginBottom="20dp"
@@ -157,7 +157,7 @@
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
                 android:textAllCaps="false"
-                android:backgroundTint="#80E9D4"
+                android:backgroundTint="@color/primary_blue"
                 app:cornerRadius="12dp"
                 android:layout_marginTop="24dp" />
 
@@ -235,6 +235,7 @@
     <!-- 🔹 Progress -->
     <ProgressBar
         android:id="@+id/progressBar"
+        android:progressTint="@color/primary_blue"
         style="?android:attr/progressBarStyleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

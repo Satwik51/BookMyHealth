@@ -17,6 +17,10 @@ espressoCore = "3.6.1"
 
 # Firebase BOM only (ktx auto resolve hoga)
 firebaseBom = "34.6.0"
+visionCommon = "17.3.0"
+playServicesMlkitTextRecognitionCommon = "19.1.0"
+playServicesMlkitTextRecognition = "19.0.1"
+cardview = "1.0.0"
 
 [libraries]
 # AndroidX
@@ -33,6 +37,10 @@ androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-co
 
 # Firebase BOM (IMPORTANT: hyphen, NOT underscore)
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
+vision-common = { group = "com.google.mlkit", name = "vision-common", version.ref = "visionCommon" }
+play-services-mlkit-text-recognition-common = { group = "com.google.android.gms", name = "play-services-mlkit-text-recognition-common", version.ref = "playServicesMlkitTextRecognitionCommon" }
+play-services-mlkit-text-recognition = { group = "com.google.android.gms", name = "play-services-mlkit-text-recognition", version.ref = "playServicesMlkitTextRecognition" }
+androidx-cardview = { group = "androidx.cardview", name = "cardview", version.ref = "cardview" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

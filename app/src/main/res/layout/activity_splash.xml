@@ -37,7 +37,7 @@
         android:layout_below="@id/ivLogo"
         android:layout_centerHorizontal="true"
         android:text="BookMyHealth"
-        android:textColor="#80E9D4"
+        android:textColor="@color/white"
         android:textSize="28sp"
         android:textStyle="bold"
         android:letterSpacing="0.05"
@@ -65,6 +65,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
         android:indeterminate="true"
-        android:indeterminateTint="#FFEB3B" />
+        android:indeterminateTint="@color/primary_blue" />
 
 </RelativeLayout>

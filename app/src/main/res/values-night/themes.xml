@@ -1,24 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="Base.Theme.BookMyHealth" parent="Theme.Material3.DayNight.NoActionBar">
 
-        <!-- Brand Colors -->
-        <item name="colorPrimary">#AB47BC</item>
-        <item name="colorPrimaryContainer">#80E9D4</item>
+        <!-- Brand (lighter indigo on dark bg) -->
+        <item name="colorPrimary">#6B7FF0</item>
+        <item name="colorPrimaryContainer">#1A2460</item>
+        <item name="colorOnPrimaryContainer">#C7CEFF</item>
 
-        <!-- ✅ Proper Dark Background (Material3 Safe) -->
-        <item name="android:colorBackground">#121212</item>
-        <item name="colorSurface">#121212</item>
-
-        <!-- Highlight -->
+        <!-- Secondary -->
         <item name="colorSecondary">@color/highlightYellow</item>
+        <item name="colorOnSecondary">@color/black</item>
 
-        <!-- System Bars -->
-        <item name="android:statusBarColor">#121212</item>
-        <item name="android:navigationBarColor">#121212</item>
+        <!-- Surface & Background -->
+        <item name="colorSurface">#1A1D30</item>
+        <item name="colorOnSurface">#E8ECFF</item>
+        <item name="colorOnSurfaceVariant">#8B96B8</item>
+        <item name="android:colorBackground">#0F1120</item>
 
         <!-- Text on primary -->
         <item name="colorOnPrimary">@color/white</item>
+
+        <!-- System bars -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="23">false</item>
 
     </style>
 

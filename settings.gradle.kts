@@ -5,6 +5,7 @@ pluginManagement {
         mavenCentral()
         gradlePluginPortal()
     }
+
     // Optional: define plugin versions centrally (not strictly required here because root sets them)
 }
 
@@ -16,6 +17,9 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+
+        // ✅ CORRECT (Kotlin DSL)
+        maven("https://jitpack.io")
     }
 }
 

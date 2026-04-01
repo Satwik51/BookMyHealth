@@ -5,7 +5,8 @@
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.auth.user.UserDashboardActivity">
+    tools:context=".ui.auth.user.UserDashboardActivity"
+    android:fitsSystemWindows="true">
 
     <!-- ⭐ MAIN UI -->
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -31,7 +32,7 @@
             android:gravity="center_vertical"
             android:padding="10dp"
             android:elevation="4dp"
-            android:layout_marginTop="45dp"
+            android:layout_marginTop="10dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             >
@@ -59,7 +60,7 @@
                     android:text="Welcome User 👋"
                     android:textStyle="bold"
                     android:textSize="22sp"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="@color/white"  />
 
                 <TextView
                     android:id="@+id/tvSubTitle"
@@ -67,7 +68,7 @@
                     android:layout_height="wrap_content"
                     android:text="Book your doctor appointment easily"
                     android:textSize="14sp"
-                    android:textColor="#80E9D4" />
+                    android:textColor="@color/white" />
             </LinearLayout>
         </LinearLayout>
 
@@ -83,18 +84,17 @@
             android:paddingHorizontal="20dp" />
 
         <!-- ⭐ MAIN CONTENT -->
-        <LinearLayout
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="360dp"
-            android:padding="16dp"
-            android:scrollbars="none"
             android:fillViewport="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="16dp">
 
                 <!-- ⚡ QUICK ACTIONS -->
                 <LinearLayout
@@ -103,65 +103,96 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="center"
-                    android:weightSum="2"
+                    android:weightSum="3"
                     android:layout_marginBottom="28dp">
 
-                    <!-- Appointments -->
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/cardAppointments"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
-                        app:cardCornerRadius="20dp"
-                        app:cardElevation="8dp"
+                        android:layout_marginEnd="4dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="6dp"
                         android:backgroundTint="@android:color/white">
 
                         <LinearLayout
                             android:gravity="center"
                             android:orientation="vertical"
-                            android:padding="18dp"
+                            android:padding="12dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <ImageView
-                                android:layout_width="48dp"
-                                android:layout_height="48dp"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
                                 android:src="@drawable/ic_calender"
                                 app:tint="#AB47BC" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="My Appointments"
+                                android:text="Bookings"
                                 android:textColor="#AB47BC"
-                                android:textSize="15sp"
+                                android:textSize="12sp"
                                 android:textStyle="bold"
-                                android:layout_marginTop="8dp" />
+                                android:layout_marginTop="6dp" />
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
-                    <!-- Profile -->
                     <com.google.android.material.card.MaterialCardView
-                        android:id="@+id/cardProfile"
+                        android:id="@+id/cardGetSlip"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        app:cardCornerRadius="20dp"
-                        app:cardElevation="8dp"
+                        android:layout_marginHorizontal="4dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="6dp"
                         android:backgroundTint="@android:color/white">
 
                         <LinearLayout
                             android:gravity="center"
                             android:orientation="vertical"
-                            android:padding="18dp"
+                            android:padding="12dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <ImageView
-                                android:layout_width="48dp"
-                                android:layout_height="48dp"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:src="@drawable/ic_calender"
+                                app:tint="@color/primary_blue" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="My Slip"
+                                android:textColor="@color/primary_blue"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:layout_marginTop="6dp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardProfile"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="6dp"
+                        android:backgroundTint="@android:color/white">
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="12dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
                                 android:src="@drawable/ic_doctor_placeholder"
                                 app:tint="#80E9D4" />
 
@@ -170,13 +201,23 @@
                                 android:layout_height="wrap_content"
                                 android:text="Profile"
                                 android:textColor="#80E9D4"
-                                android:textSize="15sp"
+                                android:textSize="12sp"
                                 android:textStyle="bold"
-                                android:layout_marginTop="8dp" />
+                                android:layout_marginTop="6dp" />
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
                 </LinearLayout>
+
+                <!-- 🎬 POSTER SLIDER (16:9) -->
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/posterSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginBottom="20dp"
+                    android:clipToPadding="false"
+                    android:clipChildren="false"
+                    android:overScrollMode="never"/>
 
                 <!-- 🔍 SEARCH + FILTER + REFRESH -->
                 <LinearLayout
@@ -197,7 +238,7 @@
                         android:layout_marginEnd="10dp"
                         android:padding="0dp"
                         app:boxBackgroundMode="none"
-                        app:startIconDrawable="@drawable/ic_search"
+                        app:startIconDrawable="@drawable/ic_search1"
                         app:startIconTint="@color/black">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -237,7 +278,7 @@
                         android:padding="10dp"
                         android:background="@drawable/bg_round_white"
                         android:src="@drawable/ic_refresh"
-                        app:tint="#80E9D4" />
+                        app:tint="@color/primary_blue" />
 
                 </LinearLayout>
 
@@ -249,7 +290,7 @@
                     android:text="Available Doctors 👨‍⚕️"
                     android:textSize="19sp"
                     android:textStyle="bold"
-                    android:textColor="#AB47BC"
+                    android:textColor="@color/primary_blue"
                     android:layout_marginBottom="12dp" />
 
                 <androidx.cardview.widget.CardView
@@ -316,8 +357,60 @@
                     android:layout_marginBottom="12dp"
                     android:visibility="gone" />
             </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <!-- 🔥 FAB MENU OPTIONS -->
+        <LinearLayout
+            android:id="@+id/fabMenuLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="90dp"
+            android:layout_marginEnd="20dp"
+            android:visibility="gone">
+
+            <!-- OPTION 1 -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSymptomChecker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AI Symptom Checker"
+                android:layout_marginBottom="10dp"
+                app:cornerRadius="20dp"
+                android:backgroundTint="@color/purple_500"
+                android:textColor="@android:color/white"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDrugSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Drug Info 💊"
+                android:textAllCaps="false"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/primary_blue"
+                android:textColor="@android:color/white"/>
+
+            <!-- OPTION 3 -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnComingSoon2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AI CHAT BOT"
+                app:cornerRadius="20dp"/>
+
         </LinearLayout>
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabSymptomChecker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="20dp"
+            android:src="@drawable/ic_health"
+            android:contentDescription="AI Symptom Checker"
+            app:backgroundTint="@color/primary_blue"
+            app:tint="@android:color/white"/>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <!-- ⭐ Navigation Drawer -->

@@ -114,7 +114,7 @@
                 android:textAllCaps="false"
                 android:textSize="16sp"
                 android:textColor="@color/white"
-                android:backgroundTint="#80E9D4"
+                android:backgroundTint="@color/primary_blue"
                 android:layout_marginTop="24dp"
                 app:cornerRadius="12dp"
                 android:elevation="2dp" />
@@ -193,7 +193,7 @@
         android:layout_centerInParent="true"
         android:indeterminate="true"
         android:visibility="gone"
-        android:progressTint="#FFEB3B"
+        android:progressTint="@color/primary_blue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <TextView

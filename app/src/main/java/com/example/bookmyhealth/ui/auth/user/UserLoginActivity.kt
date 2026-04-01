@@ -24,6 +24,7 @@ class UserLoginActivity : AppCompatActivity() {
     private val viewModel: AuthViewModel by viewModels()
 
     // ============================================================================================
+    // ============================================================================================
     // ⭐ GOOGLE LOGIN HANDLER
     // ============================================================================================
     private val googleSignInLauncher = registerForActivityResult(

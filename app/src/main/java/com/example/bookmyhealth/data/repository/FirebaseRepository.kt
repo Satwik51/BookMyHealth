@@ -35,7 +35,12 @@ class FirebaseRepository {
                     return@addOnCompleteListener
                 }
 
-                val uid = auth.currentUser?.uid ?: return@addOnCompleteListener
+                val uid = auth.currentUser?.uid
+
+                if (uid == null) {
+                    callback(false, "User ID not found")
+                    return@addOnCompleteListener
+                }
 
                 val userData = User(
                     uid = uid,
@@ -80,7 +85,12 @@ class FirebaseRepository {
                     return@addOnCompleteListener
                 }
 
-                val uid = auth.currentUser?.uid ?: return@addOnCompleteListener
+                val uid = auth.currentUser?.uid
+
+                if (uid == null) {
+                    callback(false, "User ID not found")
+                    return@addOnCompleteListener
+                }
 
                 // verify role
                 database.child("users").child(uid).get()

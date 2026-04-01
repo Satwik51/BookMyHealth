@@ -32,7 +32,7 @@
             android:text="Filter Doctors"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="#AB47BC"
+            android:textColor="@color/primary_blue"
             android:layout_gravity="center"
             android:layout_marginBottom="12dp" />
 
@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Clear"
-                android:textColor="#AB47BC"
+                android:textColor="@color/primary_blue"
                 app:backgroundTint="#F3E5F5" />
 
             <View
@@ -73,7 +73,7 @@
                 android:text="Apply"
                 android:textStyle="bold"
                 android:textColor="#FFFFFF"
-                app:backgroundTint="#AB47BC" />
+                app:backgroundTint="@color/primary_blue" />
 
         </LinearLayout>
     </LinearLayout>

@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F4FF"
+    android:fitsSystemWindows="true">
+
+    <!-- ══════════════════════════════════════════
+         COLLAPSING TOOLBAR (Hero Section)
+    ══════════════════════════════════════════ -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:contentScrim="@color/colorSurface">
+
+            <!-- HERO GRADIENT CARD -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/heroCard"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <!-- Background gradient layer -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_medicine_hero"/>
+
+                <!-- Decorative circle blur (top-right) -->
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="top|end"
+                    android:layout_margin="-30dp"
+                    android:background="@drawable/circle_blur_white"
+                    android:alpha="0.18"/>
+
+                <!-- Content overlay -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="24dp"
+                    android:gravity="bottom">
+
+                    <!-- Category badge -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="28dp"
+                        app:cardCornerRadius="14dp"
+                        app:cardBackgroundColor="#26FFFFFF"
+                        app:strokeWidth="0dp"
+                        app:cardElevation="0dp"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Analgesic · Anti-inflammatory"
+                            android:textColor="#FFFFFF"
+                            android:textSize="11sp"
+                            android:letterSpacing="0.05"
+                            android:gravity="center"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="12dp"/>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Drug Name -->
+                    <TextView
+                        android:id="@+id/drugname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ibuprofen 400mg"
+                        android:textColor="@color/white"
+                        android:textSize="26sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="-0.02"
+                        android:layout_marginBottom="4dp"/>
+
+                    <!-- Subtitle -->
+                    <TextView
+                        android:id="@+id/drugSubtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Film-coated tablets · Rx required"
+                        android:textColor="#B3FFFFFF"
+                        android:textSize="13sp"/>
+
+                </LinearLayout>
+
+                <!-- Pill image (decorative, top-right) -->
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="top|end"
+                    android:layout_margin="24dp"
+                    android:src="@android:drawable/ic_menu_info_details"
+                    android:alpha="0.55"
+                    android:scaleType="fitCenter"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- ══════════════════════════════════════════
+         MAIN SCROLLABLE CONTENT
+    ══════════════════════════════════════════ -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:clipToPadding="false"
+        android:paddingBottom="96dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- ─── SEARCH BAR ─────────────────────── -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/searchBar"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="26dp"
+                app:cardElevation="0dp"
+                app:strokeColor="#E2E8F8"
+                app:strokeWidth="1.5dp"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingStart="18dp"
+                    android:paddingEnd="14dp">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@android:drawable/ic_menu_search"
+                        android:layout_marginEnd="10dp"
+                        android:alpha="0.5"/>
+
+                    <AutoCompleteTextView
+                        android:id="@+id/Etsearch"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:hint="Search medicines, symptoms…"
+                        android:textSize="14sp"
+                        android:textColorHint="#A0AABB"
+                        android:background="@null"
+                        android:imeOptions="actionSearch"
+                        android:inputType="text"/>
+
+                    <!-- Filter chip -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        app:cardCornerRadius="16dp"
+                        app:cardBackgroundColor="#EEF2FF"
+                        app:strokeWidth="0dp"
+                        app:cardElevation="0dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Filter"
+                            android:textColor="@color/primary_blue"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:paddingStart="14dp"
+                            android:paddingEnd="14dp"/>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ─── QUICK STATS ROW ────────────────── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:layout_marginBottom="20dp"
+                android:weightSum="3">
+
+                <!-- Stat 1: Dosage -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    app:cardCornerRadius="18dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="#EDF0FA">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="10dp">
+                        <TextView
+                            android:id="@+id/tvStatDose"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="400mg"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="#1A2460"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dose"
+                            android:textSize="11sp"
+                            android:textColor="#8B96B8"
+                            android:layout_marginTop="2dp"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Stat 2: Frequency -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    app:cardCornerRadius="18dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="#EDF0FA">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="10dp">
+                        <TextView
+                            android:id="@+id/tvStatFrequency"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="3×"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="#1A2460"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Per day"
+                            android:textSize="11sp"
+                            android:textColor="#8B96B8"
+                            android:layout_marginTop="2dp"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Stat 3: Duration -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="18dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="#EDF0FA">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="10dp">
+                        <TextView
+                            android:id="@+id/tvStatCourse"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="7 days"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="#1A2460"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Course"
+                            android:textSize="11sp"
+                            android:textColor="#8B96B8"
+                            android:layout_marginTop="2dp"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <!-- ─── SEGMENTED TABS ─────────────────── -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/tabsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="24dp"
+                app:cardBackgroundColor="#E8EDFF"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:id="@+id/tabsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="4dp"
+                    android:weightSum="3">
+
+                    <TextView
+                        android:id="@+id/tabOverview"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Overview"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary_blue"
+                        android:background="@drawable/tab_active_bg"/>
+
+                    <TextView
+                        android:id="@+id/tabUsage"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Usage"
+                        android:textSize="13sp"
+                        android:textColor="#7B87B4"/>
+
+                    <TextView
+                        android:id="@+id/tabDirections"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Directions"
+                        android:textSize="13sp"
+                        android:textColor="#7B87B4"/>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ─── USAGE CARD ─────────────────────── -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/usageCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="22dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#EDF0FA">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- Card header row -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="12dp">
+
+                        <!-- Icon badge -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            app:cardCornerRadius="12dp"
+                            app:cardBackgroundColor="#EEF2FF"
+                            app:strokeWidth="0dp"
+                            app:cardElevation="0dp"
+                            android:layout_marginEnd="12dp">
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:src="@android:drawable/ic_menu_help"
+                                android:alpha="0.7"/>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Usage"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="#1A2460"/>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="24dp"
+                            app:cardCornerRadius="12dp"
+                            app:cardBackgroundColor="#E8FFF4"
+                            app:strokeWidth="0dp"
+                            app:cardElevation="0dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="Common"
+                                android:textColor="#1BAA6A"
+                                android:textSize="11sp"
+                                android:textStyle="bold"
+                                android:gravity="center"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"/>
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+                    <!-- Divider -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#F0F3FA"
+                        android:layout_marginBottom="12dp"/>
+
+                    <TextView
+                        android:id="@+id/tvUsage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Used to relieve pain, reduce fever, and treat inflammation. Effective for headaches, dental pain, menstrual cramps, muscle aches, and minor arthritis."
+                        android:textSize="14sp"
+                        android:lineSpacingMultiplier="1.6"
+                        android:textColor="#4A5580"/>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ─── DIRECTIONS CARD ────────────────── -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/directionsCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="22dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#EDF0FA">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- Card header row -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="12dp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            app:cardCornerRadius="12dp"
+                            app:cardBackgroundColor="#FFF3E0"
+                            app:strokeWidth="0dp"
+                            app:cardElevation="0dp"
+                            android:layout_marginEnd="12dp">
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:src="@android:drawable/ic_menu_directions"
+                                android:alpha="0.7"/>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Directions"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="#1A2460"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#F0F3FA"
+                        android:layout_marginBottom="12dp"/>
+
+                    <TextView
+                        android:id="@+id/tvDirections"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Take 1 tablet every 4–6 hours with food or milk. Do not exceed 3 tablets in 24 hours. Swallow whole with a full glass of water. Do not crush or chew."
+                        android:textSize="14sp"
+                        android:lineSpacingMultiplier="1.6"
+                        android:textColor="#4A5580"/>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ─── WARNINGS CARD ──────────────────── -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/warningsCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="12dp"
+                app:cardCornerRadius="22dp"
+                app:cardBackgroundColor="#FFF8F0"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="#FFE8CC">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="10dp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            app:cardCornerRadius="12dp"
+                            app:cardBackgroundColor="#FFE0B2"
+                            app:strokeWidth="0dp"
+                            app:cardElevation="0dp"
+                            android:layout_marginEnd="12dp">
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:src="@android:drawable/ic_dialog_alert"
+                                android:alpha="0.7"/>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Warnings"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="#7B3A00"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvWarnings"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Avoid if allergic to NSAIDs. Not for children under 12 without medical advice. Consult your doctor if pregnant, breastfeeding, or have kidney/liver issues."
+                        android:textSize="14sp"
+                        android:lineSpacingMultiplier="1.6"
+                        android:textColor="#8A4A00"/>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- ══════════════════════════════════════════
+         BOTTOM ACTION BAR (Floating)
+    ══════════════════════════════════════════ -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="28dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardElevation="12dp"
+        app:strokeWidth="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <!-- Bookmark icon button -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnBookmark"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:cardCornerRadius="16dp"
+                app:cardBackgroundColor="#EEF2FF"
+                app:strokeWidth="0dp"
+                app:cardElevation="0dp"
+                android:layout_marginEnd="12dp">
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center"
+                    android:src="@android:drawable/btn_star_big_off"
+                    android:alpha="0.7"/>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Share icon button -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnShare"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:cardCornerRadius="16dp"
+                app:cardBackgroundColor="#EEF2FF"
+                app:strokeWidth="0dp"
+                app:cardElevation="0dp"
+                android:layout_marginEnd="12dp">
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center"
+                    android:src="@android:drawable/ic_menu_share"
+                    android:alpha="0.7"/>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Primary CTA -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/bottomBar"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="1"
+                android:text="Consult a Doctor"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.02"
+                app:backgroundTint="@color/primary_blue"
+                app:cornerRadius="18dp"
+                app:elevation="0dp"
+                app:rippleColor="#26FFFFFF"/>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

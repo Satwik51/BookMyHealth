@@ -5,7 +5,8 @@
     android:id="@+id/doctorDrawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.auth.doctor.DoctorDashboardActivity">
+    tools:context=".ui.auth.doctor.DoctorDashboardActivity"
+    android:fitsSystemWindows="true">
 
     <!-- MAIN SCREEN LAYOUT -->
     <LinearLayout
@@ -66,7 +67,7 @@
                         android:text="Dr. Loading..."
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        android:textColor="#80E9D4" />
+                        android:textColor="@color/primary_blue"  />
                 </LinearLayout>
 
                 <TextView
@@ -113,7 +114,7 @@
                 android:padding="0dp"
                 android:layout_marginEnd="10dp"
                 app:boxBackgroundMode="none"
-                app:startIconDrawable="@drawable/ic_search"
+                app:startIconDrawable="@drawable/ic_search1"
                 app:startIconTint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -147,18 +148,20 @@
                 android:background="@drawable/bg_round_white"
                 android:padding="10dp"
                 android:src="@drawable/ic_refresh"
-                app:tint="#80E9D4" />
+                app:tint="@color/primary_blue" />
         </LinearLayout>
 
 
 
 
-        <!-- ⚡ QUICK ACTIONS -->
+        <!-- ... baki ka code same rahega ... -->
+
+        <!-- ⚡ QUICK ACTIONS (Updated with Scan Button) -->
         <LinearLayout
             android:id="@+id/layoutActions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="18dp"
+            android:padding="12dp"
             android:gravity="center"
             android:orientation="horizontal"
             android:background="@drawable/bg_quick_action"
@@ -171,12 +174,27 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Approved List"
+                android:text="Approved"
+                android:textSize="12sp"
                 android:textStyle="bold"
                 android:textColor="@color/white"
                 app:backgroundTint="#AB47BC" />
 
-            <View android:layout_width="12dp" android:layout_height="0dp" />
+            <View android:layout_width="8dp" android:layout_height="0dp" />
+
+            <!-- 🔥 NEW: SCAN QR BUTTON -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnScanQR"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.2"
+                android:text="Scan QR"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                app:backgroundTint="#1A73E8" />
+
+            <View android:layout_width="8dp" android:layout_height="0dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnProfile"
@@ -184,12 +202,13 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Profile"
+                android:textSize="12sp"
                 android:textStyle="bold"
                 android:textColor="@color/white"
                 app:backgroundTint="#80E9D4" />
 
         </LinearLayout>
-
+        <!-- ... baki ka code same rahega ... -->
 
 
 

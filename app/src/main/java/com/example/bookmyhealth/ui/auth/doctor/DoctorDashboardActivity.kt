@@ -6,15 +6,16 @@ import android.os.Handler
 import android.os.Looper
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
-import android.view.animation.AnimationUtils
 import android.view.animation.OvershootInterpolator
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
 import com.example.bookmyhealth.R
 import com.example.bookmyhealth.adapter.AppointmentAdapter
@@ -29,6 +30,7 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.card.MaterialCardView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.google.zxing.integration.android.IntentIntegrator
 
 class DoctorDashboardActivity : AppCompatActivity() {
 
@@ -44,19 +46,15 @@ class DoctorDashboardActivity : AppCompatActivity() {
 
     private val auth by lazy { FirebaseAuth.getInstance() }
 
+    private val DB_URL = "https://bookmyhealth-5920a-default-rtdb.asia-southeast1.firebasedatabase.app"
+
     private val dbRefAppointments: DatabaseReference by lazy {
-        FirebaseDatabase.getInstance(
-            "https://bookmyhealth-5920a-default-rtdb.asia-southeast1.firebasedatabase.app"
-        ).getReference("appointments")
+        FirebaseDatabase.getInstance(DB_URL).getReference("appointments")
     }
 
     private val dbRefDoctors: DatabaseReference by lazy {
-        FirebaseDatabase.getInstance(
-            "https://bookmyhealth-5920a-default-rtdb.asia-southeast1.firebasedatabase.app"
-        ).getReference("doctors")
+        FirebaseDatabase.getInstance(DB_URL).getReference("doctors")
     }
-
-    private var appointmentListener: ValueEventListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,7 +74,7 @@ class DoctorDashboardActivity : AppCompatActivity() {
         animateSearchBar()
         animateQuickActions()
 
-        val fromSignup = intent.getBooleanExtra(DoctorSignupActivity.EXTRA_FROM_DOCTOR_SIGNUP, false)
+        val fromSignup = intent.getBooleanExtra("EXTRA_FROM_DOCTOR_SIGNUP", false)
         if (fromSignup && savedInstanceState == null) {
             binding.root.post { showDoctorSignupSuccessDialog() }
         }
@@ -84,8 +82,7 @@ class DoctorDashboardActivity : AppCompatActivity() {
 
     private fun showDoctorSignupSuccessDialog() {
         val view = layoutInflater.inflate(R.layout.alert_success, null)
-
-        val dialog = androidx.appcompat.app.AlertDialog.Builder(this)
+        val dialog = AlertDialog.Builder(this)
             .setView(view)
             .setCancelable(false)
             .create()
@@ -93,22 +90,15 @@ class DoctorDashboardActivity : AppCompatActivity() {
         dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
         dialog.show()
 
-        val okBtn = view.findViewById<MaterialButton>(R.id.btnDialogOk)
-        val goProfileBtn = view.findViewById<MaterialButton>(R.id.btnGoProfile)
-
-        // ✅ OK BUTTON
-        okBtn.setOnClickListener {
+        view.findViewById<MaterialButton>(R.id.btnDialogOk).setOnClickListener {
             dialog.dismiss()
         }
 
-        // ✅ GO TO PROFILE BUTTON
-        goProfileBtn.setOnClickListener {
+        view.findViewById<MaterialButton>(R.id.btnGoProfile).setOnClickListener {
             dialog.dismiss()
             startActivity(Intent(this, DoctorProfileActivity::class.java))
         }
     }
-
-
     private fun setupUI() {
         setupRecyclerView()
 
@@ -120,198 +110,241 @@ class DoctorDashboardActivity : AppCompatActivity() {
             startActivity(Intent(this, DoctorProfileActivity::class.java))
         }
 
-        binding.btnRefreshDoctor.setOnClickListener {
+        binding.btnScanQR.setOnClickListener {
 
-            binding.btnRefreshDoctor.animate()
-                .rotationBy(360f)
-                .setDuration(600)
-                .setInterpolator(OvershootInterpolator())
-                .start()
+            val integrator = IntentIntegrator(this)
+            integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE)
+            integrator.setPrompt("\n\n\n📱 BookMyHealth Verifier\nScan Patient Booking QR")
+            integrator.setBeepEnabled(true)
 
-            binding.etSearchDoctor.setText("")
-            filteredList.clear()
-            filteredList.addAll(appointmentList)
-            appointmentAdapter.submitList(filteredList.toList())
-
-            SuperToast.show(
-                this,
-                SuperToast.Type.SUCCESS,
-                "Refreshing",
-                "Updating appointments…"
+            // 🔥🔥 FINAL FIX (FORCE PORTRAIT)
+            integrator.setCaptureActivity(
+                com.example.bookmyhealth.utils.CaptureActivityPortrait::class.java
             )
 
-            binding.rvAppointments.smoothScrollToPosition(0)
-            fetchAppointments()
+            integrator.setOrientationLocked(true)
+
+            integrator.initiateScan()
         }
 
-        binding.btnFilterDoctor.setOnClickListener {
-            openFilterDialog()
+        binding.btnRefreshDoctor.setOnClickListener {
+            binding.btnRefreshDoctor.animate().rotationBy(360f).setDuration(600)
+                .setInterpolator(OvershootInterpolator()).start()
+            fetchAppointments()
+            SuperToast.show(this, SuperToast.Type.SUCCESS, "Refreshing", "Data updated")
+        }
+
+        binding.btnFilterDoctor.setOnClickListener { openFilterDialog() }
+    }
+
+    // 🔥 FIXED QR SCAN
+    // 🔥 ONLY CHANGE: onActivityResult + debug logs + safe cleaning
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
+
+        if (result != null) {
+
+            if (result.contents != null) {
+
+                val rawData = result.contents
+
+                Log.d("QR_DEBUG", "==============================")
+                Log.d("QR_DEBUG", "RAW DATA = [$rawData]")
+                Log.d("QR_DEBUG", "RAW LENGTH = ${rawData.length}")
+
+                // ✅ SAFE CLEAN (NO OVER CLEANING)
+                val cleanId = rawData
+                    .trim()
+                    .replace("\n", "")
+                    .replace("\r", "")
+                    .replace(" ", "")
+
+                Log.d("QR_DEBUG", "CLEAN ID = [$cleanId]")
+                Log.d("QR_DEBUG", "CLEAN LENGTH = ${cleanId.length}")
+
+                // 🔥 Character by character debug
+                cleanId.forEachIndexed { index, c ->
+                    Log.d("QR_DEBUG", "CHAR[$index] = '$c' ASCII=${c.code}")
+                }
+
+                if (cleanId.isNotEmpty()) {
+                    fetchAndVerifyPatient(cleanId)
+                } else {
+                    SuperToast.show(this, SuperToast.Type.ERROR, "Scan Error", "Invalid QR")
+                }
+
+            } else {
+                Log.d("QR_DEBUG", "Scan Cancelled")
+            }
+
+        } else {
+            super.onActivityResult(requestCode, resultCode, data)
         }
     }
 
-    private fun loadGooglePhotoTop() {
-        val user = auth.currentUser
-        val photoUrl = user?.photoUrl
+    private fun fetchAndVerifyPatient(appId: String) {
 
-        if (photoUrl != null) {
-            Glide.with(this)
-                .load(photoUrl)
-                .placeholder(R.drawable.placeholder_profile)
-                .circleCrop()
-                .into(binding.ivDoctorProfile)
+        Log.d("QR_DEBUG", "🔥 FETCHING ID = [$appId]")
+
+        binding.progressBar.visibility = View.VISIBLE
+
+        dbRefAppointments.child(appId).get()
+            .addOnSuccessListener { appSnap ->
+
+                Log.d("QR_DEBUG", "EXISTS = ${appSnap.exists()}")
+                Log.d("QR_DEBUG", "KEY FROM DB = ${appSnap.key}")
+
+                if (appSnap.exists()) {
+
+                    val userId = appSnap.child("userId").value?.toString() ?: ""
+
+                    Log.d("QR_DEBUG", "USER ID = $userId")
+
+                    if (userId.isNotEmpty()) {
+
+                        FirebaseDatabase.getInstance(DB_URL)
+                            .getReference("users")
+                            .child(userId)
+                            .get()
+                            .addOnSuccessListener { userSnap ->
+
+                                binding.progressBar.visibility = View.GONE
+
+                                val name = userSnap.child("name").value?.toString() ?: "Unknown"
+                                val age = userSnap.child("age").value?.toString() ?: "N/A"
+                                val img = userSnap.child("imageUrl").value?.toString() ?: ""
+                                val email = userSnap.child("email").value?.toString() ?: "N/A"
+                                val phone = userSnap.child("phone").value?.toString() ?: "N/A"
+                                val address = userSnap.child("address").value?.toString() ?: "N/A"
+
+                                val dr = appSnap.child("doctorName").value?.toString() ?: "Doctor"
+                                val date = appSnap.child("date").value?.toString() ?: "N/A"
+                                val time = appSnap.child("time").value?.toString() ?: "N/A"
+                                val token = appSnap.child("tokenNumber").value?.toString() ?: "0"
+                                val status = appSnap.child("status").value?.toString() ?: "Pending"
+
+                                showPatientVerificationDialog(
+                                    name, email, phone, token, status,
+                                    img, address, age, dr, date, time
+                                )
+                            }
+                            .addOnFailureListener {
+                                binding.progressBar.visibility = View.GONE
+                                Log.e("QR_DEBUG", "❌ USER FETCH ERROR = ${it.message}")
+                            }
+
+                    } else {
+                        binding.progressBar.visibility = View.GONE
+                        Log.d("QR_DEBUG", "❌ USER ID EMPTY")
+                    }
+
+                } else {
+                    binding.progressBar.visibility = View.GONE
+                    Log.d("QR_DEBUG", "❌ APPOINTMENT NOT FOUND")
+                    SuperToast.show(this, SuperToast.Type.ERROR, "Not Found", "Appointment not found")
+                }
+
+            }
+            .addOnFailureListener {
+                binding.progressBar.visibility = View.GONE
+                Log.e("QR_DEBUG", "❌ FIREBASE ERROR = ${it.message}")
+            }
+    }
+
+    private fun showPatientVerificationDialog(name: String, email: String, phone: String, token: String, status: String, img: String, address: String, age: String, dr: String, date: String, time: String) {
+        val dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_patient_verify, null)
+        val dialog = AlertDialog.Builder(this).setView(dialogView).create()
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+
+        dialogView.findViewById<TextView>(R.id.tvVerifyName).text = "$name ($age)"
+        dialogView.findViewById<TextView>(R.id.tvVerifyDoctor).text = "Doctor: $dr"
+        dialogView.findViewById<TextView>(R.id.tvVerifyDateTime).text = "Date: $date | Time: $time"
+        dialogView.findViewById<TextView>(R.id.tvVerifyDetails).text = "Email: $email\nPhone: $phone\nToken: #$token"
+        dialogView.findViewById<TextView>(R.id.tvVerifyAddress).text = address
+
+        val tvStatus = dialogView.findViewById<TextView>(R.id.tvVerifyStatus)
+        tvStatus.text = "Status: $status"
+
+        if (status.equals("Approved", ignoreCase = true)) {
+            tvStatus.setTextColor(android.graphics.Color.parseColor("#2E7D32"))
+        } else {
+            tvStatus.setTextColor(android.graphics.Color.parseColor("#D32F2F"))
+        }
+
+        val ivUser = dialogView.findViewById<ImageView>(R.id.ivVerifyUser)
+        Glide.with(this)
+            .load(img)
+            .placeholder(R.drawable.profile_placeholder)
+            .circleCrop()
+            .into(ivUser)
+
+        dialogView.findViewById<MaterialButton>(R.id.btnVerifyClose).setOnClickListener { dialog.dismiss() }
+        dialog.show()
+    }
+
+    private fun loadGooglePhotoTop() {
+        auth.currentUser?.photoUrl?.let {
+            Glide.with(this).load(it).placeholder(R.drawable.placeholder_profile).circleCrop().into(binding.ivDoctorProfile)
         }
     }
 
     private fun openFilterDialog() {
         val dialogView = layoutInflater.inflate(R.layout.dialog_filter_doctor, null)
-
-        val dialog = android.app.AlertDialog.Builder(this)
-            .setView(dialogView)
-            .create()
-
+        val dialog = AlertDialog.Builder(this).setView(dialogView).create()
         dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
-
-        val cardToday = dialogView.findViewById<MaterialCardView>(R.id.cardFilterToday)
-        val cardUpcoming = dialogView.findViewById<MaterialCardView>(R.id.cardFilterUpcoming)
-        val cardAll = dialogView.findViewById<MaterialCardView>(R.id.cardFilterAll)
-        val btnClearFilter = dialogView.findViewById<MaterialButton>(R.id.btnClearFilter)
-
-        cardToday.setOnClickListener {
-            applyDateFilter("TODAY")
-            dialog.dismiss()
-        }
-
-        cardUpcoming.setOnClickListener {
-            applyDateFilter("UPCOMING")
-            dialog.dismiss()
-        }
-
-        cardAll.setOnClickListener {
-            applyDateFilter("ALL")
-            dialog.dismiss()
-        }
-
-        btnClearFilter.setOnClickListener {
+        dialogView.findViewById<MaterialCardView>(R.id.cardFilterToday).setOnClickListener { applyDateFilter("TODAY"); dialog.dismiss() }
+        dialogView.findViewById<MaterialCardView>(R.id.cardFilterUpcoming).setOnClickListener { applyDateFilter("UPCOMING"); dialog.dismiss() }
+        dialogView.findViewById<MaterialCardView>(R.id.cardFilterAll).setOnClickListener { applyDateFilter("ALL"); dialog.dismiss() }
+        dialogView.findViewById<MaterialButton>(R.id.btnClearFilter).setOnClickListener {
             binding.etSearchDoctor.setText("")
-            filteredList.clear()
-            filteredList.addAll(appointmentList)
-            appointmentAdapter.submitList(filteredList.toList())
-
-            SuperToast.show(
-                this,
-                SuperToast.Type.WARNING,
-                "Filter Cleared",
-                "All filter options reset"
-            )
-
+            fetchAppointments()
             dialog.dismiss()
         }
-
         dialog.show()
     }
 
-    private fun getTodayString(): String {
-        val cal = java.util.Calendar.getInstance()
-        return String.format(
-            "%04d-%02d-%02d",
-            cal.get(java.util.Calendar.YEAR),
-            cal.get(java.util.Calendar.MONTH) + 1,
-            cal.get(java.util.Calendar.DAY_OF_MONTH)
-        )
-    }
-
     private fun applyDateFilter(type: String) {
-        val today = getTodayString()
+        val cal = java.util.Calendar.getInstance()
+        val today = String.format("%04d-%02d-%02d", cal.get(java.util.Calendar.YEAR), cal.get(java.util.Calendar.MONTH) + 1, cal.get(java.util.Calendar.DAY_OF_MONTH))
         filteredList.clear()
-
         when (type) {
             "TODAY" -> filteredList.addAll(appointmentList.filter { it.date == today })
             "UPCOMING" -> filteredList.addAll(appointmentList.filter { it.date > today })
             "ALL" -> filteredList.addAll(appointmentList)
         }
-
         appointmentAdapter.submitList(filteredList.toList())
         toggleEmptyState(filteredList.isEmpty())
-
-        SuperToast.show(
-            this,
-            SuperToast.Type.SUCCESS,
-            "Filter Applied",
-            "Showing $type appointments"
-        )
     }
 
     private fun setupSearchFilter() {
         binding.etSearchDoctor.addTextChangedListener(object : TextWatcher {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                applySearch(s.toString())
+                val q = s.toString().lowercase()
+                filteredList.clear()
+                filteredList.addAll(if (q.isEmpty()) appointmentList else appointmentList.filter { it.userName.lowercase().contains(q) || it.date.contains(q) })
+                appointmentAdapter.submitList(filteredList.toList())
+                toggleEmptyState(filteredList.isEmpty())
             }
-
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun afterTextChanged(s: Editable?) {}
         })
     }
 
-    private fun applySearch(query: String) {
-        val q = query.lowercase()
-        filteredList.clear()
-
-        filteredList.addAll(
-            if (q.isEmpty()) appointmentList
-            else appointmentList.filter {
-                it.userName.lowercase().contains(q) ||
-                        it.date.lowercase().contains(q) ||
-                        it.time.lowercase().contains(q)
-            }
-        )
-
-        appointmentAdapter.submitList(filteredList.toList())
-        toggleEmptyState(filteredList.isEmpty())
-    }
-
     private fun setupDrawer() {
-        binding.ivDoctorProfile.setOnClickListener {
-            binding.doctorDrawerLayout.openDrawer(GravityCompat.START)
-        }
-
+        binding.ivDoctorProfile.setOnClickListener { binding.doctorDrawerLayout.openDrawer(GravityCompat.START) }
         val headerView = binding.doctorNavigationView.getHeaderView(0)
-        val headerName = headerView.findViewById<TextView>(R.id.headerDoctorName)
-        val headerImage = headerView.findViewById<ImageView>(R.id.headerDoctorImage)
-
         val uid = auth.currentUser?.uid ?: return
-
-        dbRefDoctors.child(uid).child("name").get()
-            .addOnSuccessListener { headerName.text = "Dr. ${it.value}" }
-
-        auth.currentUser?.photoUrl?.let {
-            Glide.with(this)
-                .load(it)
-                .circleCrop()
-                .into(headerImage)
+        dbRefDoctors.child(uid).get().addOnSuccessListener {
+            headerView.findViewById<TextView>(R.id.headerDoctorName).text = "Dr. ${it.child("name").value}"
         }
-
         binding.doctorNavigationView.setNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.nav_home -> binding.doctorDrawerLayout.closeDrawer(GravityCompat.START)
-
                 R.id.nav_profile -> startActivity(Intent(this, DoctorProfileActivity::class.java))
-
-                R.id.nav_appointments ->
-                    startActivity(Intent(this, DoctorApprovedListActivity::class.java))
-
                 R.id.nav_logout -> {
-                    FirebaseAuth.getInstance().signOut()
-
-                    val i = Intent(this, RoleSelectActivity::class.java)
-                    i.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                    startActivity(i)
-
-                    SuperToast.show(
-                        this,
-                        SuperToast.Type.WARNING,
-                        "Logged Out",
-                        "See you again!"
-                    )
+                    auth.signOut()
+                    startActivity(Intent(this, RoleSelectActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK))
                 }
             }
             true
@@ -320,36 +353,15 @@ class DoctorDashboardActivity : AppCompatActivity() {
 
     private fun loadDoctorName() {
         val uid = auth.currentUser?.uid ?: return
-
-        dbRefDoctors.child(uid).get()
-            .addOnSuccessListener { snapshot ->
-                val name = snapshot.child("name").value?.toString() ?: "Doctor"
-                binding.tvDoctorName.text = "Dr. $name"
-
-                val headerView = binding.doctorNavigationView.getHeaderView(0)
-                val hName = headerView.findViewById<TextView>(R.id.headerDoctorName)
-                hName.text = "Dr. $name"
-
-                val imageUrl = snapshot.child("imageUrl").value?.toString()
-                if (!imageUrl.isNullOrEmpty()) {
-                    val hImg = headerView.findViewById<ImageView>(R.id.headerDoctorImage)
-                    Glide.with(this).load(imageUrl).circleCrop().into(hImg)
-                }
-            }
+        dbRefDoctors.child(uid).get().addOnSuccessListener { snapshot ->
+            binding.tvDoctorName.text = "Dr. ${snapshot.child("name").value ?: "Doctor"}"
+        }
     }
 
     private fun setupLottieSlider() {
-        val slides = listOf(
-            SlideItem(R.raw.doctor_slide_1, "Manage Appointments Easily."),
-            SlideItem(R.raw.doctor_slide_2, "Smart Dashboard for Smart Doctors."),
-            SlideItem(R.raw.doctor_slide_3, "Update Profile Anytime.")
-        )
-
+        val slides = listOf(SlideItem(R.raw.doctor_slide_1, "Manage Appointments"), SlideItem(R.raw.doctor_slide_2, "Dashboard"), SlideItem(R.raw.doctor_slide_3, "Profile"))
         sliderAdapter = LottieSliderAdapter(slides)
         binding.lottieSlider.adapter = sliderAdapter
-
-        binding.lottieSlider.orientation = ViewPager2.ORIENTATION_HORIZONTAL
-
         sliderHandler.postDelayed(sliderRunnable, 3000)
     }
 
@@ -358,204 +370,57 @@ class DoctorDashboardActivity : AppCompatActivity() {
             if (::sliderAdapter.isInitialized) {
                 if (currentPage >= sliderAdapter.itemCount) currentPage = 0
                 binding.lottieSlider.setCurrentItem(currentPage++, true)
+                sliderHandler.postDelayed(this, 3000)
             }
-            sliderHandler.postDelayed(this, 3000)
         }
-    }
-
-    override fun onPause() {
-        super.onPause()
-        sliderHandler.removeCallbacks(sliderRunnable)
-    }
-
-    override fun onResume() {
-        super.onResume()
-        sliderHandler.postDelayed(sliderRunnable, 3000)
     }
 
     private fun setupRecyclerView() {
         appointmentAdapter = AppointmentAdapter(
-            onApprove = { a -> updateAppointmentStatusSafe(a, "Approved") },
-            onReject = { a -> updateAppointmentStatusSafe(a, "Rejected") }
+            onApprove = { a -> updateStatus(a, "Approved") },
+            onReject = { a -> updateStatus(a, "Rejected") }
         )
-
         binding.rvAppointments.layoutManager = LinearLayoutManager(this)
         binding.rvAppointments.adapter = appointmentAdapter
-
-        binding.rvAppointments.layoutAnimation =
-            AnimationUtils.loadLayoutAnimation(this, R.anim.recycler_fade_in)
     }
 
     private fun fetchAppointments() {
         val doctorId = auth.currentUser?.uid ?: return
-
         binding.progressBar.visibility = View.VISIBLE
-        binding.emptyContainer.visibility = View.GONE
-
-        appointmentListener?.let { dbRefAppointments.removeEventListener(it) }
-
-        appointmentListener =
-            dbRefAppointments.orderByChild("doctorId").equalTo(doctorId)
-                .addValueEventListener(object : ValueEventListener {
-
-                    override fun onDataChange(snapshot: DataSnapshot) {
-                        appointmentList.clear()
-                        filteredList.clear()
-
-                        for (child in snapshot.children) {
-                            val appt = child.getValue(Appointment::class.java)
-                                ?.copy(appointmentId = child.key ?: "")
-                            if (appt != null && appt.status == "Pending") {
-                                appointmentList.add(appt)
-                            }
-                        }
-
-                        filteredList.addAll(appointmentList)
-
-                        binding.progressBar.visibility = View.GONE
-                        toggleEmptyState(filteredList.isEmpty())
-
-                        appointmentAdapter.submitList(filteredList.toList())
-                        binding.rvAppointments.scheduleLayoutAnimation()
-                    }
-
-                    override fun onCancelled(error: DatabaseError) {
-                        binding.progressBar.visibility = View.GONE
-                        SuperToast.show(
-                            this@DoctorDashboardActivity,
-                            SuperToast.Type.ERROR,
-                            "Error",
-                            error.message
-                        )
-                    }
-                })
+        dbRefAppointments.orderByChild("doctorId").equalTo(doctorId).addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                appointmentList.clear()
+                for (child in snapshot.children) {
+                    val appt = child.getValue(Appointment::class.java)?.copy(appointmentId = child.key ?: "")
+                    if (appt != null && appt.status == "Pending") appointmentList.add(appt)
+                }
+                filteredList.clear(); filteredList.addAll(appointmentList)
+                binding.progressBar.visibility = View.GONE
+                toggleEmptyState(filteredList.isEmpty())
+                appointmentAdapter.submitList(filteredList.toList())
+            }
+            override fun onCancelled(error: DatabaseError) { binding.progressBar.visibility = View.GONE }
+        })
     }
 
     private fun toggleEmptyState(isEmpty: Boolean) {
-        if (isEmpty) {
-            binding.rvAppointments.visibility = View.GONE
-            binding.emptyContainer.visibility = View.VISIBLE
-            binding.lottieEmpty.playAnimation()
-            animateEmpty()
-        } else {
-            binding.emptyContainer.visibility = View.GONE
-            binding.lottieEmpty.cancelAnimation()
-            binding.rvAppointments.visibility = View.VISIBLE
-        }
+        binding.emptyContainer.visibility = if (isEmpty) View.VISIBLE else View.GONE
+        binding.rvAppointments.visibility = if (isEmpty) View.GONE else View.VISIBLE
     }
 
-    private fun updateAppointmentStatusSafe(app: Appointment?, status: String) {
-        if (app == null) {
-            SuperToast.show(
-                this,
-                SuperToast.Type.ERROR,
-                "Invalid Appointment",
-                "Data not found"
-            )
-            return
-        }
-        updateAppointmentStatus(app, status)
-    }
-
-    private fun updateAppointmentStatus(appt: Appointment, status: String) {
-        val id = appt.appointmentId
-
-        if (id.isBlank()) {
-            SuperToast.show(
-                this,
-                SuperToast.Type.ERROR,
-                "Error",
-                "Invalid appointment ID"
-            )
-            return
-        }
-
-        dbRefAppointments.child(id).child("status").setValue(status)
-            .addOnSuccessListener {
-                SuperToast.show(
-                    this,
-                    SuperToast.Type.SUCCESS,
-                    "Updated",
-                    "Marked as $status"
-                )
-            }
-            .addOnFailureListener {
-                SuperToast.show(
-                    this,
-                    SuperToast.Type.ERROR,
-                    "Failed",
-                    it.message ?: "Something went wrong"
-                )
-            }
+    private fun updateStatus(appt: Appointment?, status: String) {
+        if (appt?.appointmentId.isNullOrBlank()) return
+        dbRefAppointments.child(appt!!.appointmentId).child("status").setValue(status)
+            .addOnSuccessListener { SuperToast.show(this, SuperToast.Type.SUCCESS, "Updated", "Marked as $status") }
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        appointmentListener?.let { dbRefAppointments.removeEventListener(it) }
         sliderHandler.removeCallbacks(sliderRunnable)
-        binding.lottieEmpty.cancelAnimation()
     }
 
-    private fun animateHeader() {
-        binding.headerDoctor.translationY = -80f
-        binding.headerDoctor.alpha = 0f
-
-        binding.headerDoctor.animate()
-            .translationY(0f)
-            .alpha(1f)
-            .setDuration(650)
-            .setStartDelay(150)
-            .start()
-    }
-
-    private fun animateSlider() {
-        binding.lottieSlider.scaleX = 0.85f
-        binding.lottieSlider.scaleY = 0.85f
-        binding.lottieSlider.alpha = 0f
-
-        binding.lottieSlider.animate()
-            .scaleX(1f)
-            .scaleY(1f)
-            .alpha(1f)
-            .setDuration(650)
-            .setStartDelay(250)
-            .start()
-    }
-
-    private fun animateQuickActions() {
-        binding.layoutActions.translationY = 50f
-        binding.layoutActions.alpha = 0f
-
-        binding.layoutActions.animate()
-            .translationY(0f)
-            .alpha(1f)
-            .setDuration(650)
-            .setStartDelay(350)
-            .start()
-    }
-
-    private fun animateSearchBar() {
-        binding.layoutSearchBarDoctor.translationY = 40f
-        binding.layoutSearchBarDoctor.alpha = 0f
-
-        binding.layoutSearchBarDoctor.animate()
-            .translationY(0f)
-            .alpha(1f)
-            .setDuration(550)
-            .setStartDelay(300)
-            .start()
-    }
-
-    private fun animateEmpty() {
-        binding.emptyContainer.scaleX = 0.8f
-        binding.emptyContainer.scaleY = 0.8f
-        binding.emptyContainer.alpha = 0f
-
-        binding.emptyContainer.animate()
-            .scaleX(1f)
-            .scaleY(1f)
-            .alpha(1f)
-            .setDuration(400)
-            .start()
-    }
+    private fun animateHeader() { binding.headerDoctor.animate().translationY(0f).alpha(1f).setDuration(650).start() }
+    private fun animateSlider() { binding.lottieSlider.animate().scaleX(1f).scaleY(1f).alpha(1f).setDuration(650).start() }
+    private fun animateQuickActions() { binding.layoutActions.animate().translationY(0f).alpha(1f).setDuration(650).start() }
+    private fun animateSearchBar() { binding.layoutSearchBarDoctor.animate().translationY(0f).alpha(1f).setDuration(550).start() }
 }

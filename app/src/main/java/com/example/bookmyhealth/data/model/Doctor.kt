@@ -1,8 +1,8 @@
 package com.example.bookmyhealth.data.model
 
 /**
- * ✅ Doctor Model (Latest Version)
- * Fully compatible with Firebase Realtime Database + Your New Profile UI
+ * ✅ Doctor Model (Final Updated Version)
+ * Firebase Realtime Database + Storage Compatible
  */
 data class Doctor(
 
@@ -16,7 +16,10 @@ data class Doctor(
 
     var imageUrl: String = "",              // Profile image URL (Firebase Storage)
 
-    // ⭐ NEW FIELDS YOU ADDED IN PROFILE UI
+    // ⭐ NEW FIELD FOR CERTIFICATION
+    var certificateUrl: String = "",        // Document/Certificate URL (Firebase Storage)
+
+    // ⭐ FIELDS FROM PROFILE UI
     var about: String = "",                 // Short bio
     var clinicName: String = "",            // Clinic name
     var consultationFee: String = "",       // Fee per appointment

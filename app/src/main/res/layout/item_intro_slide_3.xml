@@ -24,7 +24,7 @@
         android:text="All in One App"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="#80E9D4"
+        android:textColor="@color/white"
         android:layout_marginBottom="12dp" />
 
     <!-- 🔹 Description -->
@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:text="Your complete healthcare companion — BookMyHealth connects you instantly to trusted doctors."
         android:textSize="14sp"
-        android:textColor="@color/bgLight"
+        android:textColor="@color/primary_blue"
         android:gravity="center"
         android:paddingHorizontal="12dp" />
 </LinearLayout>

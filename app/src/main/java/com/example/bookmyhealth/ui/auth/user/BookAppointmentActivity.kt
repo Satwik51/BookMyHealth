@@ -10,12 +10,17 @@ import android.view.animation.OvershootInterpolator
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
-import com.example.bookmyhealth.data.model.Appointment
+import com.example.bookmyhealth.R
 import com.example.bookmyhealth.databinding.ActivityBookAppointmentBinding
+import com.example.bookmyhealth.ui.dialog.BookingConfirmDialog
 import com.example.bookmyhealth.utils.SuperToast
 import com.google.android.material.chip.Chip
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import java.text.SimpleDateFormat
 import java.util.*
 
 class BookAppointmentActivity : AppCompatActivity() {
@@ -103,13 +108,9 @@ class BookAppointmentActivity : AppCompatActivity() {
         doctorName = intent.getStringExtra("doctorName") ?: ""
 
         if (doctorId.isEmpty()) {
-            SuperToast.show(
-                this,
-                SuperToast.Type.ERROR,
-                "Missing",
-                "Doctor info missing!"
-            )
+            SuperToast.show(this, SuperToast.Type.ERROR, "Missing", "Doctor info missing!")
             finish()
+            return
         }
 
         binding.tvDoctorName.text = doctorName
@@ -119,7 +120,6 @@ class BookAppointmentActivity : AppCompatActivity() {
     private fun fetchDoctorFullDetails() {
         db.child("doctors").child(doctorId).get()
             .addOnSuccessListener { snap ->
-
                 if (!snap.exists()) return@addOnSuccessListener
 
                 val imageUrl = snap.child("imageUrl").value?.toString() ?: ""
@@ -232,7 +232,7 @@ class BookAppointmentActivity : AppCompatActivity() {
             val c = Calendar.getInstance()
             TimePickerDialog(
                 this,
-                { _, h, m -> binding.etTime.setText(String.format("%02d:%02d", h, m)) },
+                { _, h, mi -> binding.etTime.setText(String.format("%02d:%02d", h, mi)) },
                 c.get(Calendar.HOUR_OF_DAY),
                 c.get(Calendar.MINUTE),
                 true
@@ -243,7 +243,7 @@ class BookAppointmentActivity : AppCompatActivity() {
     // ------------------------------------------------------------
     private fun setupBookButton() {
         binding.btnBook.setOnClickListener {
-
+            // Button animation
             binding.btnBook.animate()
                 .scaleX(0.93f)
                 .scaleY(0.93f)
@@ -256,68 +256,139 @@ class BookAppointmentActivity : AppCompatActivity() {
             val time = binding.etTime.text.toString()
 
             if (date.isEmpty() || time.isEmpty()) {
-                SuperToast.show(
-                    this,
-                    SuperToast.Type.WARNING,
-                    "Missing Info",
-                    "Select both date & time"
-                )
+                SuperToast.show(this, SuperToast.Type.WARNING, "Missing Info", "Select both date & time")
                 return@setOnClickListener
             }
 
-            val selectedChip = binding.chipSlots.checkedChipId
-            if (selectedChip == -1) {
-                SuperToast.show(
-                    this,
-                    SuperToast.Type.WARNING,
-                    "Slot Required",
-                    "Please select a slot"
-                )
+            val selectedChipId = binding.chipSlots.checkedChipId
+            if (selectedChipId == -1) {
+                SuperToast.show(this, SuperToast.Type.WARNING, "Slot Required", "Please select a slot")
                 return@setOnClickListener
             }
 
-            val slotText = findViewById<Chip>(selectedChip).text.toString()
-
+            val slotText = findViewById<Chip>(selectedChipId).text.toString()
+            val slotNumber = slotText.replace("Slot ", "").toIntOrNull() ?: 1
             val userId = auth.currentUser?.uid ?: return@setOnClickListener
-            val appId = db.child("appointments").push().key!!
 
-            db.child("users").child(userId).get().addOnSuccessListener { uSnap ->
-                val userName = uSnap.child("name").value?.toString() ?: "User"
+            // Check existing bookings for token number
+            db.child("appointments").orderByChild("doctorId").equalTo(doctorId)
+                .addListenerForSingleValueEvent(object : ValueEventListener {
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        var sameDateCount = 0
+                        for (child in snapshot.children) {
+                            val dbDate = child.child("date").value?.toString() ?: ""
+                            if (dbDate == date) {
+                                sameDateCount++
+                            }
+                        }
 
-                val appointment = Appointment(
-                    appointmentId = appId,
-                    userId = userId,
-                    userName = userName,
-                    doctorId = doctorId,
-                    doctorName = doctorName,
-                    date = date,
-                    time = time,
-                    slot = slotText,
-                    status = "Pending"
-                )
-
-                val updates = hashMapOf<String, Any>(
-                    "/appointments/$appId" to appointment,
-                    "/users/$userId/myAppointments/$appId" to appointment,
-                    "/doctors/$doctorId/requests/$appId" to appointment
-                )
-
-                db.updateChildren(updates)
-                    .addOnSuccessListener {
-                        SuperToast.show(
-                            this,
-                            SuperToast.Type.SUCCESS,
-                            "Booked!",
-                            "Appointment booked successfully"
-                        )
-
-                        binding.root.animate()
-                            .alpha(0f)
-                            .setDuration(300)
-                            .withEndAction { finish() }
-                            .start()
+                        val newToken = String.format("%02d", sameDateCount + 1)
+                        saveAppointment(userId, date, time, slotText, newToken, slotNumber)
                     }
-            }
+
+                    override fun onCancelled(error: DatabaseError) {
+                        SuperToast.show(
+                            this@BookAppointmentActivity,
+                            SuperToast.Type.ERROR,
+                            "Error",
+                            error.message
+                        )
+                    }
+                })
         }
+    }
+
+    // ------------------------------------------------------------
+    private fun saveAppointment(
+        userId: String,
+        date: String,
+        time: String,
+        slot: String,
+        token: String,
+        slotNumber: Int
+    ) {
+        val appId = db.child("appointments").push().key!!
+
+        db.child("users").child(userId).get().addOnSuccessListener { uSnap ->
+            val userName = uSnap.child("name").value?.toString() ?: "User"
+
+            val appointmentMap = hashMapOf(
+                "appointmentId" to appId,
+                "userId" to userId,
+                "userName" to userName,
+                "doctorId" to doctorId,
+                "doctorName" to doctorName,
+                "date" to date,
+                "time" to time,
+                "slot" to slot,
+                "tokenNumber" to token,
+                "status" to "Pending"
+            )
+
+            val updates = hashMapOf<String, Any>(
+                "/appointments/$appId" to appointmentMap,
+                "/users/$userId/myAppointments/$appId" to appointmentMap,
+                "/doctors/$doctorId/requests/$appId" to appointmentMap
+            )
+
+            db.updateChildren(updates)
+                .addOnSuccessListener {
+                    Log.d("BookAppointment", "✅ Booking saved: $appId")
+
+                    // 🎉 Show confirmation dialog
+                    showBookingConfirmationDialog(
+                        doctorName = doctorName,
+                        date = date,
+                        time = time,
+                        slot = slotNumber,
+                        token = token,
+                        refId = appId
+                    )
+
+                }
+                .addOnFailureListener { e ->
+                    Log.e("BookAppointment", "❌ Booking failed: ${e.message}")
+                    SuperToast.show(
+                        this@BookAppointmentActivity,
+                        SuperToast.Type.ERROR,
+                        "Error",
+                        "Failed to book appointment"
+                    )
+                }
+        }
+    }
+
+    // 🎉 SHOW BOOKING CONFIRMATION DIALOG
+    private fun showBookingConfirmationDialog(
+        doctorName: String,
+        date: String,
+        time: String,
+        slot: Int,
+        token: String,
+        refId: String
+    ) {
+        // Convert date string to Date object
+        val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+        val appointmentDate = try {
+            dateFormat.parse(date)
+        } catch (e: Exception) {
+            Date()
+        }
+
+        // Create and show dialog
+        val dialog = BookingConfirmDialog.newInstance(
+            doctorName = doctorName,
+            date = appointmentDate ?: Date(),
+            time = time,
+            slot = slot,
+            tokenNumber = token,
+            refId = refId
+        )
+
+        dialog.setOnDismissListener {
+            finish()
+        }
+
+        dialog.show(supportFragmentManager, "BookingConfirmDialog")
     }
 }

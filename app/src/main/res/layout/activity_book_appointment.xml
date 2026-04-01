@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_modern_texture">
+    android:background="@drawable/bg_modern_texture"
+    android:fitsSystemWindows="true">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -25,7 +26,7 @@
                 android:text="Book Appointment"
                 android:textSize="30dp"
                 android:textStyle="bold"
-                android:textColor="#AB47BC"
+                android:textColor="@color/primary_blue"
                 android:layout_marginTop="14dp" />
 
             <!-- ⭐ DOCTOR MAIN CARD -->
@@ -54,7 +55,7 @@
                         android:scaleType="centerCrop"
                         android:src="@drawable/ic_doctor_placeholder"
                         app:shapeAppearanceOverlay="@style/RoundedImage"
-                        app:strokeColor="#80E9D4"
+                        app:strokeColor="@color/white"
                         app:strokeWidth="2dp"
                         />
 
@@ -71,7 +72,7 @@
                             android:layout_height="wrap_content"
                             android:text="Dr. Sarah Johnson"
                             android:textSize="21sp"
-                            android:textColor="#80E9D4"
+                            android:textColor="@color/white"
                             android:textStyle="bold" />
 
                         <TextView
@@ -103,7 +104,7 @@
                 android:text="About Doctor"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="#80E9D4"
+                android:textColor="@color/primary_blue"
                 android:layout_marginTop="14dp" />
 
             <TextView
@@ -123,7 +124,7 @@
                 android:text="Clinic Information"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="#80E9D4"
+                android:textColor="@color/primary_blue"
                 android:layout_marginTop="20dp" />
 
             <TextView
@@ -143,7 +144,7 @@
                 android:text="Weekly Availability"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="#80E9D4"
+                android:textColor="@color/primary_blue"
                 android:layout_marginTop="20dp" />
 
             <LinearLayout
@@ -163,7 +164,7 @@
                 android:text="Available Slots"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="#80E9D4"
+                android:textColor="@color/primary_blue"
                 android:layout_marginTop="20dp" />
 
             <com.google.android.material.chip.ChipGroup
@@ -183,7 +184,7 @@
                 android:text="Awards &amp; Achievements"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="#80E9D4"
+                android:textColor="@color/primary_blue"
                 android:layout_marginTop="20dp" />
 
             <LinearLayout
@@ -201,7 +202,7 @@
                 android:text="Select Date"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="#80E9D4"
+                android:textColor="@color/primary_blue"
                 android:layout_marginTop="26dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -235,7 +236,7 @@
                 android:text="Select Time"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="#80E9D4"
+                android:textColor="@color/primary_blue"
                 android:layout_marginTop="18dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -275,7 +276,7 @@
                 android:textSize="17sp"
                 android:padding="14dp"
                 android:textColor="@android:color/white"
-                android:backgroundTint="#80E9D4"
+                android:backgroundTint="@color/primary_blue"
                 app:cornerRadius="18dp"
                 android:layout_marginBottom="50dp"
                 android:elevation="6dp"/>

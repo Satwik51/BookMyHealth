@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context=".ui.auth.RoleSelectActivity">
+    tools:context=".ui.auth.RoleSelectActivity"
+    android:fitsSystemWindows="true">
 
     <!-- 🔹 Top Half: ViewPager Intro -->
     <androidx.viewpager2.widget.ViewPager2
@@ -39,7 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Select Your Role"
-            android:textColor="#AB47BC"
+            android:textColor="@color/primary_blue"
             android:layout_gravity="center"
             android:textSize="22sp"
             android:textStyle="bold"
@@ -131,14 +132,14 @@
             android:layout_height="70dp"
             android:layout_gravity="bottom"
             android:layout_marginBottom="5dp"
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="80dp"
             android:text="Continue"
             android:textAllCaps="false"
             android:textSize="20sp"
             android:enabled="false"
             android:textColor="@color/white"
             app:cornerRadius="20dp"
-            android:backgroundTint="#80E9D4" />
+            android:backgroundTint="@color/primary_blue" />
 
     </LinearLayout>
 

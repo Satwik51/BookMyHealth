@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F9FAFB"
-    tools:context=".ui.auth.user.UserAppointmentsActivity">
+    tools:context=".ui.auth.user.UserAppointmentsActivity"
+    android:fitsSystemWindows="true">
 
     <!-- MAIN CONTENT -->
     <LinearLayout
@@ -27,7 +28,7 @@
                 android:layout_weight="1"
                 android:layout_marginTop="10dp"
                 android:text="My Appointments"
-                android:textColor="#AB47BC"
+                android:textColor="@color/primary_blue"
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
@@ -39,7 +40,7 @@
                 android:layout_marginTop="10dp"
                 android:src="@drawable/ic_refresh"
                 android:background="@drawable/bg_round_white"
-                app:tint="#AB47BC"
+                app:tint="@color/primary_blue"
                 android:elevation="4dp" />
         </LinearLayout>
 
@@ -85,7 +86,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="No appointments booked yet"
-            android:textColor="#80E9D4"
+            android:textColor="@color/primary_blue"
             android:textStyle="bold"
             android:textSize="16sp"
             android:layout_marginTop="8dp" />
@@ -98,7 +99,7 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_gravity="center"
-        android:indeterminateTint="#FFEB3B"
+        android:indeterminateTint="@color/primary_blue"
         android:visibility="gone" />
 
 </FrameLayout>

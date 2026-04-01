@@ -24,7 +24,7 @@
         android:text="Amazing Features"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="#80E9D4"
+        android:textColor="@color/white"
         android:layout_marginBottom="12dp" />
 
     <!-- 🔹 Description -->
@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:text="Find top doctors, book appointments, and manage your health with one tap."
         android:textSize="14sp"
-        android:textColor="#F7F8F2"
+        android:textColor="@color/primary_blue"
         android:gravity="center"
         android:paddingHorizontal="12dp" />
 </LinearLayout>

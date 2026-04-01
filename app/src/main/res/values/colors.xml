@@ -1,71 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="primary_blue">#0D99FF</color>
-    <color name="background_light">#F9FAFB</color>
-    <color name="gray_200">#E5E7EB</color>
-    <color name="gray_600">#6B7280</color>
-    <color name="green_approved">#4CAF50</color>
-    <color name="green">#4CAF50</color>   <!-- for approved -->
-    <color name="red">#F44336</color>     <!-- for rejected -->
-    <color name="orange">#FF9800</color>  <!-- for pending/other -->
-    <color name="gray_500">#888888</color>
-    <color name="highlightYellow">#FFEB3B</color>
-    <color name="green_success">#4CAF50</color>
-    <color name="red_error">#F44336</color>
-    <color name="blue_primary">#1976D2</color>
-    <color name="blue_light">#42A5F5</color>
 
-    <color name="primaryBlue">#1976D2</color>
+    <!-- ── Core ───────────────────────────────────────────────────────────── -->
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="transparent">#00000000</color>
+
+    <!-- ── Brand (Indigo) ─────────────────────────────────────────────────── -->
+    <color name="colorPrimary">#3D55F0</color>
+    <color name="colorPrimaryDark">#2B40E8</color>
+    <color name="colorPrimaryContainer">#EEF2FF</color>
+    <color name="colorAccent">#6B7FF0</color>
+
+    <!-- ── Surface / Background ───────────────────────────────────────────── -->
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorBackground">#F0F4FF</color>
+    <color name="bgLight">#F5F5F5</color>
     <color name="lightBlue">#E3F2FD</color>
+    <color name="background_light">#F9FAFB</color>
+
+    <!-- ── Text ───────────────────────────────────────────────────────────── -->
+    <color name="textPrimary">#1A2460</color>
+    <color name="textSecondary">#4A5580</color>
+    <color name="textHint">#8B96B8</color>
     <color name="textDark">#212121</color>
     <color name="textGray">#757575</color>
-    <color name="bgLight">#F5F5F5</color>
-
-
-    <color name="primaryBlueDark">#1565C0</color>
-    <color name="greenAccent">#4CAF50</color>
-    <color name="greenDark">#2E7D32</color>
-
-
-    <color name="darkPrimary">#80E9D4</color>
-    <color name="darkPrimaryContainer">#1E1E1E</color>
-
-
-
-
-
-    <!-- 🔹 Primary Brand Colors -->
-
-        <color name="primaryGreen">#00C853</color>        <!-- Success green -->
-        <color name="purple">#AA00FF</color>              <!-- Accent purple -->
-
-        <!-- 🔹 Neutral / Background -->
-
-        <color name="lightGray">#E0E0E0</color>
-        <color name="gray">#757575</color>
-        <color name="darkGray">#424242</color>
-
-
-
-        <!-- 🔹 Background Gradients (for optional fancy cards) -->
-        <color name="blueGradientStart">#2196F3</color>
-        <color name="blueGradientEnd">#1976D2</color>
-
-        <color name="greenGradientStart">#00C853</color>
-        <color name="greenGradientEnd">#009624</color>
-
-        <color name="purpleGradientStart">#AA00FF</color>
-        <color name="purpleGradientEnd">#6200EA</color>
-
-    <color name="transparent">#00000000</color>
     <color name="darkPrimaryText">#1A1A1A</color>
 
-    <color name="main">#AB47BC</color>
-    <color name="text">#02C39A</color>
+    <!-- ── Tabs ───────────────────────────────────────────────────────────── -->
+    <color name="tabActiveText">#4F63E8</color>
+    <color name="tabInactiveText">#7B87B4</color>
 
+    <!-- ── Grays ──────────────────────────────────────────────────────────── -->
+    <color name="gray_200">#E5E7EB</color>
+    <color name="gray_500">#888888</color>
+    <color name="gray_600">#6B7280</color>
+    <color name="lightGray">#E0E0E0</color>
+    <color name="gray">#757575</color>
+    <color name="darkGray">#424242</color>
 
+    <!-- ── Semantic ───────────────────────────────────────────────────────── -->
+    <color name="colorSuccess">#1BAA6A</color>
+    <color name="colorWarning">#F57C00</color>
+    <color name="colorDanger">#E53935</color>
 
+    <!-- Status aliases (legacy names kept for existing code) -->
+    <color name="green">#4CAF50</color>
+    <color name="green_approved">#4CAF50</color>
+    <color name="green_success">#4CAF50</color>
+    <color name="greenAccent">#4CAF50</color>
+    <color name="greenDark">#2E7D32</color>
+    <color name="primaryGreen">#00C853</color>
+    <color name="red">#F44336</color>
+    <color name="red_error">#F44336</color>
+    <color name="orange">#FF9800</color>
+
+    <!-- ── Blues ──────────────────────────────────────────────────────────── -->
+    <color name="blue_primary">#1976D2</color>
+    <color name="blue_light">#42A5F5</color>
+    <color name="primaryBlue">#1976D2</color>
+    <color name="primaryBlueDark">#1565C0</color>
+    <color name="blueGradientStart">#2196F3</color>
+    <color name="blueGradientEnd">#1976D2</color>
+
+    <!-- ── Purples ────────────────────────────────────────────────────────── -->
+    <color name="purple_500">#6200EE</color>
+    <color name="purple">#AA00FF</color>
+    <color name="purpleGradientStart">#AA00FF</color>
+    <color name="purpleGradientEnd">#6200EA</color>
+
+    <!-- ── Greens ─────────────────────────────────────────────────────────── -->
+    <color name="greenGradientStart">#00C853</color>
+    <color name="greenGradientEnd">#009624</color>
+
+    <!-- ── Misc ───────────────────────────────────────────────────────────── -->
+    <color name="highlightYellow">#FFC107</color>
+
+    <!-- ── Legacy aliases (referenced by existing drawables and layouts) ──── -->
+    <color name="main">#6DD5ED</color>           <!-- bg_app.xml, bg_curve.xml, bg_intro_curve.xml, activity_book_appointment.xml -->
+    <color name="primary_blue">#1976D2</color>   <!-- activity_book_appointment.xml -->
+    <color name="card">#D3D3D3</color>
+    <!-- Primary Colors -->
+    <color name="primary">#667eea</color>
+    <color name="primary_dark">#5a6fd6</color>
+    <color name="primary_light">#764ba2</color>
+
+    <!-- Accent Colors -->
+    <color name="accent_green">#00d4aa</color>
+    <color name="accent_orange">#ff9500</color>
+    <color name="accent_red">#ff4757</color>
+
+    <!-- Background & Surface -->
+    <color name="background">#f8fafc</color>
+    <color name="surface">#ffffff</color>
+    <color name="card_bg">#ffffff</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#1a1a2e</color>
+    <color name="text_secondary">#64748b</color>
+    <color name="text_hint">#94a3b8</color>
+
+    <!-- UI Elements -->
+    <color name="border_gray">#e2e8f0</color>
+    <color name="progress_bg">#e2e8f0</color>
+    <color name="light_gray">#f1f5f9</color>
+    <color name="drag_handle">#cbd5e1</color>
+
+    <!-- Status Colors -->
+    <color name="success">#00d4aa</color>
+    <color name="warning">#ff9500</color>
+    <color name="error">#ff4757</color>
+    <color name="warning_bg">#fff7ed</color>
+
+    <!-- Severity Colors -->
+    <color name="severity_low">#00d4aa</color>
+    <color name="severity_medium">#ff9500</color>
+    <color name="severity_high">#ff4757</color>
+
+    <!-- Glass Effect -->
+    <color name="glass_white">#E6FFFFFF</color>
+    <color name="glass_dark">#40000000</color>
+
+    <!-- Chip Colors -->
+    <color name="chip_selected">@color/primary</color>
+    <color name="chip_unselected">@color/light_gray</color>
 
 </resources>

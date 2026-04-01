@@ -1,0 +1,1163 @@
+[
+  {
+    "name": "Flu",
+    "symptoms": ["Fever", "Cough", "Fatigue", "Headache", "Body Ache"]
+  },
+  {
+    "name": "COVID-19",
+    "symptoms": ["Fever", "Cough", "Loss of Smell", "Breathing Issue", "Fatigue"]
+  },
+  {
+    "name": "Common Cold",
+    "symptoms": ["Sneezing", "Runny Nose", "Cough", "Sore Throat"]
+  },
+  {
+    "name": "Malaria",
+    "symptoms": ["Fever", "Chills", "Sweating", "Headache"]
+  },
+  {
+    "name": "Dengue",
+    "symptoms": ["Fever", "Joint Pain", "Headache", "Rash", "Muscle Pain"]
+  },
+  {
+    "name": "Typhoid",
+    "symptoms": ["Fever", "Weakness", "Stomach Pain", "Loss of Appetite"]
+  },
+  {
+    "name": "Pneumonia",
+    "symptoms": ["Fever", "Cough", "Chest Pain", "Breathing Issue"]
+  },
+  {
+    "name": "Tuberculosis",
+    "symptoms": ["Cough", "Weight Loss", "Night Sweats", "Fever"]
+  },
+  {
+    "name": "Asthma",
+    "symptoms": ["Cough", "Breathing Issue", "Chest Tightness"]
+  },
+  {
+    "name": "Bronchitis",
+    "symptoms": ["Cough", "Fatigue", "Chest Discomfort"]
+  },
+
+  {
+    "name": "Migraine",
+    "symptoms": ["Headache", "Nausea", "Light Sensitivity"]
+  },
+  {
+    "name": "Brain Tumor",
+    "symptoms": ["Headache", "Vomiting", "Vision Problem"]
+  },
+  {
+    "name": "Epilepsy",
+    "symptoms": ["Seizures", "Confusion", "Loss of Consciousness"]
+  },
+
+  {
+    "name": "Heart Attack",
+    "symptoms": ["Chest Pain", "Sweating", "Shortness of Breath", "Arm Pain"]
+  },
+  {
+    "name": "Hypertension",
+    "symptoms": ["Headache", "Dizziness", "Blurred Vision"]
+  },
+  {
+    "name": "Arrhythmia",
+    "symptoms": ["Irregular Heartbeat", "Fatigue", "Dizziness"]
+  },
+
+  {
+    "name": "Diabetes",
+    "symptoms": ["Frequent Urination", "Increased Thirst", "Fatigue", "Blurred Vision"]
+  },
+  {
+    "name": "Hypothyroidism",
+    "symptoms": ["Fatigue", "Weight Gain", "Cold Sensitivity"]
+  },
+  {
+    "name": "Hyperthyroidism",
+    "symptoms": ["Weight Loss", "Anxiety", "Sweating"]
+  },
+
+  {
+    "name": "Skin Allergy",
+    "symptoms": ["Rash", "Itching", "Redness"]
+  },
+  {
+    "name": "Eczema",
+    "symptoms": ["Dry Skin", "Itching", "Cracks"]
+  },
+  {
+    "name": "Psoriasis",
+    "symptoms": ["Red Patches", "Skin Scaling", "Itching"]
+  },
+
+  {
+    "name": "Gastritis",
+    "symptoms": ["Stomach Pain", "Nausea", "Bloating"]
+  },
+  {
+    "name": "Food Poisoning",
+    "symptoms": ["Vomiting", "Diarrhea", "Fever", "Abdominal Pain"]
+  },
+  {
+    "name": "Appendicitis",
+    "symptoms": ["Abdominal Pain", "Fever", "Nausea"]
+  },
+
+  {
+    "name": "Kidney Stone",
+    "symptoms": ["Back Pain", "Blood in Urine", "Nausea"]
+  },
+  {
+    "name": "UTI",
+    "symptoms": ["Burning Urination", "Frequent Urination", "Lower Abdominal Pain"]
+  },
+
+  {
+    "name": "Depression",
+    "symptoms": ["Sadness", "Fatigue", "Loss of Interest", "Sleep Issues"]
+  },
+  {
+    "name": "Anxiety",
+    "symptoms": ["Restlessness", "Sweating", "Fear", "Rapid Heartbeat"]
+  },
+
+  {
+    "name": "Arthritis",
+    "symptoms": ["Joint Pain", "Swelling", "Stiffness"]
+  },
+  {
+    "name": "Osteoporosis",
+    "symptoms": ["Bone Pain", "Weak Bones", "Fractures"]
+  },
+
+  {
+    "name": "Eye Infection",
+    "symptoms": ["Red Eyes", "Discharge", "Itching"]
+  },
+  {
+    "name": "Conjunctivitis",
+    "symptoms": ["Red Eyes", "Tearing", "Itching"]
+  },
+
+  {
+    "name": "Ear Infection",
+    "symptoms": ["Ear Pain", "Hearing Loss", "Fever"]
+  },
+  {
+    "name": "Sinusitis",
+    "symptoms": ["Headache", "Nasal Congestion", "Facial Pain"]
+  },
+
+  {
+    "name": "Allergic Rhinitis",
+    "symptoms": ["Sneezing", "Runny Nose", "Itchy Eyes"]
+  },
+  {
+    "name": "Laryngitis",
+    "symptoms": ["Hoarseness", "Sore Throat", "Dry Cough"]
+  },
+
+  {
+    "name": "Chickenpox",
+    "symptoms": ["Rash", "Fever", "Itching"]
+  },
+  {
+    "name": "Measles",
+    "symptoms": ["Rash", "Fever", "Cough", "Runny Nose"]
+  },
+  {
+    "name": "Hepatitis",
+    "symptoms": ["Fatigue", "Jaundice", "Abdominal Pain"]
+  },
+
+  {
+    "name": "Anemia",
+    "symptoms": ["Fatigue", "Pale Skin", "Shortness of Breath"]
+  },
+  {
+    "name": "Vitamin D Deficiency",
+    "symptoms": ["Bone Pain", "Fatigue", "Muscle Weakness"]
+  }
+
+,
+  {
+    "name": "Cholera",
+    "symptoms": ["Diarrhea", "Dehydration", "Vomiting"]
+  },
+  {
+    "name": "Rabies",
+    "symptoms": ["Fever", "Fear of Water", "Aggression"]
+  },
+  {
+    "name": "Leprosy",
+    "symptoms": ["Skin Lesions", "Numbness", "Weak Muscles"]
+  },
+  {
+    "name": "Mumps",
+    "symptoms": ["Swollen Glands", "Fever", "Headache"]
+  },
+  {
+    "name": "Rubella",
+    "symptoms": ["Rash", "Fever", "Swollen Lymph Nodes"]
+  },
+  {
+    "name": "Polio",
+    "symptoms": ["Weakness", "Paralysis", "Fever"]
+  },
+  {
+    "name": "Whooping Cough",
+    "symptoms": ["Severe Cough", "Runny Nose", "Fever"]
+  },
+  {
+    "name": "Tetanus",
+    "symptoms": ["Muscle Stiffness", "Jaw Lock", "Spasms"]
+  },
+  {
+    "name": "Sepsis",
+    "symptoms": ["Fever", "Rapid Heartbeat", "Confusion"]
+  },
+
+  {
+    "name": "GERD",
+    "symptoms": ["Heartburn", "Chest Pain", "Acid Reflux"]
+  },
+  {
+    "name": "Peptic Ulcer",
+    "symptoms": ["Stomach Pain", "Bloating", "Nausea"]
+  },
+  {
+    "name": "IBS",
+    "symptoms": ["Abdominal Pain", "Diarrhea", "Constipation"]
+  },
+
+  {
+    "name": "Liver Cirrhosis",
+    "symptoms": ["Fatigue", "Jaundice", "Swelling"]
+  },
+  {
+    "name": "Fatty Liver",
+    "symptoms": ["Fatigue", "Abdominal Pain"]
+  },
+
+  {
+    "name": "Parkinson's Disease",
+    "symptoms": ["Tremors", "Slow Movement", "Balance Issues"]
+  },
+  {
+    "name": "Alzheimer's",
+    "symptoms": ["Memory Loss", "Confusion", "Behavior Changes"]
+  },
+
+  {
+    "name": "Stroke",
+    "symptoms": ["Weakness", "Speech Difficulty", "Face Drooping"]
+  },
+
+  {
+    "name": "Sleep Apnea",
+    "symptoms": ["Snoring", "Breathing Stops", "Fatigue"]
+  },
+
+  {
+    "name": "Gout",
+    "symptoms": ["Joint Pain", "Swelling", "Redness"]
+  },
+  {
+    "name": "Fibromyalgia",
+    "symptoms": ["Muscle Pain", "Fatigue", "Sleep Issues"]
+  },
+
+  {
+    "name": "Cataract",
+    "symptoms": ["Blurred Vision", "Light Sensitivity"]
+  },
+  {
+    "name": "Glaucoma",
+    "symptoms": ["Eye Pain", "Vision Loss"]
+  },
+
+  {
+    "name": "Otitis Media",
+    "symptoms": ["Ear Pain", "Fever", "Hearing Loss"]
+  },
+
+  {
+    "name": "Nasal Polyps",
+    "symptoms": ["Blocked Nose", "Loss of Smell"]
+  },
+
+  {
+    "name": "Chronic Kidney Disease",
+    "symptoms": ["Fatigue", "Swelling", "Frequent Urination"]
+  },
+  {
+    "name": "Nephritis",
+    "symptoms": ["Blood in Urine", "Swelling", "Fatigue"]
+  },
+
+  {
+    "name": "PCOS",
+    "symptoms": ["Irregular Periods", "Weight Gain", "Acne"]
+  },
+  {
+    "name": "Endometriosis",
+    "symptoms": ["Pelvic Pain", "Heavy Periods"]
+  },
+
+  {
+    "name": "Breast Cancer",
+    "symptoms": ["Breast Lump", "Pain", "Skin Changes"]
+  },
+  {
+    "name": "Lung Cancer",
+    "symptoms": ["Cough", "Chest Pain", "Weight Loss"]
+  },
+  {
+    "name": "Colon Cancer",
+    "symptoms": ["Blood in Stool", "Weight Loss", "Fatigue"]
+  },
+
+  {
+    "name": "Leukemia",
+    "symptoms": ["Fatigue", "Frequent Infections", "Bleeding"]
+  },
+
+  {
+    "name": "HIV/AIDS",
+    "symptoms": ["Weight Loss", "Fever", "Fatigue"]
+  },
+
+  {
+    "name": "Ebola",
+    "symptoms": ["Fever", "Bleeding", "Weakness"]
+  },
+
+  {
+    "name": "Zika Virus",
+    "symptoms": ["Rash", "Fever", "Joint Pain"]
+  },
+
+  {
+    "name": "Heat Stroke",
+    "symptoms": ["High Temperature", "Confusion", "Dizziness"]
+  },
+
+  {
+    "name": "Hypothermia",
+    "symptoms": ["Shivering", "Confusion", "Fatigue"]
+  },
+
+  {
+    "name": "Allergic Reaction",
+    "symptoms": ["Swelling", "Itching", "Breathing Issue"]
+  },
+
+  {
+    "name": "Food Allergy",
+    "symptoms": ["Vomiting", "Rash", "Swelling"]
+  },
+
+  {
+    "name": "Motion Sickness",
+    "symptoms": ["Nausea", "Dizziness", "Vomiting"]
+  },
+
+  {
+    "name": "Vertigo",
+    "symptoms": ["Dizziness", "Balance Issues"]
+  },
+
+  {
+    "name": "Dehydration",
+    "symptoms": ["Dry Mouth", "Fatigue", "Dizziness"]
+  }
+
+,
+  {
+    "name": "Scarlet Fever",
+    "symptoms": ["Fever", "Rash", "Sore Throat"]
+  },
+  {
+    "name": "Mononucleosis",
+    "symptoms": ["Fatigue", "Fever", "Swollen Lymph Nodes"]
+  },
+  {
+    "name": "Lyme Disease",
+    "symptoms": ["Rash", "Fever", "Joint Pain"]
+  },
+  {
+    "name": "Yellow Fever",
+    "symptoms": ["Fever", "Jaundice", "Muscle Pain"]
+  },
+  {
+    "name": "Typhus",
+    "symptoms": ["Fever", "Rash", "Headache"]
+  },
+
+  {
+    "name": "H1N1 Influenza",
+    "symptoms": ["Fever", "Cough", "Body Ache"]
+  },
+  {
+    "name": "Avian Flu",
+    "symptoms": ["Fever", "Cough", "Breathing Issue"]
+  },
+
+  {
+    "name": "Celiac Disease",
+    "symptoms": ["Diarrhea", "Weight Loss", "Abdominal Pain"]
+  },
+  {
+    "name": "Crohn's Disease",
+    "symptoms": ["Abdominal Pain", "Diarrhea", "Fatigue"]
+  },
+  {
+    "name": "Ulcerative Colitis",
+    "symptoms": ["Diarrhea", "Blood in Stool", "Abdominal Pain"]
+  },
+
+  {
+    "name": "Pancreatitis",
+    "symptoms": ["Abdominal Pain", "Nausea", "Vomiting"]
+  },
+  {
+    "name": "Gallstones",
+    "symptoms": ["Abdominal Pain", "Nausea", "Indigestion"]
+  },
+
+  {
+    "name": "Multiple Sclerosis",
+    "symptoms": ["Fatigue", "Numbness", "Vision Problems"]
+  },
+  {
+    "name": "Amyotrophic Lateral Sclerosis",
+    "symptoms": ["Muscle Weakness", "Speech Difficulty"]
+  },
+
+  {
+    "name": "Peripheral Neuropathy",
+    "symptoms": ["Numbness", "Tingling", "Pain"]
+  },
+
+  {
+    "name": "Atherosclerosis",
+    "symptoms": ["Chest Pain", "Fatigue"]
+  },
+
+  {
+    "name": "Varicose Veins",
+    "symptoms": ["Leg Pain", "Swelling"]
+  },
+
+  {
+    "name": "Chronic Fatigue Syndrome",
+    "symptoms": ["Fatigue", "Sleep Issues", "Joint Pain"]
+  },
+
+  {
+    "name": "Systemic Lupus Erythematosus",
+    "symptoms": ["Fatigue", "Joint Pain", "Rash"]
+  },
+
+  {
+    "name": "Scleroderma",
+    "symptoms": ["Skin Tightness", "Joint Pain"]
+  },
+
+  {
+    "name": "Sjogren's Syndrome",
+    "symptoms": ["Dry Eyes", "Dry Mouth"]
+  },
+
+  {
+    "name": "Rosacea",
+    "symptoms": ["Redness", "Facial Swelling"]
+  },
+
+  {
+    "name": "Melanoma",
+    "symptoms": ["Skin Changes", "New Mole"]
+  },
+
+  {
+    "name": "Basal Cell Carcinoma",
+    "symptoms": ["Skin Lesions", "Bleeding"]
+  },
+
+  {
+    "name": "Squamous Cell Carcinoma",
+    "symptoms": ["Skin Ulcer", "Red Patch"]
+  },
+
+  {
+    "name": "Testicular Cancer",
+    "symptoms": ["Testicular Lump", "Pain"]
+  },
+
+  {
+    "name": "Prostate Cancer",
+    "symptoms": ["Frequent Urination", "Weak Urine Flow"]
+  },
+
+  {
+    "name": "Ovarian Cancer",
+    "symptoms": ["Abdominal Pain", "Bloating"]
+  },
+
+  {
+    "name": "Cervical Cancer",
+    "symptoms": ["Pelvic Pain", "Abnormal Bleeding"]
+  },
+
+  {
+    "name": "Throat Cancer",
+    "symptoms": ["Sore Throat", "Difficulty Swallowing"]
+  },
+
+  {
+    "name": "Skin Infection",
+    "symptoms": ["Redness", "Pain", "Swelling"]
+  },
+
+  {
+    "name": "Cellulitis",
+    "symptoms": ["Red Skin", "Swelling", "Pain"]
+  },
+
+  {
+    "name": "Impetigo",
+    "symptoms": ["Blisters", "Rash"]
+  },
+
+  {
+    "name": "Scabies",
+    "symptoms": ["Itching", "Rash"]
+  },
+
+  {
+    "name": "Ringworm",
+    "symptoms": ["Rash", "Itching"]
+  },
+
+  {
+    "name": "Athlete's Foot",
+    "symptoms": ["Itching", "Burning", "Cracks"]
+  },
+
+  {
+    "name": "Oral Thrush",
+    "symptoms": ["White Patches", "Pain"]
+  },
+
+  {
+    "name": "Gingivitis",
+    "symptoms": ["Bleeding Gums", "Swelling"]
+  },
+
+  {
+    "name": "Periodontitis",
+    "symptoms": ["Gum Pain", "Loose Teeth"]
+  },
+
+  {
+    "name": "Tooth Abscess",
+    "symptoms": ["Tooth Pain", "Swelling"]
+  },
+
+  {
+    "name": "Hearing Loss",
+    "symptoms": ["Difficulty Hearing", "Ear Ringing"]
+  },
+
+  {
+    "name": "Tinnitus",
+    "symptoms": ["Ringing in Ears", "Hearing Issues"]
+  },
+
+  {
+    "name": "Vertigo Disorder",
+    "symptoms": ["Dizziness", "Spinning Sensation"]
+  },
+
+  {
+    "name": "Deafness",
+    "symptoms": ["Hearing Loss", "Speech Issues"]
+  }
+
+,
+  {
+    "name": "Plague",
+    "symptoms": ["Fever", "Chills", "Swollen Lymph Nodes"]
+  },
+  {
+    "name": "Diphtheria",
+    "symptoms": ["Sore Throat", "Fever", "Breathing Issue"]
+  },
+  {
+    "name": "Hantavirus",
+    "symptoms": ["Fever", "Muscle Pain", "Breathing Issue"]
+  },
+  {
+    "name": "Marburg Virus",
+    "symptoms": ["Fever", "Bleeding", "Weakness"]
+  },
+  {
+    "name": "West Nile Virus",
+    "symptoms": ["Fever", "Headache", "Fatigue"]
+  },
+
+  {
+    "name": "Rheumatoid Arthritis",
+    "symptoms": ["Joint Pain", "Swelling", "Stiffness"]
+  },
+  {
+    "name": "Bursitis",
+    "symptoms": ["Joint Pain", "Swelling"]
+  },
+  {
+    "name": "Tendonitis",
+    "symptoms": ["Pain", "Swelling", "Limited Movement"]
+  },
+
+  {
+    "name": "Sciatica",
+    "symptoms": ["Back Pain", "Leg Pain", "Numbness"]
+  },
+  {
+    "name": "Herniated Disc",
+    "symptoms": ["Back Pain", "Numbness", "Weakness"]
+  },
+
+  {
+    "name": "Chronic Bronchitis",
+    "symptoms": ["Cough", "Mucus", "Fatigue"]
+  },
+  {
+    "name": "Emphysema",
+    "symptoms": ["Shortness of Breath", "Fatigue"]
+  },
+
+  {
+    "name": "Pulmonary Embolism",
+    "symptoms": ["Chest Pain", "Breathing Issue", "Cough"]
+  },
+  {
+    "name": "Pulmonary Hypertension",
+    "symptoms": ["Fatigue", "Shortness of Breath"]
+  },
+
+  {
+    "name": "Coronary Artery Disease",
+    "symptoms": ["Chest Pain", "Shortness of Breath"]
+  },
+  {
+    "name": "Heart Failure",
+    "symptoms": ["Fatigue", "Swelling", "Shortness of Breath"]
+  },
+
+  {
+    "name": "Mitral Valve Prolapse",
+    "symptoms": ["Chest Pain", "Fatigue"]
+  },
+
+  {
+    "name": "Iron Deficiency",
+    "symptoms": ["Fatigue", "Weakness", "Pale Skin"]
+  },
+
+  {
+    "name": "Leukopenia",
+    "symptoms": ["Frequent Infections", "Weakness"]
+  },
+
+  {
+    "name": "Thalassemia",
+    "symptoms": ["Fatigue", "Pale Skin", "Weakness"]
+  },
+
+  {
+    "name": "Sickle Cell Disease",
+    "symptoms": ["Pain", "Fatigue", "Swelling"]
+  },
+
+  {
+    "name": "Obesity",
+    "symptoms": ["Weight Gain", "Fatigue"]
+  },
+
+  {
+    "name": "Metabolic Syndrome",
+    "symptoms": ["Weight Gain", "High Blood Pressure"]
+  },
+
+  {
+    "name": "Insomnia",
+    "symptoms": ["Sleep Issues", "Fatigue"]
+  },
+
+  {
+    "name": "Narcolepsy",
+    "symptoms": ["Sleep Attacks", "Fatigue"]
+  },
+
+  {
+    "name": "Restless Leg Syndrome",
+    "symptoms": ["Leg Discomfort", "Sleep Issues"]
+  },
+
+  {
+    "name": "Attention Deficit Disorder",
+    "symptoms": ["Inattention", "Hyperactivity"]
+  },
+
+  {
+    "name": "Bipolar Disorder",
+    "symptoms": ["Mood Swings", "Energy Changes"]
+  },
+
+  {
+    "name": "Schizophrenia",
+    "symptoms": ["Hallucinations", "Delusions"]
+  },
+
+  {
+    "name": "Obsessive Compulsive Disorder",
+    "symptoms": ["Obsessions", "Compulsions"]
+  },
+
+  {
+    "name": "Post Traumatic Stress Disorder",
+    "symptoms": ["Flashbacks", "Anxiety", "Sleep Issues"]
+  },
+
+  {
+    "name": "Panic Disorder",
+    "symptoms": ["Panic Attacks", "Fear", "Sweating"]
+  },
+
+  {
+    "name": "Hyperlipidemia",
+    "symptoms": ["Chest Pain", "Fatigue"]
+  },
+
+  {
+    "name": "Hypoglycemia",
+    "symptoms": ["Dizziness", "Sweating", "Weakness"]
+  },
+
+  {
+    "name": "Hyperglycemia",
+    "symptoms": ["Frequent Urination", "Fatigue"]
+  },
+
+  {
+    "name": "Addison's Disease",
+    "symptoms": ["Fatigue", "Weight Loss"]
+  },
+
+  {
+    "name": "Cushing's Syndrome",
+    "symptoms": ["Weight Gain", "Fatigue"]
+  },
+
+  {
+    "name": "Goiter",
+    "symptoms": ["Neck Swelling", "Breathing Difficulty"]
+  },
+
+  {
+    "name": "Acne",
+    "symptoms": ["Pimples", "Redness"]
+  },
+
+  {
+    "name": "Boils",
+    "symptoms": ["Painful Lump", "Redness"]
+  },
+
+  {
+    "name": "Cold Sores",
+    "symptoms": ["Blisters", "Pain"]
+  },
+
+  {
+    "name": "Warts",
+    "symptoms": ["Skin Growth", "Rough Texture"]
+  },
+
+  {
+    "name": "Herpes",
+    "symptoms": ["Blisters", "Pain", "Itching"]
+  },
+
+  {
+    "name": "Molluscum Contagiosum",
+    "symptoms": ["Skin Bumps", "Itching"]
+  },
+
+  {
+    "name": "Sunburn",
+    "symptoms": ["Red Skin", "Pain"]
+  },
+
+  {
+    "name": "Heat Rash",
+    "symptoms": ["Rash", "Itching"]
+  },
+
+  {
+    "name": "Frostbite",
+    "symptoms": ["Numbness", "Skin Discoloration"]
+  },
+
+  {
+    "name": "Motion Disorder",
+    "symptoms": ["Dizziness", "Balance Issues"]
+  }
+
+,
+  {
+    "name": "Rickets",
+    "symptoms": ["Bone Pain", "Weak Bones", "Growth Issues"]
+  },
+  {
+    "name": "Osteomalacia",
+    "symptoms": ["Bone Pain", "Muscle Weakness"]
+  },
+  {
+    "name": "Paget's Disease",
+    "symptoms": ["Bone Pain", "Bone Deformity"]
+  },
+
+  {
+    "name": "Spinal Stenosis",
+    "symptoms": ["Back Pain", "Numbness", "Weakness"]
+  },
+  {
+    "name": "Kyphosis",
+    "symptoms": ["Back Pain", "Posture Issues"]
+  },
+  {
+    "name": "Scoliosis",
+    "symptoms": ["Back Pain", "Uneven Shoulders"]
+  },
+
+  {
+    "name": "COPD",
+    "symptoms": ["Cough", "Shortness of Breath", "Fatigue"]
+  },
+  {
+    "name": "Pleural Effusion",
+    "symptoms": ["Chest Pain", "Breathing Issue"]
+  },
+  {
+    "name": "Lung Fibrosis",
+    "symptoms": ["Dry Cough", "Shortness of Breath"]
+  },
+
+  {
+    "name": "Angina",
+    "symptoms": ["Chest Pain", "Fatigue"]
+  },
+  {
+    "name": "Myocarditis",
+    "symptoms": ["Chest Pain", "Fatigue", "Breathing Issue"]
+  },
+  {
+    "name": "Pericarditis",
+    "symptoms": ["Chest Pain", "Fever"]
+  },
+
+  {
+    "name": "Deep Vein Thrombosis",
+    "symptoms": ["Leg Swelling", "Pain", "Redness"]
+  },
+  {
+    "name": "Varicocele",
+    "symptoms": ["Testicular Pain", "Swelling"]
+  },
+
+  {
+    "name": "Cirrhosis",
+    "symptoms": ["Fatigue", "Swelling", "Jaundice"]
+  },
+  {
+    "name": "Hepatic Encephalopathy",
+    "symptoms": ["Confusion", "Fatigue"]
+  },
+
+  {
+    "name": "Pancreatic Cancer",
+    "symptoms": ["Abdominal Pain", "Weight Loss", "Jaundice"]
+  },
+
+  {
+    "name": "Esophageal Cancer",
+    "symptoms": ["Difficulty Swallowing", "Weight Loss"]
+  },
+
+  {
+    "name": "Bladder Cancer",
+    "symptoms": ["Blood in Urine", "Painful Urination"]
+  },
+
+  {
+    "name": "Kidney Cancer",
+    "symptoms": ["Blood in Urine", "Back Pain"]
+  },
+
+  {
+    "name": "Lymphoma",
+    "symptoms": ["Swollen Lymph Nodes", "Fever", "Weight Loss"]
+  },
+
+  {
+    "name": "Sarcoma",
+    "symptoms": ["Lump", "Pain"]
+  },
+
+  {
+    "name": "Autoimmune Disease",
+    "symptoms": ["Fatigue", "Joint Pain", "Fever"]
+  },
+
+  {
+    "name": "Vasculitis",
+    "symptoms": ["Fatigue", "Rash", "Fever"]
+  },
+
+  {
+    "name": "Raynaud's Disease",
+    "symptoms": ["Cold Fingers", "Color Change"]
+  },
+
+  {
+    "name": "Chronic Sinusitis",
+    "symptoms": ["Headache", "Nasal Congestion", "Facial Pain"]
+  },
+
+  {
+    "name": "Nasal Infection",
+    "symptoms": ["Runny Nose", "Congestion", "Pain"]
+  },
+
+  {
+    "name": "Tonsillitis",
+    "symptoms": ["Sore Throat", "Fever", "Difficulty Swallowing"]
+  },
+
+  {
+    "name": "Pharyngitis",
+    "symptoms": ["Sore Throat", "Fever"]
+  },
+
+  {
+    "name": "Oral Cancer",
+    "symptoms": ["Mouth Sores", "Pain", "Bleeding"]
+  },
+
+  {
+    "name": "Halitosis",
+    "symptoms": ["Bad Breath"]
+  },
+
+  {
+    "name": "Dry Eye Syndrome",
+    "symptoms": ["Dry Eyes", "Irritation"]
+  },
+
+  {
+    "name": "Macular Degeneration",
+    "symptoms": ["Vision Loss", "Blurred Vision"]
+  },
+
+  {
+    "name": "Retinal Detachment",
+    "symptoms": ["Vision Loss", "Flashes"]
+  },
+
+  {
+    "name": "Earwax Blockage",
+    "symptoms": ["Hearing Loss", "Ear Pain"]
+  },
+
+  {
+    "name": "Labyrinthitis",
+    "symptoms": ["Dizziness", "Hearing Loss"]
+  },
+
+  {
+    "name": "Meniere's Disease",
+    "symptoms": ["Vertigo", "Hearing Loss", "Tinnitus"]
+  },
+
+  {
+    "name": "Chronic Fatigue",
+    "symptoms": ["Fatigue", "Weakness"]
+  },
+
+  {
+    "name": "Jet Lag",
+    "symptoms": ["Sleep Issues", "Fatigue"]
+  },
+
+  {
+    "name": "Altitude Sickness",
+    "symptoms": ["Headache", "Nausea", "Dizziness"]
+  },
+
+  {
+    "name": "Radiation Sickness",
+    "symptoms": ["Nausea", "Fatigue", "Vomiting"]
+  },
+
+  {
+    "name": "Poisoning",
+    "symptoms": ["Vomiting", "Confusion", "Dizziness"]
+  },
+
+  {
+    "name": "Drug Overdose",
+    "symptoms": ["Confusion", "Breathing Issue"]
+  },
+
+  {
+    "name": "Alcohol Poisoning",
+    "symptoms": ["Confusion", "Vomiting", "Slow Breathing"]
+  }
+
+,
+  {
+    "name": "Allergic Rhinitis",
+    "symptoms": ["Sneezing", "Runny Nose", "Nasal Congestion", "Itchy Eyes"]
+  },
+  {
+    "name": "Seasonal Allergy (Hay Fever)",
+    "symptoms": ["Sneezing", "Runny Nose", "Watery Eyes", "Itching"]
+  },
+  {
+    "name": "Dust Allergy",
+    "symptoms": ["Sneezing", "Cough", "Runny Nose", "Itching"]
+  },
+  {
+    "name": "Pollen Allergy",
+    "symptoms": ["Sneezing", "Runny Nose", "Watery Eyes"]
+  },
+  {
+    "name": "Pet Allergy",
+    "symptoms": ["Sneezing", "Cough", "Itchy Skin", "Runny Nose"]
+  },
+  {
+    "name": "Food Allergy",
+    "symptoms": ["Vomiting", "Rash", "Swelling", "Itching"]
+  },
+  {
+    "name": "Milk Allergy",
+    "symptoms": ["Diarrhea", "Vomiting", "Rash"]
+  },
+  {
+    "name": "Peanut Allergy",
+    "symptoms": ["Swelling", "Itching", "Breathing Issue"]
+  },
+  {
+    "name": "Shellfish Allergy",
+    "symptoms": ["Swelling", "Vomiting", "Rash"]
+  },
+  {
+    "name": "Drug Allergy",
+    "symptoms": ["Rash", "Swelling", "Fever"]
+  },
+  {
+    "name": "Latex Allergy",
+    "symptoms": ["Rash", "Itching", "Redness"]
+  },
+  {
+    "name": "Mold Allergy",
+    "symptoms": ["Sneezing", "Cough", "Runny Nose"]
+  },
+  {
+    "name": "Insect Sting Allergy",
+    "symptoms": ["Swelling", "Pain", "Redness"]
+  },
+  {
+    "name": "Eye Allergy",
+    "symptoms": ["Red Eyes", "Itching", "Watery Eyes"]
+  },
+  {
+    "name": "Skin Allergy",
+    "symptoms": ["Rash", "Itching", "Redness", "Swelling"]
+  },
+  {
+    "name": "Contact Dermatitis",
+    "symptoms": ["Rash", "Itching", "Blisters"]
+  },
+  {
+    "name": "Sun Allergy",
+    "symptoms": ["Rash", "Itching", "Redness"]
+  },
+  {
+    "name": "Cold Allergy",
+    "symptoms": ["Rash", "Itching", "Swelling"]
+  },
+  {
+    "name": "Heat Allergy",
+    "symptoms": ["Rash", "Itching", "Sweating"]
+  },
+  {
+    "name": "Perfume Allergy",
+    "symptoms": ["Headache", "Sneezing", "Skin Irritation"]
+  },
+
+  {
+    "name": "Asthma (General)",
+    "symptoms": ["Cough", "Breathing Issue", "Chest Tightness", "Wheezing"]
+  },
+  {
+    "name": "Allergic Asthma",
+    "symptoms": ["Cough", "Wheezing", "Breathing Issue", "Sneezing"]
+  },
+  {
+    "name": "Non-Allergic Asthma",
+    "symptoms": ["Cough", "Breathing Issue", "Chest Tightness"]
+  },
+  {
+    "name": "Exercise-Induced Asthma",
+    "symptoms": ["Shortness of Breath", "Cough", "Chest Tightness"]
+  },
+  {
+    "name": "Occupational Asthma",
+    "symptoms": ["Cough", "Wheezing", "Breathing Issue"]
+  },
+  {
+    "name": "Nocturnal Asthma",
+    "symptoms": ["Night Cough", "Wheezing", "Breathing Issue"]
+  },
+  {
+    "name": "Childhood Asthma",
+    "symptoms": ["Cough", "Wheezing", "Breathing Difficulty"]
+  },
+  {
+    "name": "Severe Asthma",
+    "symptoms": ["Severe Breathlessness", "Chest Tightness", "Wheezing"]
+  },
+  {
+    "name": "Cough Variant Asthma",
+    "symptoms": ["Persistent Cough", "No Wheezing"]
+  },
+  {
+    "name": "Seasonal Asthma",
+    "symptoms": ["Cough", "Breathing Issue", "Sneezing"]
+  },
+  {
+    "name": "Acute Asthma Attack",
+    "symptoms": ["Severe Breathing Issue", "Chest Tightness", "Wheezing"]
+  },
+  {
+    "name": "Chronic Asthma",
+    "symptoms": ["Persistent Cough", "Wheezing", "Breathing Issue"]
+  }
+
+]
+
