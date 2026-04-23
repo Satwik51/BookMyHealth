@@ -628,27 +628,27 @@ Update the Web Client ID in `app/src/main/res/values/strings.xml`:
 ### 🚀 Onboarding & Authentication
 | Role Selection | Login | Signup |
 |:---:|:---:|:---:|
-| ![Role Select](Screenshots/Role_Select.png) | ![Login](INSERT_LINK_HERE/1000101348.png) | ![Signup](INSERT_LINK_HERE/Screenshot_20260423_173330.png) |
+| <img src="Screenshots/Role_Select.png" width="200"> | <img src="Screenshots/Login.png" width="200"> | <img src="Screenshots/Signup.png" width="200"> |
 
 ### 👤 User Dashboard & Booking
 | Dashboard | Doctor List | Filtering | Booking Confirmed |
 |:---:|:---:|:---:|:---:|
-| ![Dashboard](INSERT_LINK_HERE/Screenshot_20260423_173909.jpg) | ![Doctors](INSERT_LINK_HERE/Screenshot_20260423_174139.png) | ![Filter](INSERT_LINK_HERE/Screenshot_20260423_174330.png) | ![Confirmed](INSERT_LINK_HERE/Screenshot_20260423_173946.png) |
+| <img src="Screenshots/Dashboard.png" width="200"> | <img src="Screenshots/Doctors.png" width="200"> | <img src="Screenshots/Filter.png" width="200"> | <img src="Screenshots/Confirmed.png" width="200"> |
 
 ### 🤖 AI-Powered Health Features
 | Symptom Analyzer | Analysis Results | Drug Information | Detailed Drug Info |
 |:---:|:---:|:---:|:---:|
-| ![Analyzer](INSERT_LINK_HERE/Screenshot_20260423_174744.png) | ![Results](INSERT_LINK_HERE/Screenshot_20260423_174937.png) | ![Drug Info](INSERT_LINK_HERE/Screenshot_20260423_174656.jpg) | ![Drug Details](INSERT_LINK_HERE/Screenshot_20260423_174727.jpg) |
+| <img src="Screenshots/Analyzer.png" width="200"> | <img src="Screenshots/Results.png" width="200"> | <img src="Screenshots/Drug_Info.png" width="200"> | <img src="Screenshots/Detailed_Drug_Info.png" width="200"> |
 
 ### 👨‍⚕️ Doctor Portal & Verification
 | Doctor Dashboard | Pending Requests | QR Verifier Mode | Profile & Certs |
 |:---:|:---:|:---:|:---:|
-| ![Doc Dash](INSERT_LINK_HERE/1000101350.png) | ![Requests](INSERT_LINK_HERE/1000101351.png) | ![QR Scanner](INSERT_LINK_HERE/1000101353.jpg) | ![Profile](INSERT_LINK_HERE/1000101354.png) |
+| <img src="Screenshots/Doc_Dash.png" width="200"> | <img src="Screenshots/Requests.png" width="200"> | <img src="Screenshots/QR_Scanner.png" width="200"> | <img src="Screenshots/Doc_Profile.png" width="200"> |
 
 ### 📋 Appointments & Profile
 | Appointment Slip | Slip QR Code | User Profile | Side Menu |
 |:---:|:---:|:---:|:---:|
-| ![Slip](INSERT_LINK_HERE/Screenshot_20260423_175137.png) | ![QR Slip](INSERT_LINK_HERE/Screenshot_20260423_175146.png) | ![Profile](INSERT_LINK_HERE/Screenshot_20260423_174241.png) | ![Drawer](INSERT_LINK_HERE/Screenshot_20260423_174256.png) |
+| <img src="Screenshots/Slip.png" width="200"> | <img src="Screenshots/QR_Slip.png" width="200"> | <img src="Screenshots/Profile.png" width="200"> | <img src="Screenshots/Drawer.png" width="200"> |
 
 ## 🔧 Configuration
 
