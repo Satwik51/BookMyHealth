@@ -628,7 +628,7 @@ Update the Web Client ID in `app/src/main/res/values/strings.xml`:
 ### 🚀 Onboarding & Authentication
 | Role Selection | Login | Signup |
 |:---:|:---:|:---:|
-| ![Role Select](INSERT_LINK_HERE/Screenshot_20260423_173208.png) | ![Login](INSERT_LINK_HERE/1000101348.png) | ![Signup](INSERT_LINK_HERE/Screenshot_20260423_173330.png) |
+| ![Role Select](Screenshots/Role_Select.png) | ![Login](INSERT_LINK_HERE/1000101348.png) | ![Signup](INSERT_LINK_HERE/Screenshot_20260423_173330.png) |
 
 ### 👤 User Dashboard & Booking
 | Dashboard | Doctor List | Filtering | Booking Confirmed |
