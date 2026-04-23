@@ -291,60 +291,113 @@ The app follows **MVVM (Model-View-ViewModel)** architecture pattern:
 | `DoctorApprovedListActivity` | View approved appointments |
 | `DoctorProfileActivity` | Doctor profile management with full details |
 
+#### 🤖 AI-Powered & Chat Features
+| Activity | Description |
+|:--------:|:-----------|
+| `ChatActivity` | AI-powered chatbot interface for health queries |
+| `SymptomCheckerActivity` | AI symptom analysis tool for initial screening |
+| `DrugSearchActivity` | AI/FDA integrated drug database search |
+
+#### 📋 Appointments & Utilities
+| Activity | Description |
+|:--------:|:-----------|
+| `AppointmentSlipActivity` | Displays digital appointment slip with QR verification |
+| `BookingConfirmDialog` | Confirmation popup for successful appointment booking |
+
 </div>
 
-### Package Structure
-```
+### 📂 Project Directory Structure
+
+```text
 com.example.bookmyhealth/
 ├── adapter/              # RecyclerView & ViewPager adapters
+│   ├── AnalysisResultAdapter.kt
 │   ├── AppointmentAdapter.kt
+│   ├── BannerAdapter.kt
+│   ├── ChatAdapter.kt
 │   ├── DoctorListAdapter.kt
 │   ├── IntroAdapter.kt
 │   ├── LottieSliderAdapter.kt
+│   ├── PosterAdapter.kt
+│   ├── SuggestionAdapter.kt
+│   ├── SymptomAdapter.kt
 │   ├── UserAppointmentAdapter.kt
 │   └── UserLottieAdapter.kt
 │
 ├── data/
-│   ├── model/           # Data classes
+│   ├── model/            # Data classes
+│   │   ├── AnalysisResult.kt
 │   │   ├── Appointment.kt
+│   │   ├── ChatMessage.kt
+│   │   ├── Disease.kt
 │   │   ├── Doctor.kt
+│   │   ├── Drug.kt
+│   │   ├── DrugMeta.kt
+│   │   ├── DrugMetaResults.kt
+│   │   ├── DrugResponse.kt
 │   │   ├── IntroItem.kt
+│   │   ├── OpenFda.kt
 │   │   ├── SlideItem.kt
+│   │   ├── Symptom.kt
+│   │   ├── SymptomCategory.kt
 │   │   ├── User.kt
 │   │   └── UserSlideItem.kt
-│   └── repository/      # Data access layer
+│   └── repository/       # Data access layer
+│       ├── ChatRepository.kt
+│       ├── DrugRepository.kt
 │       └── FirebaseRepository.kt
 │
+├── network/              # API & Networking
+│   ├── GeminiService.kt
+│   ├── OpenFdaApi.kt
+│   └── RetrofitClient.kt
+│
 ├── ui/
-│   ├── auth/           # Authentication screens
+│   ├── auth/             # Authentication screens
 │   │   ├── RoleSelectActivity.kt
-│   │   ├── doctor/     # Doctor auth screens
-│   │   │   ├── DoctorLoginActivity.kt
-│   │   │   ├── DoctorSignupActivity.kt
+│   │   ├── doctor/
+│   │   │   ├── DoctorApprovedListActivity.kt
 │   │   │   ├── DoctorDashboardActivity.kt
-│   │   │   └── DoctorApprovedListActivity.kt
-│   │   └── user/       # User auth screens
-│   │       ├── UserLoginActivity.kt
-│   │       ├── UserSignupActivity.kt
-│   │       ├── UserDashboardActivity.kt
+│   │   │   ├── DoctorLoginActivity.kt
+│   │   │   └── DoctorSignupActivity.kt
+│   │   └── user/
 │   │       ├── BookAppointmentActivity.kt
-│   │       └── UserAppointmentsActivity.kt
-│   ├── profile/        # Profile management
+│   │       ├── UserAppointmentsActivity.kt
+│   │       ├── UserDashboardActivity.kt
+│   │       ├── UserLoginActivity.kt
+│   │       └── UserSignupActivity.kt
+│   ├── chat/             # AI Chat Features
+│   │   └── ChatActivity.kt
+│   ├── dialog/           # Dialogs & Popups
+│   │   └── BookingConfirmDialog.kt
+│   ├── drug/             # Drug Search & Info
+│   │   └── DrugSearchActivity.kt
+│   ├── profile/          # Profile Management
 │   │   ├── DoctorProfileActivity.kt
 │   │   └── UserProfileActivity.kt
-│   └── splash/        # Splash & loading screens
-│       ├── LoadingActivity.kt
-│       └── SplashActivity.kt
+│   ├── splash/           # Splash & Loading
+│   │   ├── LoadingActivity.kt
+│   │   └── SplashActivity.kt
+│   └── symptom/          # Symptom Analysis
+│       └── SymptomCheckerActivity.kt
 │
-├── utils/              # Utility classes
+├── utils/                # Helper classes
+│   ├── CaptureActivityPortrait.kt
+│   ├── Constants.kt
+│   ├── JsonUtils.kt
+│   ├── NotificationHelper.kt
+│   ├── NotificationWorker.kt
+│   ├── QRUtils.kt
 │   └── SuperToast.kt
 │
-└── viewmodel/          # ViewModels
+└── viewmodel/            # ViewModels (MVVM)
     ├── AppointmentViewModel.kt
     ├── AuthViewModel.kt
-    └── DoctorViewModel.kt
+    ├── ChatViewModel.kt
+    ├── DoctorViewModel.kt
+    ├── DrugViewModel.kt
+    └── SymptomViewModel.kt
 ```
-
 ---
 
 ## 📊 Data Models
