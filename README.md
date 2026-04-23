@@ -8,24 +8,25 @@
 <img src="https://img.shields.io/badge/Material%20Design-757575?style=for-the-badge&logo=material-design&logoColor=white" alt="Material Design"/>
 <img src="https://img.shields.io/badge/Gradle-02303A?style=for-the-badge&logo=Gradle&logoColor=white" alt="Gradle"/>
 <img src="https://img.shields.io/badge/Google%20Sign--In-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Google Sign-In"/>
+<img src="https://img.shields.io/badge/AI%20Integration-FF5722?style=for-the-badge&logo=google-cloud&logoColor=white" alt="AI"/>
 
 <br/>
 
 <img src="https://img.shields.io/badge/API-24%2B-brightgreen?style=flat-square" alt="Min SDK"/>
 <img src="https://img.shields.io/badge/Target%20SDK-35-blue?style=flat-square" alt="Target SDK"/>
-<img src="https://img.shields.io/badge/Version-1.0-orange?style=flat-square" alt="Version"/>
+<img src="https://img.shields.io/badge/Version-2.0-orange?style=flat-square" alt="Version"/>
 <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License"/>
 
 <br/>
 
-**A modern healthcare appointment booking Android application built with Kotlin and Firebase**
+**A next-gen, AI-powered healthcare appointment booking Android application built with Kotlin and Firebase**
 
 [![GitHub stars](https://img.shields.io/github/stars/yourusername/BookMyHealth.svg?style=social&label=Star)](https://github.com/yourusername/BookMyHealth)
 [![GitHub forks](https://img.shields.io/github/forks/yourusername/BookMyHealth.svg?style=social&label=Fork)](https://github.com/yourusername/BookMyHealth)
 
 ---
 
-[Features](#-features) • [Tech Stack](#-tech-stack) • [Architecture](#-architecture) • [Installation](#-installation) • [Screenshots](#-screenshots) • [Contributing](#-contributing)
+[Features](#-features) • [Tech Stack](#-tech-stack) • [Installation](#-installation) • [Screenshots](#-screenshots) • [Contributing](#-contributing)
 
 </div>
 
@@ -33,96 +34,47 @@
 
 ## 📱 About
 
-<div align="center">
-
-### 🏥 BookMyHealth App Icon
-
-<img src="https://img.shields.io/badge/📱-App%20Icon-0D99FF?style=for-the-badge" alt="App Icon"/>
-
-> App icon available in `app/src/main/mipmap-*/ic_launcher.png`
-
-<img src="https://img.shields.io/badge/BookMyHealth-Healthcare%20App-0D99FF?style=for-the-badge&logo=hospital&logoColor=white" alt="BookMyHealth"/>
-
-</div>
-
-**BookMyHealth** is a comprehensive healthcare management application that connects patients with doctors, enabling seamless appointment booking and management. The app features a dual-role system supporting both **Doctors** and **Users (Patients)**, with a beautiful, modern UI powered by Material Design 3 and smooth animations.
+**BookMyHealth** is a comprehensive healthcare management application that connects patients with doctors, enabling seamless appointment booking and management. This updated version integrates **AI-powered diagnostic tools**, **Digital QR-based appointment slips**, and a **Verifier system** for doctors, ensuring a frictionless patient experience.
 
 <div align="center">
 
 <img src="https://img.shields.io/badge/🏥-Healthcare-4CAF50?style=flat-square" alt="Healthcare"/>
-<img src="https://img.shields.io/badge/📅-Appointments-1976D2?style=flat-square" alt="Appointments"/>
+<img src="https://img.shields.io/badge/🤖-AI%20Diagnostics-FF5722?style=flat-square" alt="AI"/>
 <img src="https://img.shields.io/badge/👨‍⚕️-Doctors-FF9800?style=flat-square" alt="Doctors"/>
 <img src="https://img.shields.io/badge/👤-Patients-AA00FF?style=flat-square" alt="Patients"/>
-<img src="https://img.shields.io/badge/☁️-Cloud%20Sync-039BE5?style=flat-square" alt="Cloud Sync"/>
+<img src="https://img.shields.io/badge/⚡-Verified-039BE5?style=flat-square" alt="Verified"/>
 
 </div>
-
-### Key Highlights
-- 🎯 **Dual Role System**: Separate interfaces for Doctors and Patients
-- 🔐 **Multiple Authentication**: Email/Password and Google Sign-In
-- 📅 **Appointment Management**: Book, view, and manage appointments
-- 🔍 **Smart Search & Filter**: Find doctors by specialization, experience, and availability
-- 🎨 **Modern UI/UX**: Beautiful animations, Lottie effects, and Material Design
-- ☁️ **Cloud-Powered**: Real-time data synchronization with Firebase
 
 ---
 
 ## ✨ Features
 
-<div align="center">
+### 🔐 Authentication & Profile
+- **Multi-Auth:** Email/Password and one-tap Google Sign-In.
+- **Role-Based Access:** Dedicated interfaces for Patients and Doctors.
+- **Verified Status:** Verified doctor badge system.
+- **Profile Management:** Detailed portfolios including Awards, Achievements, and Certifications.
 
-### 🎯 Core Features Overview
-
-<img src="https://img.shields.io/badge/🔐-Authentication-1976D2?style=for-the-badge" alt="Auth"/>
-<img src="https://img.shields.io/badge/👨‍⚕️-Doctor%20Portal-FF9800?style=for-the-badge" alt="Doctor"/>
-<img src="https://img.shields.io/badge/👤-Patient%20Portal-4CAF50?style=for-the-badge" alt="Patient"/>
-<img src="https://img.shields.io/badge/📅-Appointments-AA00FF?style=for-the-badge" alt="Appointments"/>
-<img src="https://img.shields.io/badge/🎨-Modern%20UI-00C853?style=for-the-badge" alt="UI"/>
-
-</div>
-
-### 🔐 Authentication & User Management
-- **Email/Password Authentication**: Secure registration and login
-- **Google Sign-In Integration**: One-tap authentication with Google accounts
-- **Role-Based Access**: Separate login flows for Doctors and Users
-- **Password Reset**: Forgot password functionality
-- **Auto Login**: Persistent session management
-- **Profile Management**: Complete profile setup and editing
+### 👤 Patient Features
+- **AI Symptom Analyzer:** Select symptoms for an AI-powered health analysis to get insights on potential conditions and recommended specialists.
+- **Drug Information Module:** Search medications to get instant data on dosage, usage, and safety directions.
+- **Digital Appointment Slip:** Access your appointment details via QR Code, Token Number, and Reference ID. Save/Download slips directly to your gallery.
+- **Smart Discovery:** Filter doctors by Specialization (ENT, Orthopedic, etc.), Experience, and Availability.
 
 ### 👨‍⚕️ Doctor Features
-- **Doctor Dashboard**: View all appointment requests in real-time
-- **Appointment Management**: Approve or reject appointment requests
-- **Profile Management**: Complete doctor profile with:
-  - Specialization, Experience, Clinic Name
-  - Consultation Fee, About Section
-  - Weekly Availability Schedule
-  - Achievements & Awards
-  - Profile Image Upload
-- **Appointment History**: Track all past and upcoming appointments
-- **Search & Filter**: Filter appointments by status, date, patient name
-
-### 👤 User (Patient) Features
-- **User Dashboard**: Browse available doctors with beautiful card layouts
-- **Doctor Discovery**: 
-  - Search doctors by name, specialization
-  - Filter by specialization, experience, availability
-  - View doctor profiles with complete details
-- **Appointment Booking**: 
-  - Select date and time slots
-  - Book appointments with preferred doctors
-  - View appointment status (Pending/Approved/Rejected)
-- **My Appointments**: Track all booked appointments
-- **Profile Management**: Edit personal information and profile picture
+- **Verifier Mode:** Built-in QR Code scanner to instantly verify patient appointments at the clinic reception.
+- **Appointment Control:** Manage requests in real-time (Approve/Reject).
+- **Dashboard Overview:** Track total patients, upcoming schedules, and manage clinical availability.
 
 ### 🎨 UI/UX Features
+- **Material Design 3:** Modern, accessible interface.
+- **Lottie Animations:** Smooth interactions (Role selection, Loading, AI analysis results).
+- **Dark Theme:** Full support for dark mode.
 
-<div align="center">
+---
 
-<img src="https://img.shields.io/badge/🎨-Modern%20UI-AA00FF?style=for-the-badge" alt="UI"/>
-<img src="https://img.shields.io/badge/✨-Animations-00D9FF?style=for-the-badge" alt="Animations"/>
-<img src="https://img.shields.io/badge/🌙-Dark%20Mode-757575?style=for-the-badge" alt="Dark Mode"/>
 
-</div>
 
 - **Splash Screen**: Animated app launch with fade effects
 - **Intro Sliders**: Beautiful onboarding experience with ViewPager2
@@ -144,10 +96,6 @@
 
 ---
 
-## 🛠 Tech Stack
-
-<div align="center">
-
 ### Technology Stack Overview
 
 ```mermaid
@@ -158,8 +106,8 @@ graph LR
     D --> E[Realtime Database]
     D --> F[Authentication]
     D --> G[Storage]
-    C --> H[Material Design]
-    C --> I[Lottie Animations]
+    C --> H[Material 3]
+    C --> I[ML Kit/AI Logic]
     C --> J[Glide]
 ```
 
@@ -172,11 +120,7 @@ graph LR
 
 </div>
 
-### Core Technologies
-- **Language**: <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/kotlin/kotlin-original.svg" width="20" height="20"/> [Kotlin](https://kotlinlang.org/) **2.0.21**
-- **Platform**: <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original.svg" width="20" height="20"/> **Android** (API 24 - 35)
-- **Build System**: <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/gradle/gradle-plain.svg" width="20" height="20"/> **Gradle 8.5.0** with Kotlin DSL
-- **Architecture**: 🏗️ **MVVM** (Model-View-ViewModel)
+
 
 ### Android Libraries
 | Library | Version | Purpose | Logo |
@@ -246,20 +190,28 @@ graph LR
 graph TD
     A[Splash Screen] --> B[Role Selection]
     B --> C{Choose Role}
+
+    %% User Flow
     C -->|User| D[User Login/Signup]
-    C -->|Doctor| E[Doctor Login/Signup]
     D --> F[User Dashboard]
-    E --> G[Doctor Dashboard]
     F --> H[Browse Doctors]
     F --> I[My Appointments]
     F --> J[User Profile]
+    F --> Q[AI Symptom Analyzer]
+    F --> R[Drug Info Module]
     H --> K[Book Appointment]
+    K --> P[Appointment Confirmed]
+    I --> S[Digital Appointment Slip / QR]
+
+    %% Doctor Flow
+    C -->|Doctor| E[Doctor Login/Signup]
+    E --> G[Doctor Dashboard]
     G --> L[Appointment Requests]
     G --> M[Approved Appointments]
     G --> N[Doctor Profile]
+    G --> T[QR Verifier / Scanner]
     L --> O{Approve/Reject}
     O -->|Approve| M
-    K --> P[Appointment Confirmed]
 ```
 
 </div>
