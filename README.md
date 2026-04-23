@@ -14,7 +14,7 @@
 
 <img src="https://img.shields.io/badge/API-24%2B-brightgreen?style=flat-square" alt="Min SDK"/>
 <img src="https://img.shields.io/badge/Target%20SDK-35-blue?style=flat-square" alt="Target SDK"/>
-<img src="https://img.shields.io/badge/Version-2.0-orange?style=flat-square" alt="Version"/>
+<img src="https://img.shields.io/badge/Version-1.1-orange?style=flat-square" alt="Version"/>
 <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License"/>
 
 <br/>
@@ -405,6 +405,73 @@ data class Appointment(
 
 <div align="center">
 
+### AI & Symptom Checker Models
+
+</div>
+
+### Symptom
+```kotlin
+// Symptom Analysis
+data class Symptom(
+    val id: String,
+    val name: String,
+    val category: SymptomCategory,
+    var isSelected: Boolean = false,
+    var severity: Int = 1
+)
+
+enum class SymptomCategory(val displayName: String) {
+    GENERAL, PAIN, DIGESTIVE, RESPIRATORY, SKIN, NEUROLOGICAL, OTHER
+}
+
+data class AnalysisResult(
+    val diseaseName: String,
+    val confidence: Int,
+    val matchedSymptoms: List<String>,
+    val doctorType: String
+)
+
+// Chatbot Models
+data class ChatMessage(
+    val message: String,
+    val isUser: Boolean, // true = User, false = AI
+    val time: Long = System.currentTimeMillis(),
+    val isLoading: Boolean = false
+)
+```
+
+### External API Models (Drug Information)
+```kotlin
+data class DrugResponse(val results: List<Drug>?, val meta: DrugMeta?)
+
+data class Drug(
+    val id: String?,
+    val openfda: OpenFda?,
+    val purpose: List<String>?,
+    val indications_and_usage: List<String>?,
+    val dosage_and_administration: List<String>?,
+    val warnings: List<String>?,
+    val contraindications: List<String>?
+    // ... Additional utility getters (displayName, bestUsage, etc.)
+)
+
+data class OpenFda(
+    val brand_name: List<String>?,
+    val generic_name: List<String>?,
+    val product_type: List<String>?,
+    val route: List<String>?
+)
+```
+
+### UI Helper Models
+```kotlin
+data class IntroItem(val icon: Int, val title: String, val description: String)
+data class SlideItem(val animation: Int, val text: String)
+data class UserSlideItem(val animation: Int, val text: String)
+```
+
+<div align="center">
+
 <img src="https://img.shields.io/badge/📊-Data%20Models-1976D2?style=for-the-badge" alt="Data Models"/>
 <img src="https://img.shields.io/badge/☁️-Firebase%20Realtime-FFA000?style=for-the-badge&logo=firebase" alt="Firebase"/>
 
@@ -558,45 +625,30 @@ Update the Web Client ID in `app/src/main/res/values/strings.xml`:
 
 ## 📸 Screenshots
 
-<div align="center">
-
-### 🚀 Splash & Onboarding
-
-| Splash Screen | Role Selection | Intro Slider |
+### 🚀 Onboarding & Authentication
+| Role Selection | Login | Signup |
 |:---:|:---:|:---:|
-| <img src="https://via.placeholder.com/300x600/0D99FF/FFFFFF?text=Splash+Screen" width="200" alt="Splash Screen"/> | <img src="https://via.placeholder.com/300x600/4CAF50/FFFFFF?text=Role+Selection" width="200" alt="Role Selection"/> | <img src="https://via.placeholder.com/300x600/AA00FF/FFFFFF?text=Intro+Slider" width="200" alt="Intro Slider"/> |
+| ![Role Select](INSERT_LINK_HERE/Screenshot_20260423_173208.png) | ![Login](INSERT_LINK_HERE/1000101348.png) | ![Signup](INSERT_LINK_HERE/Screenshot_20260423_173330.png) |
 
-### 🔐 Authentication
-
-| User Login | User Signup | Doctor Login | Doctor Signup |
+### 👤 User Dashboard & Booking
+| Dashboard | Doctor List | Filtering | Booking Confirmed |
 |:---:|:---:|:---:|:---:|
-| <img src="https://via.placeholder.com/300x600/1976D2/FFFFFF?text=User+Login" width="150" alt="User Login"/> | <img src="https://via.placeholder.com/300x600/00C853/FFFFFF?text=User+Signup" width="150" alt="User Signup"/> | <img src="https://via.placeholder.com/300x600/1976D2/FFFFFF?text=Doctor+Login" width="150" alt="Doctor Login"/> | <img src="https://via.placeholder.com/300x600/00C853/FFFFFF?text=Doctor+Signup" width="150" alt="Doctor Signup"/> |
+| ![Dashboard](INSERT_LINK_HERE/Screenshot_20260423_173909.jpg) | ![Doctors](INSERT_LINK_HERE/Screenshot_20260423_174139.png) | ![Filter](INSERT_LINK_HERE/Screenshot_20260423_174330.png) | ![Confirmed](INSERT_LINK_HERE/Screenshot_20260423_173946.png) |
 
-### 👤 User Features
-
-| User Dashboard | Doctor List | Search & Filter | Book Appointment |
+### 🤖 AI-Powered Health Features
+| Symptom Analyzer | Analysis Results | Drug Information | Detailed Drug Info |
 |:---:|:---:|:---:|:---:|
-| <img src="https://via.placeholder.com/300x600/0D99FF/FFFFFF?text=User+Dashboard" width="150" alt="User Dashboard"/> | <img src="https://via.placeholder.com/300x600/4CAF50/FFFFFF?text=Doctor+List" width="150" alt="Doctor List"/> | <img src="https://via.placeholder.com/300x600/AA00FF/FFFFFF?text=Search+Filter" width="150" alt="Search & Filter"/> | <img src="https://via.placeholder.com/300x600/FF9800/FFFFFF?text=Book+Appointment" width="150" alt="Book Appointment"/> |
+| ![Analyzer](INSERT_LINK_HERE/Screenshot_20260423_174744.png) | ![Results](INSERT_LINK_HERE/Screenshot_20260423_174937.png) | ![Drug Info](INSERT_LINK_HERE/Screenshot_20260423_174656.jpg) | ![Drug Details](INSERT_LINK_HERE/Screenshot_20260423_174727.jpg) |
 
-| Doctor Profile | My Appointments | User Profile |
-|:---:|:---:|:---:|
-| <img src="https://via.placeholder.com/300x600/1976D2/FFFFFF?text=Doctor+Profile" width="200" alt="Doctor Profile"/> | <img src="https://via.placeholder.com/300x600/00C853/FFFFFF?text=My+Appointments" width="200" alt="My Appointments"/> | <img src="https://via.placeholder.com/300x600/AA00FF/FFFFFF?text=User+Profile" width="200" alt="User Profile"/> |
-
-### 👨‍⚕️ Doctor Features
-
-| Doctor Dashboard | Appointment Requests | Approve/Reject | Approved List |
+### 👨‍⚕️ Doctor Portal & Verification
+| Doctor Dashboard | Pending Requests | QR Verifier Mode | Profile & Certs |
 |:---:|:---:|:---:|:---:|
-| <img src="https://via.placeholder.com/300x600/0D99FF/FFFFFF?text=Doctor+Dashboard" width="150" alt="Doctor Dashboard"/> | <img src="https://via.placeholder.com/300x600/FF9800/FFFFFF?text=Appointment+Requests" width="150" alt="Appointment Requests"/> | <img src="https://via.placeholder.com/300x600/4CAF50/FFFFFF?text=Approve+Reject" width="150" alt="Approve/Reject"/> | <img src="https://via.placeholder.com/300x600/00C853/FFFFFF?text=Approved+List" width="150" alt="Approved List"/> |
+| ![Doc Dash](INSERT_LINK_HERE/1000101350.png) | ![Requests](INSERT_LINK_HERE/1000101351.png) | ![QR Scanner](INSERT_LINK_HERE/1000101353.jpg) | ![Profile](INSERT_LINK_HERE/1000101354.png) |
 
-| Doctor Profile | Profile Management |
-|:---:|:---:|
-| <img src="https://via.placeholder.com/300x600/1976D2/FFFFFF?text=Doctor+Profile" width="200" alt="Doctor Profile"/> | <img src="https://via.placeholder.com/300x600/AA00FF/FFFFFF?text=Profile+Management" width="200" alt="Profile Management"/> |
-
-> **Note**: Replace placeholder images with actual screenshots from your app for better presentation.
-
-</div>
-
----
+### 📋 Appointments & Profile
+| Appointment Slip | Slip QR Code | User Profile | Side Menu |
+|:---:|:---:|:---:|:---:|
+| ![Slip](INSERT_LINK_HERE/Screenshot_20260423_175137.png) | ![QR Slip](INSERT_LINK_HERE/Screenshot_20260423_175146.png) | ![Profile](INSERT_LINK_HERE/Screenshot_20260423_174241.png) | ![Drawer](INSERT_LINK_HERE/Screenshot_20260423_174256.png) |
 
 ## 🔧 Configuration
 
